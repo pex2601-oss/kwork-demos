@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Premium Car Wash — демо</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,Segoe UI,Arial,sans-serif;background:#05070b;color:#e8eef6;line-height:1.55}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}a{color:inherit}
+header{position:fixed;inset:0 0 auto;z-index:9;backdrop-filter:blur(10px);background:#05070bb0;border-bottom:1px solid #ffffff10}
+header .w{display:flex;justify-content:space-between;align-items:center;height:66px}.logo{font-weight:800;letter-spacing:3px}.logo span{color:#38d6ff}
+nav a{text-decoration:none;margin-left:24px;color:#9fb1c6;font-size:14px}
+.btn{display:inline-block;padding:14px 28px;border-radius:40px;background:linear-gradient(90deg,#38d6ff,#6a7bff);color:#04121a;font-weight:700;text-decoration:none;border:0;cursor:pointer}
+.scrolly{height:1300px;position:relative}
+.stage{position:sticky;top:0;height:min(100vh,820px);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(ellipse at 50% 70%,#12324a 0,#05070b 65%)}
+.stage h1{font-size:clamp(34px,6vw,72px);text-align:center;line-height:1.05;margin-bottom:10px}.stage h1 em{font-style:normal;background:linear-gradient(90deg,#38d6ff,#a3b4ff);-webkit-background-clip:text;color:transparent}
+.stage p{color:#8ea3b8;margin-bottom:20px;text-align:center}
+.car{position:relative;width:min(900px,92vw);aspect-ratio:900/330}.car svg{position:absolute;inset:0;width:100%;height:100%}
+#dirt{clip-path:inset(0 0 0 var(--p,45%))}
+.bar{position:absolute;top:0;bottom:0;left:var(--p,45%);width:3px;background:#38d6ff;box-shadow:0 0 25px 6px #38d6ff99}
+.hint{margin-top:16px;font-size:13px;color:#6f8399;letter-spacing:2px;text-transform:uppercase}
+section{padding:96px 0}h2{font-size:40px;margin-bottom:14px}.sub{color:#8ea3b8;margin-bottom:44px;max-width:640px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pk{background:linear-gradient(180deg,#0d1622,#080d14);border:1px solid #ffffff12;border-radius:20px;padding:30px}.pk.hot{border-color:#38d6ff;box-shadow:0 0 50px #38d6ff22}
+.pk h3{font-size:22px;margin-bottom:6px}.pk .pr{font-size:34px;font-weight:800;margin:14px 0}.pk li{list-style:none;color:#9fb1c6;padding:6px 0;border-bottom:1px solid #ffffff0d}.pk li:before{content:"✓ ";color:#38d6ff}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.steps div{padding:24px;border-radius:16px;background:#0b121b}.steps b{font-size:40px;color:#38d6ff;display:block}
+.book{background:linear-gradient(120deg,#0e2235,#121a3a);border-radius:26px;padding:50px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.book input,.book select{width:100%;padding:15px;border-radius:12px;border:1px solid #ffffff1a;background:#05070b88;color:#fff;margin-bottom:12px;font:inherit}
+footer{padding:30px 0;color:#53657a;font-size:13px;border-top:1px solid #ffffff10}
+@media(max-width:860px){.grid,.steps,.book{grid-template-columns:1fr}nav{display:none}}
+</style></head><body>
+<header><div class="w"><div class="logo">AQUA<span>LUXE</span></div><nav><a href="#pk">Услуги</a><a href="#how">Как это работает</a><a href="#book">Запись</a></nav><a class="btn" href="#book">Записаться</a></div></header>
+<div class="scrolly" id="sc"><div class="stage">
+<h1>Ваш автомобиль <em>как из салона</em></h1><p>Прокрутите вниз — и смотрите, как мы смываем грязь</p>
+<div class="car" id="car">
+<svg viewBox="0 0 900 330"><defs><linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9f3ff"/><stop offset=".45" stop-color="#7da2c8"/><stop offset="1" stop-color="#1a2b40"/></linearGradient><linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#0b1a2a"/><stop offset=".5" stop-color="#3b6c93"/><stop offset="1" stop-color="#0b1a2a"/></linearGradient></defs>
+<ellipse cx="450" cy="300" rx="400" ry="18" fill="#000" opacity=".6"/>
+<path d="M70 240 Q60 190 130 175 L280 150 Q360 80 470 78 Q590 78 670 150 L790 170 Q850 185 845 235 L840 260 L70 262 Z" fill="url(#body)"/>
+<path d="M300 152 Q370 98 470 96 Q570 96 640 152 Z" fill="url(#gl)"/><line x1="470" y1="96" x2="470" y2="152" stroke="#1a2b40" stroke-width="6"/>
+<path d="M120 200 Q450 175 820 200" stroke="#fff" stroke-opacity=".7" stroke-width="3" fill="none"/>
+<circle cx="220" cy="262" r="52" fill="#0a0f16"/><circle cx="220" cy="262" r="30" fill="#9fb3c8"/><circle cx="680" cy="262" r="52" fill="#0a0f16"/><circle cx="680" cy="262" r="30" fill="#9fb3c8"/>
+<rect x="810" y="200" width="30" height="12" rx="5" fill="#ffe7a3"/><rect x="72" y="205" width="24" height="10" rx="4" fill="#ff4d5e"/></svg>
+<svg id="dirt" viewBox="0 0 900 330"><defs><filter id="mud"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="4" seed="4"/><feColorMatrix values="0 0 0 0 .32 0 0 0 0 .24 0 0 0 0 .15 0 0 0 2.2 -.7"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+<clipPath id="cs"><path d="M70 240 Q60 190 130 175 L280 150 Q360 80 470 78 Q590 78 670 150 L790 170 Q850 185 845 235 L840 260 L70 262 Z"/><circle cx="220" cy="262" r="52"/><circle cx="680" cy="262" r="52"/></clipPath></defs>
+<g clip-path="url(#cs)"><rect width="900" height="330" fill="#6b5a45" opacity=".78"/><rect width="900" height="330" fill="#fff" filter="url(#mud)"/></g></svg>
+<div class="bar"></div></div><div class="hint">↓ scroll</div></div></div>
+<section id="pk"><div class="w"><h2>Программы мойки</h2><p class="sub">Пример тарифной сетки. Названия, цены и состав услуг — заглушки для согласования.</p>
+<div class="grid"><div class="pk"><h3>Express</h3><p>Быстрая наружная мойка</p><div class="pr">$XX</div><ul><li>Бесконтактная мойка</li><li>Сушка</li><li>Чернение шин</li></ul></div>
+<div class="pk hot"><h3>Premium</h3><p>Снаружи и внутри</p><div class="pr">$XX</div><ul><li>Двухфазная мойка</li><li>Химчистка ковриков</li><li>Уборка салона</li><li>Воск</li></ul></div>
+<div class="pk"><h3>Detailing</h3><p>Полный уход</p><div class="pr">$XXX</div><ul><li>Полировка кузова</li><li>Керамика</li><li>Химчистка салона</li></ul></div></div></div></section>
+<section id="how"><div class="w"><h2>Как это работает</h2><div class="steps"><div><b>01</b>Онлайн-запись на удобное время</div><div><b>02</b>Приёмка и осмотр авто</div><div><b>03</b>Мойка и детейлинг</div><div><b>04</b>Выдача чистого автомобиля</div></div></div></section>
+<section id="book"><div class="w"><div class="book"><div><h2>Запишитесь онлайн</h2><p class="sub">Выберите программу и время — мы подтвердим запись.</p></div>
+<form onsubmit="event.preventDefault();this.innerHTML='<h3>Запись создана (демо)</h3>'"><input placeholder="Имя"><select><option>Программа</option><option>Express</option><option>Premium</option><option>Detailing</option></select><input type="datetime-local"><button class="btn">Записаться</button></form></div></div></section>
+<footer><div class="w">© Car Wash — демонстрационный макет. В продакшене эффект делается на Three.js/WebGL с 3D-моделью и GSAP ScrollTrigger.</div></footer>
+<script>
+const sc=document.getElementById('sc'),car=document.getElementById('car');
+function u(){const r=sc.getBoundingClientRect(),t=Math.min(1,Math.max(0,-r.top/(sc.offsetHeight-innerHeight)));car.style.setProperty('--p',(t*100).toFixed(1)+'%')}
+addEventListener('scroll',u);
+</script></body></html>

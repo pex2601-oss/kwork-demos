@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Станкостроительный завод — демо</title>
+<style>
+:root{--d:#0f1720;--a:#f5a524;--g:#e9edf2;--t:#1c2733}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--t);background:#fff;line-height:1.55}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;background:rgba(15,23,32,.95);color:#fff;z-index:9}
+header .w{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:800;letter-spacing:.5px}.logo b{color:var(--a)}
+nav a{color:#cfd8e3;text-decoration:none;margin-left:26px;font-size:15px}nav a:hover{color:var(--a)}
+.btn{display:inline-block;background:var(--a);color:#111;font-weight:700;padding:14px 26px;border-radius:8px;text-decoration:none;border:0;cursor:pointer;font-size:16px}
+.btn.o{background:transparent;color:#fff;border:2px solid #fff3}
+.hero{background:radial-gradient(circle at 80% 30%,#2a3b4f 0,#0f1720 60%);color:#fff;padding:90px 0 110px;overflow:hidden}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:50px;line-height:1.1;margin-bottom:20px}.hero h1 span{color:var(--a)}
+.hero p{color:#b8c4d2;font-size:19px;margin-bottom:32px;max-width:560px}
+.stats{display:flex;gap:40px;margin-top:44px}.stats b{display:block;font-size:32px;color:var(--a)}.stats small{color:#93a1b3}
+section{padding:84px 0}h2{font-size:36px;margin-bottom:12px}.sub{color:#5b6b7d;margin-bottom:40px;font-size:18px}
+.cats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}.cats span{padding:9px 18px;border-radius:30px;background:var(--g);font-size:14px;cursor:pointer}.cats span.on{background:var(--d);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{border:1px solid #e2e7ee;border-radius:14px;overflow:hidden;transition:.25s;background:#fff}.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px #0f172014}
+.card .img{height:190px;background:linear-gradient(135deg,#dfe5ec,#f6f8fa);display:flex;align-items:center;justify-content:center}
+.card .in{padding:20px}.card h3{font-size:19px;margin-bottom:10px}
+.spec{font-size:14px;color:#5b6b7d;display:grid;grid-template-columns:1fr auto;gap:4px 10px;margin-bottom:16px}.spec b{color:var(--t)}
+.card .row{display:flex;justify-content:space-between;align-items:center}.price{font-weight:800;font-size:18px}
+.card .btn{padding:10px 16px;font-size:14px}
+.about{background:var(--g)}.about .w{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:18px}.feat div{background:#fff;padding:22px;border-radius:12px}.feat b{display:block;margin-bottom:6px}
+.promo{background:linear-gradient(110deg,var(--a),#ffc861);border-radius:20px;padding:44px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.promo h3{font-size:30px}.promo .btn{background:var(--d);color:#fff}
+.form{background:var(--d);color:#fff}.form .w{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.form input,.form select,.form textarea{width:100%;padding:15px;border-radius:8px;border:1px solid #2d3d50;background:#16222f;color:#fff;margin-bottom:14px;font:inherit}
+footer{background:#0a1017;color:#6f7f92;padding:28px 0;font-size:14px}
+@media(max-width:860px){.hero .w,.about .w,.form .w{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.hero h1{font-size:34px}nav{display:none}.promo{flex-direction:column;align-items:flex-start}}
+</style></head><body>
+<header><div class="w"><div class="logo">СТАНКО<b>ПРОМ</b></div><nav><a href="#cat">Каталог</a><a href="#about">О компании</a><a href="#promo">Акции</a><a href="#req">Заявка</a></nav><a class="btn" href="#req">Получить КП</a></div></header>
+<div class="hero"><div class="w"><div><h1>Металлообрабатывающие станки <span>собственного производства</span></h1>
+<p>Токарные, фрезерные и сверлильные станки с ЧПУ и универсальные. Подбор под задачу, пусконаладка и сервисное обслуживание.</p>
+<a class="btn" href="#cat">Смотреть каталог</a> &nbsp; <a class="btn o" href="#req">Подобрать станок</a>
+<div class="stats"><div><b>50+</b><small>моделей в каталоге</small></div><div><b>XX лет</b><small>на рынке</small></div><div><b>12 мес</b><small>гарантия*</small></div></div></div>
+<svg viewBox="0 0 420 320" width="100%"><defs><linearGradient id="m" x1="0" x2="1"><stop offset="0" stop-color="#3a4d63"/><stop offset="1" stop-color="#1e2b3a"/></linearGradient></defs>
+<rect x="30" y="200" width="360" height="70" rx="8" fill="url(#m)"/><rect x="50" y="80" width="120" height="125" rx="8" fill="#2c3d51"/><rect x="65" y="98" width="90" height="55" rx="4" fill="#0b1219"/><rect x="72" y="106" width="50" height="6" fill="#f5a524"/><rect x="72" y="118" width="70" height="4" fill="#45607c"/><rect x="72" y="128" width="60" height="4" fill="#45607c"/>
+<rect x="170" y="140" width="190" height="22" rx="11" fill="#8ea3b8"/><circle cx="185" cy="151" r="26" fill="#f5a524"/><circle cx="185" cy="151" r="10" fill="#1e2b3a"/><rect x="300" y="120" width="60" height="62" rx="6" fill="#4a6280"/><rect x="40" y="270" width="30" height="30" fill="#1e2b3a"/><rect x="350" y="270" width="30" height="30" fill="#1e2b3a"/></svg></div></div>
+<section id="cat"><div class="w"><h2>Каталог оборудования</h2><p class="sub">Подробные характеристики, фото и комплектации по каждой модели</p>
+<div class="cats"><span class="on">Все</span><span>Токарные</span><span>Фрезерные</span><span>Сверлильные</span><span>С ЧПУ</span><span>Оснастка</span></div>
+<div class="grid" id="g"></div></div></section>
+<section class="about" id="about"><div class="w"><div><h2>О компании</h2><p class="sub">Здесь будет текст о производстве: история, площадка, сертификация и ключевые клиенты.</p><a class="btn" href="#req">Заказать консультацию</a></div>
+<div class="feat"><div><b>Своё производство</b>Полный цикл от проектирования до сборки</div><div><b>Доставка и монтаж</b>Пусконаладка на площадке клиента</div><div><b>Обучение</b>Инструктаж операторов</div><div><b>Сервис</b>Запчасти и обслуживание</div></div></div></section>
+<section id="promo"><div class="w"><div class="promo"><div><h3>Акция месяца: скидка на модели серии X</h3><p>Условия акции и сроки — пример текста-заглушки.</p></div><a class="btn" href="#req">Узнать условия</a></div></div></section>
+<section class="form" id="req"><div class="w"><div><h2>Оставьте заявку</h2><p style="color:#93a1b3;font-size:18px">Подберём станок под ваши задачи и подготовим коммерческое предложение.</p></div>
+<form onsubmit="event.preventDefault();this.innerHTML='<h3>Спасибо! Заявка отправлена (демо)</h3>'"><input placeholder="Ваше имя"><input placeholder="Компания"><select><option>Интересует модель…</option><option>Токарный станок</option><option>Фрезерный станок</option></select><textarea rows="3" placeholder="Комментарий"></textarea><button class="btn">Отправить заявку</button></form></div></section>
+<footer><div class="w">© Станкостроительная компания — демонстрационный макет. Все тексты и цифры условные.</div></footer>
+<script>
+const items=[["Токарный станок Т-400","Токарные","400 мм","1000 мм","7,5 кВт"],["Фрезерный станок Ф-32","Фрезерные","320×1250","3 оси","5,5 кВт"],["Обрабатывающий центр ЧПУ V-850","С ЧПУ","850×500","24 инстр.","11 кВт"],["Сверлильный станок С-25","Сверлильные","Ø 25 мм","—","1,5 кВт"],["Токарный ЧПУ ТЦ-250","С ЧПУ","250 мм","500 мм","5,5 кВт"],["Радиально-сверлильный РС-50","Сверлильные","Ø 50 мм","1250 мм","4 кВт"]];
+const ic='<svg width="120" height="90" viewBox="0 0 120 90"><rect x="5" y="55" width="110" height="25" rx="4" fill="#9fb0c2"/><rect x="12" y="15" width="40" height="42" rx="4" fill="#6b8299"/><rect x="18" y="22" width="28" height="16" fill="#1e2b3a"/><rect x="52" y="35" width="55" height="10" rx="5" fill="#c3ced9"/><circle cx="58" cy="40" r="9" fill="#f5a524"/></svg>';
+g.innerHTML=items.map(i=>`<div class="card"><div class="img">${ic}</div><div class="in"><h3>${i[0]}</h3><div class="spec"><span>Тип</span><b>${i[1]}</b><span>Рабочая зона</span><b>${i[2]}</b><span>Параметр</span><b>${i[3]}</b><span>Мощность</span><b>${i[4]}</b></div><div class="row"><span class="price">по запросу</span><a class="btn" href="#req">Заказать</a></div></div></div>`).join('');
+</script></body></html>

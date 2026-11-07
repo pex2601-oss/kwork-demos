@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Каталог недвижимости — демо</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:"YS Text",Inter,Arial,sans-serif;background:#fff;color:#000;font-size:15px}
+.w{max-width:1200px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid #eee}header .w{display:flex;align-items:center;gap:28px;height:64px}
+.logo{font-weight:700;font-size:22px}.logo i{font-style:normal;color:#fc3f1d}
+nav a{color:#000;text-decoration:none;margin-right:18px;opacity:.75}nav a.on{opacity:1;font-weight:600}
+.tg{margin-left:auto;display:flex;align-items:center;gap:8px;background:#2aabee;color:#fff;border:0;border-radius:10px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer}
+.hero{padding:40px 0 24px}.hero h1{font-size:32px;font-weight:700;margin-bottom:18px}
+.search{display:flex;border:2px solid #ffdb4d;border-radius:12px;overflow:hidden}.search input{flex:1;border:0;padding:16px;font:inherit;outline:0}.search button{background:#ffdb4d;border:0;padding:0 28px;font:inherit;font-weight:600}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.chips span{background:#f2f3f5;border-radius:10px;padding:9px 14px;cursor:pointer}.chips span.on{background:#000;color:#fff}
+.layout{display:grid;grid-template-columns:260px 1fr;gap:28px;padding:20px 0 60px}
+aside{background:#f6f7f9;border-radius:16px;padding:20px;align-self:start;position:sticky;top:16px}
+aside h4{margin:14px 0 8px;font-size:14px;color:#555}aside h4:first-child{margin-top:0}
+.rng{display:flex;gap:8px}.rng input,aside select{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font:inherit}
+.rooms{display:flex;gap:6px}.rooms span{flex:1;text-align:center;padding:9px 0;border-radius:8px;background:#fff;border:1px solid #ddd;cursor:pointer}.rooms span.on{border-color:#000}
+.apply{width:100%;margin-top:18px;padding:12px;border-radius:10px;border:0;background:#ffdb4d;font:inherit;font-weight:600}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;color:#666}
+.list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.item{border-radius:14px;overflow:hidden;cursor:pointer}.item:hover .ph{filter:brightness(.95)}
+.ph{height:170px;border-radius:14px;position:relative}.ph .fav{position:absolute;top:10px;right:10px;background:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center}
+.item .pr{font-size:20px;font-weight:700;margin:10px 0 2px}.item .ds{color:#333}.item .ad{color:#888;font-size:13px;margin-top:2px}
+.lk{background:#f6f7f9;border-radius:20px;padding:36px;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;margin-bottom:60px}
+.lk h2{font-size:26px;margin-bottom:10px}.lk ul{list-style:none;color:#444}.lk li{padding:4px 0}.lk li:before{content:"— "}
+footer{border-top:1px solid #eee;padding:24px 0;color:#999;font-size:13px}
+@media(max-width:900px){.layout,.lk{grid-template-columns:1fr}aside{position:static}.list{grid-template-columns:1fr}nav{display:none}}
+</style></head><body>
+<header><div class="w"><div class="logo">Дом<i>.</i>Каталог</div><nav><a class="on">Купить</a><a>Снять</a><a>Новостройки</a><a>Коммерческая</a></nav>
+<button class="tg"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M21.5 3.5 2.8 10.7c-1.3.5-1.2 1.3-.2 1.6l4.8 1.5 1.8 5.6c.2.7.4.9.9.9.4 0 .6-.2.9-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.4-1.6zM9.5 14.3l-.4 3.8-1.3-4.3 10-6.3-8.3 6.8z"/></svg>Войти через Telegram</button></div></header>
+<div class="w hero"><h1>Найдите квартиру мечты</h1><div class="search"><input placeholder="Город, район, улица или ЖК"><button>Найти</button></div>
+<div class="chips"><span class="on">Квартиры</span><span>Дома</span><span>Участки</span><span>У метро</span><span>С ремонтом</span><span>Новостройки</span></div></div>
+<div class="w layout"><aside><h4>Цена, ₽</h4><div class="rng"><input placeholder="от"><input placeholder="до"></div>
+<h4>Комнат</h4><div class="rooms"><span>Ст</span><span class="on">1</span><span class="on">2</span><span>3</span><span>4+</span></div>
+<h4>Площадь, м²</h4><div class="rng"><input placeholder="от"><input placeholder="до"></div><h4>Район</h4><select><option>Любой</option></select><button class="apply">Показать объекты</button></aside>
+<main><div class="top"><span>Найдено: 1 248 объектов (демо)</span><span>Сортировка: по дате ▾</span></div><div class="list" id="l"></div></main></div>
+<div class="w"><div class="lk"><div><h2>Личный кабинет в один клик</h2><ul><li>Вход через Telegram без паролей</li><li>Избранные объекты и подборки</li><li>Уведомления о новых предложениях</li><li>История просмотров и заявок</li></ul></div>
+<div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 10px 30px #0000000d"><b>Избранное · 3</b><div style="height:10px"></div><div style="display:flex;gap:10px"><div style="flex:1;height:70px;border-radius:10px;background:linear-gradient(135deg,#c9d6df,#eef2f5)"></div><div style="flex:1;height:70px;border-radius:10px;background:linear-gradient(135deg,#e4d8c8,#f6f0e8)"></div><div style="flex:1;height:70px;border-radius:10px;background:linear-gradient(135deg,#cfe0d3,#eef5ef)"></div></div></div></div></div>
+<footer><div class="w">© Каталог недвижимости — демонстрационный макет, все объекты и цены условные.</div></footer>
+<script>
+const g=["#c9d6df,#eef2f5","#e4d8c8,#f6f0e8","#cfe0d3,#eef5ef","#d8d2e6,#f2eff7","#e8d0cf,#f7eeee","#cbdce8,#f0f5f9"];
+const d=[["8 450 000","2-комн., 54 м², 7/16 эт.","ул. Примерная, 12"],["5 900 000","1-комн., 38 м², 3/9 эт.","мкр. Центральный"],["14 200 000","3-комн., 86 м², 12/24 эт.","ЖК «Пример»"],["4 300 000","Студия, 26 м², 5/17 эт.","ул. Новая, 4"],["11 750 000","2-комн., 64 м², 9/12 эт.","пр-т Демо, 30"],["19 900 000","Дом, 140 м², участок 6 сот.","пос. Зелёный"]];
+l.innerHTML=d.map((x,i)=>`<div class="item"><div class="ph" style="background:linear-gradient(135deg,${g[i]})"><span class="fav">♡</span></div><div class="pr">${x[0]} ₽</div><div class="ds">${x[1]}</div><div class="ad">${x[2]}</div></div>`).join('');
+</script></body></html>
