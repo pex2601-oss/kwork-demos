@@ -1,57 +1,123 @@
 <!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Станкостроительный завод — демо</title>
-<style>
-:root{--d:#0f1720;--a:#f5a524;--g:#e9edf2;--t:#1c2733}
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--t);background:#fff;line-height:1.55}
-.w{max-width:1180px;margin:0 auto;padding:0 24px}
-header{position:sticky;top:0;background:rgba(15,23,32,.95);color:#fff;z-index:9}
-header .w{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{font-weight:800;letter-spacing:.5px}.logo b{color:var(--a)}
-nav a{color:#cfd8e3;text-decoration:none;margin-left:26px;font-size:15px}nav a:hover{color:var(--a)}
-.btn{display:inline-block;background:var(--a);color:#111;font-weight:700;padding:14px 26px;border-radius:8px;text-decoration:none;border:0;cursor:pointer;font-size:16px}
-.btn.o{background:transparent;color:#fff;border:2px solid #fff3}
-.hero{background:radial-gradient(circle at 80% 30%,#2a3b4f 0,#0f1720 60%);color:#fff;padding:90px 0 110px;overflow:hidden}
-.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.hero h1{font-size:50px;line-height:1.1;margin-bottom:20px}.hero h1 span{color:var(--a)}
-.hero p{color:#b8c4d2;font-size:19px;margin-bottom:32px;max-width:560px}
-.stats{display:flex;gap:40px;margin-top:44px}.stats b{display:block;font-size:32px;color:var(--a)}.stats small{color:#93a1b3}
-section{padding:84px 0}h2{font-size:36px;margin-bottom:12px}.sub{color:#5b6b7d;margin-bottom:40px;font-size:18px}
-.cats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}.cats span{padding:9px 18px;border-radius:30px;background:var(--g);font-size:14px;cursor:pointer}.cats span.on{background:var(--d);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.card{border:1px solid #e2e7ee;border-radius:14px;overflow:hidden;transition:.25s;background:#fff}.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px #0f172014}
-.card .img{height:190px;background:linear-gradient(135deg,#dfe5ec,#f6f8fa);display:flex;align-items:center;justify-content:center}
-.card .in{padding:20px}.card h3{font-size:19px;margin-bottom:10px}
-.spec{font-size:14px;color:#5b6b7d;display:grid;grid-template-columns:1fr auto;gap:4px 10px;margin-bottom:16px}.spec b{color:var(--t)}
-.card .row{display:flex;justify-content:space-between;align-items:center}.price{font-weight:800;font-size:18px}
-.card .btn{padding:10px 16px;font-size:14px}
-.about{background:var(--g)}.about .w{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-.feat{display:grid;grid-template-columns:1fr 1fr;gap:18px}.feat div{background:#fff;padding:22px;border-radius:12px}.feat b{display:block;margin-bottom:6px}
-.promo{background:linear-gradient(110deg,var(--a),#ffc861);border-radius:20px;padding:44px;display:flex;justify-content:space-between;align-items:center;gap:30px}
-.promo h3{font-size:30px}.promo .btn{background:var(--d);color:#fff}
-.form{background:var(--d);color:#fff}.form .w{display:grid;grid-template-columns:1fr 1fr;gap:50px}
-.form input,.form select,.form textarea{width:100%;padding:15px;border-radius:8px;border:1px solid #2d3d50;background:#16222f;color:#fff;margin-bottom:14px;font:inherit}
-footer{background:#0a1017;color:#6f7f92;padding:28px 0;font-size:14px}
-@media(max-width:860px){.hero .w,.about .w,.form .w{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.hero h1{font-size:34px}nav{display:none}.promo{flex-direction:column;align-items:flex-start}}
+<title>ВЕКТОР — станки для металлообработки от производителя</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.ok{padding:28px;border-radius:14px;background:rgba(80,200,120,.12);font-size:18px}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}.burger span{display:block;height:2px;background:currentColor;margin:7px 6px}
+@media(max-width:860px){.burger{display:block}.nav{position:fixed;inset:64px 0 auto 0;flex-direction:column;padding:24px;gap:18px!important;transform:translateY(-130%);transition:.4s;z-index:40}body.menu .nav{transform:none}.wrap{padding:0 18px}}
+
+:root{--bg:#0f1215;--card:#181c21;--line:#262c33;--tx:#e9edf1;--mut:#8b96a3;--ac:#ff6a1a}
+body{font-family:Manrope,sans-serif;background:var(--bg);color:var(--tx);line-height:1.55}
+h1,h2,h3,.logo{font-family:Unbounded,sans-serif;letter-spacing:-.02em}
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(15,18,21,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-size:20px;font-weight:700}.logo b{color:var(--ac)}
+.nav{display:flex;gap:30px;font-size:15px;color:var(--mut)}.nav a:hover{color:#fff}
+.nav{background:inherit}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ac);color:#fff;padding:15px 26px;border-radius:10px;font-weight:700;border:0;cursor:pointer;font-size:15px;transition:.25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,106,26,.35)}
+.btn.gh{background:transparent;border:1px solid #3a424b}.btn.gh:hover{border-color:#fff;box-shadow:none}
+.hero{min-height:100vh;position:relative;display:flex;align-items:flex-end;padding:140px 0 70px;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:zoom 18s ease-out both}
+@keyframes zoom{from{transform:scale(1.15)}to{transform:scale(1)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,12,14,.95) 0%,rgba(10,12,14,.7) 45%,rgba(10,12,14,.2)),linear-gradient(0deg,var(--bg),transparent 40%)}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.tag{display:inline-block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin-bottom:22px}
+.hero h1{font-size:clamp(34px,5.4vw,72px);line-height:1.04;max-width:900px}
+.hero p{font-size:19px;color:#c3cad2;max-width:600px;margin:26px 0 38px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:70px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.stats div{background:rgba(24,28,33,.85);padding:24px}.stats b{font-family:Unbounded;font-size:30px;display:block}.stats span{color:var(--mut);font-size:14px}
+section{padding:110px 0}.sh{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:50px;flex-wrap:wrap}
+h2{font-size:clamp(28px,3.6vw,46px);line-height:1.1;max-width:720px}.sh p{color:var(--mut);max-width:420px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.filters button{background:var(--card);color:var(--tx);border:1px solid var(--line);padding:10px 18px;border-radius:99px;cursor:pointer;font:600 14px Manrope;transition:.2s}
+.filters button.on,.filters button:hover{background:var(--ac);border-color:var(--ac)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.35s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);border-color:#3d454f;box-shadow:0 24px 50px rgba(0,0,0,.4)}
+.card .im{aspect-ratio:4/3;overflow:hidden;position:relative}.card .im img{width:100%;height:100%;object-fit:cover;transition:.6s}.card:hover .im img{transform:scale(1.07)}
+.badge{position:absolute;top:12px;left:12px;background:var(--ac);font-size:12px;font-weight:700;padding:5px 10px;border-radius:6px}
+.card .b{padding:20px;display:flex;flex-direction:column;flex:1}.card small{color:var(--mut)}.card h3{font-size:16px;margin:6px 0 12px;line-height:1.3}
+.card ul{list-style:none;font-size:13px;color:var(--mut);margin-bottom:18px}.card li{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:5px 0}.card li b{color:var(--tx);font-weight:600}
+.pr{margin-top:auto;display:flex;justify-content:space-between;align-items:center}.pr b{font-size:19px}.pr a{font-size:13px;color:var(--ac);font-weight:700}
+.more{text-align:center;margin-top:40px}
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:center}
+.about .ph{border-radius:20px;overflow:hidden;aspect-ratio:5/6;position:relative}.about .ph img{width:100%;height:100%;object-fit:cover}
+.about .ph .fl{position:absolute;bottom:24px;left:24px;right:24px;background:rgba(15,18,21,.86);backdrop-filter:blur(8px);border-radius:14px;padding:20px;display:flex;gap:16px;align-items:center}
+.fl b{font-family:Unbounded;font-size:34px;color:var(--ac)}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:36px}.feat div{border-top:2px solid var(--ac);padding-top:16px}.feat h3{font-size:16px;margin-bottom:6px}.feat p{color:var(--mut);font-size:14px}
+.promo{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:20px}
+.pc{border-radius:18px;padding:34px;position:relative;overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--card);border:1px solid var(--line);transition:.3s}
+.pc:hover{transform:translateY(-4px)}
+.pc.big{background:linear-gradient(135deg,#ff6a1a,#d9430a);border:0}.pc .n{font-family:Unbounded;font-size:56px;line-height:1}.pc h3{font-size:20px;margin:12px 0 8px}.pc p{font-size:14px;opacity:.85}
+.pc em{position:absolute;top:24px;right:24px;font-style:normal;font-size:12px;background:rgba(0,0,0,.25);padding:6px 10px;border-radius:99px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}.steps div{padding:28px;border:1px solid var(--line);border-radius:16px;counter-increment:s}
+.steps div:before{content:"0" counter(s);font-family:Unbounded;color:var(--ac);font-size:14px}.steps h3{font-size:17px;margin:14px 0 8px}.steps p{color:var(--mut);font-size:14px}
+.req{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:60px;display:grid;grid-template-columns:1fr 1fr;gap:60px;position:relative;overflow:hidden}
+.req:before{content:"";position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(rgba(255,106,26,.25),transparent 70%);top:-200px;left:-200px}
+.req>*{position:relative}.req p{color:var(--mut);margin-top:18px}
+form{display:grid;gap:14px}input,select,textarea{width:100%;background:#0f1215;border:1px solid var(--line);color:var(--tx);border-radius:10px;padding:15px 16px;font:15px Manrope;transition:.2s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--ac)}.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+footer{padding:40px 0;border-top:1px solid var(--line);color:var(--mut);font-size:14px}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}.promo,.about,.req{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){header .btn{display:none}.nav{background:#0f1215}}
+@media(max-width:560px){.hero h1{font-size:27px}.hero h1 br{display:none}section{padding:70px 0}.grid,.steps,.feat,.row2{grid-template-columns:1fr}.req{padding:28px}.hero p{font-size:16px}.stats b{font-size:22px}.hero{padding-bottom:40px}}
 </style></head><body>
-<header><div class="w"><div class="logo">СТАНКО<b>ПРОМ</b></div><nav><a href="#cat">Каталог</a><a href="#about">О компании</a><a href="#promo">Акции</a><a href="#req">Заявка</a></nav><a class="btn" href="#req">Получить КП</a></div></header>
-<div class="hero"><div class="w"><div><h1>Металлообрабатывающие станки <span>собственного производства</span></h1>
-<p>Токарные, фрезерные и сверлильные станки с ЧПУ и универсальные. Подбор под задачу, пусконаладка и сервисное обслуживание.</p>
-<a class="btn" href="#cat">Смотреть каталог</a> &nbsp; <a class="btn o" href="#req">Подобрать станок</a>
-<div class="stats"><div><b>50+</b><small>моделей в каталоге</small></div><div><b>XX лет</b><small>на рынке</small></div><div><b>12 мес</b><small>гарантия*</small></div></div></div>
-<svg viewBox="0 0 420 320" width="100%"><defs><linearGradient id="m" x1="0" x2="1"><stop offset="0" stop-color="#3a4d63"/><stop offset="1" stop-color="#1e2b3a"/></linearGradient></defs>
-<rect x="30" y="200" width="360" height="70" rx="8" fill="url(#m)"/><rect x="50" y="80" width="120" height="125" rx="8" fill="#2c3d51"/><rect x="65" y="98" width="90" height="55" rx="4" fill="#0b1219"/><rect x="72" y="106" width="50" height="6" fill="#f5a524"/><rect x="72" y="118" width="70" height="4" fill="#45607c"/><rect x="72" y="128" width="60" height="4" fill="#45607c"/>
-<rect x="170" y="140" width="190" height="22" rx="11" fill="#8ea3b8"/><circle cx="185" cy="151" r="26" fill="#f5a524"/><circle cx="185" cy="151" r="10" fill="#1e2b3a"/><rect x="300" y="120" width="60" height="62" rx="6" fill="#4a6280"/><rect x="40" y="270" width="30" height="30" fill="#1e2b3a"/><rect x="350" y="270" width="30" height="30" fill="#1e2b3a"/></svg></div></div>
-<section id="cat"><div class="w"><h2>Каталог оборудования</h2><p class="sub">Подробные характеристики, фото и комплектации по каждой модели</p>
-<div class="cats"><span class="on">Все</span><span>Токарные</span><span>Фрезерные</span><span>Сверлильные</span><span>С ЧПУ</span><span>Оснастка</span></div>
-<div class="grid" id="g"></div></div></section>
-<section class="about" id="about"><div class="w"><div><h2>О компании</h2><p class="sub">Здесь будет текст о производстве: история, площадка, сертификация и ключевые клиенты.</p><a class="btn" href="#req">Заказать консультацию</a></div>
-<div class="feat"><div><b>Своё производство</b>Полный цикл от проектирования до сборки</div><div><b>Доставка и монтаж</b>Пусконаладка на площадке клиента</div><div><b>Обучение</b>Инструктаж операторов</div><div><b>Сервис</b>Запчасти и обслуживание</div></div></div></section>
-<section id="promo"><div class="w"><div class="promo"><div><h3>Акция месяца: скидка на модели серии X</h3><p>Условия акции и сроки — пример текста-заглушки.</p></div><a class="btn" href="#req">Узнать условия</a></div></div></section>
-<section class="form" id="req"><div class="w"><div><h2>Оставьте заявку</h2><p style="color:#93a1b3;font-size:18px">Подберём станок под ваши задачи и подготовим коммерческое предложение.</p></div>
-<form onsubmit="event.preventDefault();this.innerHTML='<h3>Спасибо! Заявка отправлена (демо)</h3>'"><input placeholder="Ваше имя"><input placeholder="Компания"><select><option>Интересует модель…</option><option>Токарный станок</option><option>Фрезерный станок</option></select><textarea rows="3" placeholder="Комментарий"></textarea><button class="btn">Отправить заявку</button></form></div></section>
-<footer><div class="w">© Станкостроительная компания — демонстрационный макет. Все тексты и цифры условные.</div></footer>
+<header><div class="wrap"><a class="logo" href="#">ВЕКТОР<b>.</b></a>
+<nav class="nav"><a href="#catalog">Каталог</a><a href="#about">О заводе</a><a href="#promo">Акции</a><a href="#steps">Поставка</a></nav>
+<a class="btn" href="#req">Получить КП</a><button class="burger"><span></span><span></span></button></div></header>
+
+<section class="hero"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=2000&q=80" alt="Металлообработка">
+<div class="wrap"><span class="tag rv">Завод-производитель · с 2006 года</span>
+<h1 class="rv" data-d="100">Станки для металлообработки, которые окупаются за&nbsp;сезон</h1>
+<p class="rv" data-d="200">Токарные, фрезерные, ленточнопильные и гибочные станки собственного производства. Пусконаладка, обучение операторов и гарантия 24 месяца.</p>
+<div class="rv" data-d="300" style="display:flex;gap:14px;flex-wrap:wrap"><a class="btn" href="#catalog">Смотреть каталог →</a><a class="btn gh" href="#req">Подобрать станок</a></div>
+<div class="stats rv" data-d="400"><div><b>52</b><span>модели в каталоге</span></div><div><b>1 800+</b><span>станков отгружено</span></div><div><b>24 мес</b><span>гарантия завода</span></div><div><b>14 дней</b><span>отгрузка со склада</span></div></div></div></section>
+
+<section id="catalog"><div class="wrap">
+<div class="sh"><h2 class="rv">Каталог оборудования</h2><p class="rv">52 модели в 6 категориях. Цены указаны с НДС, на складе в Подольске — актуальное наличие уточняем в день обращения.</p></div>
+<div class="filters rv"><button class="on">Все модели · 52</button><button>Токарные · 14</button><button>Фрезерные · 11</button><button>Ленточнопильные · 8</button><button>Сверлильные · 7</button><button>Листогибы · 6</button><button>Оснастка · 6</button></div>
+<div class="grid">
+<div class="card rv"><div class="im"><img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=700&q=75" alt=""><span class="badge">Хит продаж</span></div><div class="b"><small>Токарный · ЧПУ</small><h3>ВТ-420 CNC</h3><ul><li>Ø над станиной<b>420 мм</b></li><li>РМЦ<b>1000 мм</b></li><li>Мощность<b>7,5 кВт</b></li></ul><div class="pr"><b>1 890 000 ₽</b><a href="#req">Запросить →</a></div></div></div>
+<div class="card rv" data-d="80"><div class="im"><img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="b"><small>Фрезерный · вертикальный</small><h3>ВФ-32М</h3><ul><li>Стол<b>1320×320 мм</b></li><li>Шпиндель<b>45–1660 об/мин</b></li><li>Мощность<b>4 кВт</b></li></ul><div class="pr"><b>980 000 ₽</b><a href="#req">Запросить →</a></div></div></div>
+<div class="card rv" data-d="160"><div class="im"><img src="https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=700&q=75" alt=""><span class="badge">−12%</span></div><div class="b"><small>Обрабатывающий центр</small><h3>ВЦ-850 Pro</h3><ul><li>Ходы X/Y/Z<b>850/500/550</b></li><li>Магазин<b>24 инструмента</b></li><li>Шпиндель<b>12 000 об/мин</b></li></ul><div class="pr"><b>4 350 000 ₽</b><a href="#req">Запросить →</a></div></div></div>
+<div class="card rv" data-d="240"><div class="im"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="b"><small>Ленточнопильный</small><h3>ЛП-350 Автомат</h3><ul><li>Рез круга<b>до 350 мм</b></li><li>Угол реза<b>0–60°</b></li><li>Подача<b>гидравлика</b></li></ul><div class="pr"><b>640 000 ₽</b><a href="#req">Запросить →</a></div></div></div>
+<div class="card rv"><div class="im"><img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="b"><small>Сверлильный · радиальный</small><h3>ВС-40Р</h3><ul><li>Ø сверления<b>40 мм</b></li><li>Вылет<b>1250 мм</b></li><li>Мощность<b>3 кВт</b></li></ul><div class="pr"><b>415 000 ₽</b><a href="#req">Запросить →</a></div></div></div>
+<div class="card rv" data-d="80"><div class="im"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=700&q=75" alt=""><span class="badge">Новинка</span></div><div class="b"><small>Листогиб · гидравлический</small><h3>ЛГ-3200/100</h3><ul><li>Длина гиба<b>3200 мм</b></li><li>Усилие<b>100 т</b></li><li>Задний упор<b>ЧПУ, 2 оси</b></li></ul><div class="pr"><b>2 760 000 ₽</b><a href="#req">Запросить →</a></div></div></div>
+<div class="card rv" data-d="160"><div class="im"><img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="b"><small>Токарный · универсальный</small><h3>ВТ-250 Мастер</h3><ul><li>Ø над станиной<b>250 мм</b></li><li>РМЦ<b>750 мм</b></li><li>Мощность<b>1,5 кВт</b></li></ul><div class="pr"><b>365 000 ₽</b><a href="#req">Запросить →</a></div></div></div>
+<div class="card rv" data-d="240"><div class="im"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="b"><small>Оснастка</small><h3>Патроны, тиски, УДГ</h3><ul><li>Позиций<b>120+</b></li><li>Наличие<b>склад МО</b></li><li>Подбор<b>под станок</b></li></ul><div class="pr"><b>от 8 400 ₽</b><a href="#req">Запросить →</a></div></div></div>
+</div><div class="more rv"><a class="btn gh" href="#catalog">Показать все 52 модели</a></div></div></section>
+
+<section id="about" style="background:#0b0e10"><div class="wrap about">
+<div class="ph rv"><img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=1000&q=80" alt=""><div class="fl"><b>20</b><span>лет проектируем и собираем станки на собственной площадке 12&nbsp;000&nbsp;м²</span></div></div>
+<div><span class="tag rv">О заводе</span><h2 class="rv">Делаем станки сами — от литой станины до наладки у вас в цеху</h2>
+<p class="rv" style="color:var(--mut);margin-top:20px">Конструкторское бюро, литейный участок и сборочный цех находятся на одной площадке. Поэтому мы отвечаем за каждый узел, держим запчасти на складе и можем доработать серийную модель под вашу деталь.</p>
+<div class="feat"><div class="rv"><h3>Собственное КБ</h3><p>Адаптируем модель под задачу: удлинённая станина, другой шпиндель, своя автоматика.</p></div><div class="rv" data-d="100"><h3>Запчасти за 48 часов</h3><p>Держим на складе 3 000+ позиций, чтобы ваш станок не простаивал.</p></div><div class="rv" data-d="200"><h3>Пусконаладка</h3><p>Инженер приезжает на объект, выставляет станок и обучает операторов.</p></div><div class="rv" data-d="300"><h3>Лизинг и рассрочка</h3><p>Работаем с ведущими лизинговыми компаниями, аванс от 10%.</p></div></div></div></div></section>
+
+<section id="promo"><div class="wrap"><div class="sh"><h2 class="rv">Акции этого месяца</h2><p class="rv">Предложения действуют до 30 ноября или до окончания складского остатка.</p></div>
+<div class="promo"><div class="pc big rv"><em>до 30.11</em><span class="n">−12%</span><h3>Обрабатывающий центр ВЦ-850 Pro</h3><p>Специальная цена на 3 станка со склада с комплектом инструмента в подарок.</p></div>
+<div class="pc rv" data-d="100"><em>постоянно</em><span class="n">0 ₽</span><h3>Доставка по Москве и МО</h3><p>При заказе станка от 500 000 ₽.</p></div>
+<div class="pc rv" data-d="200"><em>trade-in</em><span class="n">до 30%</span><h3>Обмен старого станка</h3><p>Зачтём стоимость вашего оборудования в цену нового.</p></div></div></div></section>
+
+<section id="steps" style="padding-top:0"><div class="wrap"><div class="sh"><h2 class="rv">Как проходит поставка</h2></div>
+<div class="steps"><div class="rv"><h3>Заявка и подбор</h3><p>Инженер уточняет деталь, материал и объёмы, подбирает 2–3 модели.</p></div><div class="rv" data-d="100"><h3>КП и договор</h3><p>Коммерческое предложение с ценой и сроками в течение одного дня.</p></div><div class="rv" data-d="200"><h3>Отгрузка</h3><p>Со склада — за 14 дней, под заказ — от 45 дней. Упаковка и страховка груза.</p></div><div class="rv" data-d="300"><h3>Запуск</h3><p>Монтаж, пусконаладка, обучение и гарантия 24 месяца.</p></div></div></div></section>
+
+<section id="req" style="padding-top:0"><div class="wrap"><div class="req">
+<div><span class="tag rv">Заявка</span><h2 class="rv">Подберём станок под вашу деталь и пришлём КП за 1 день</h2><p class="rv">Опишите задачу или приложите чертёж — инженер рассчитает конфигурацию, стоимость и срок поставки.</p></div>
+<form class="rv"><div class="row2"><input placeholder="Ваше имя" required><input placeholder="Компания"></div>
+<select><option>Тип оборудования</option><option>Токарный станок</option><option>Фрезерный станок</option><option>Обрабатывающий центр</option><option>Ленточнопильный станок</option><option>Листогиб</option><option>Нужна консультация</option></select>
+<textarea rows="4" placeholder="Что нужно обрабатывать: материал, размеры, объём партии"></textarea>
+<input placeholder="Как с вами связаться" required><button class="btn" style="justify-content:center">Получить коммерческое предложение</button></form></div></div></section>
+<footer><div class="wrap"><span>© 2026 Завод «Вектор». Станки для металлообработки</span><span>Цены указаны в рублях с НДС</span></div></footer>
 <script>
-const items=[["Токарный станок Т-400","Токарные","400 мм","1000 мм","7,5 кВт"],["Фрезерный станок Ф-32","Фрезерные","320×1250","3 оси","5,5 кВт"],["Обрабатывающий центр ЧПУ V-850","С ЧПУ","850×500","24 инстр.","11 кВт"],["Сверлильный станок С-25","Сверлильные","Ø 25 мм","—","1,5 кВт"],["Токарный ЧПУ ТЦ-250","С ЧПУ","250 мм","500 мм","5,5 кВт"],["Радиально-сверлильный РС-50","Сверлильные","Ø 50 мм","1250 мм","4 кВт"]];
-const ic='<svg width="120" height="90" viewBox="0 0 120 90"><rect x="5" y="55" width="110" height="25" rx="4" fill="#9fb0c2"/><rect x="12" y="15" width="40" height="42" rx="4" fill="#6b8299"/><rect x="18" y="22" width="28" height="16" fill="#1e2b3a"/><rect x="52" y="35" width="55" height="10" rx="5" fill="#c3ced9"/><circle cx="58" cy="40" r="9" fill="#f5a524"/></svg>';
-g.innerHTML=items.map(i=>`<div class="card"><div class="img">${ic}</div><div class="in"><h3>${i[0]}</h3><div class="spec"><span>Тип</span><b>${i[1]}</b><span>Рабочая зона</span><b>${i[2]}</b><span>Параметр</span><b>${i[3]}</b><span>Мощность</span><b>${i[4]}</b></div><div class="row"><span class="price">по запросу</span><a class="btn" href="#req">Заказать</a></div></div></div>`).join('');
-</script></body></html>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(el.dataset.d||0)+'ms';io.observe(el)});
+document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.innerHTML='<div class="ok">Спасибо! Заявка принята — мы свяжемся с вами в течение рабочего дня.</div>'}));
+const b=document.querySelector('.burger');if(b)b.onclick=()=>document.body.classList.toggle('menu');
+document.querySelectorAll('.nav a').forEach(a=>a.onclick=()=>document.body.classList.remove('menu'));
+</script>
+
+<script>document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on')})</script>
+</body></html>

@@ -1,55 +1,109 @@
 <!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Premium Car Wash — демо</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,Segoe UI,Arial,sans-serif;background:#05070b;color:#e8eef6;line-height:1.55}
-.w{max-width:1180px;margin:0 auto;padding:0 24px}a{color:inherit}
-header{position:fixed;inset:0 0 auto;z-index:9;backdrop-filter:blur(10px);background:#05070bb0;border-bottom:1px solid #ffffff10}
-header .w{display:flex;justify-content:space-between;align-items:center;height:66px}.logo{font-weight:800;letter-spacing:3px}.logo span{color:#38d6ff}
-nav a{text-decoration:none;margin-left:24px;color:#9fb1c6;font-size:14px}
-.btn{display:inline-block;padding:14px 28px;border-radius:40px;background:linear-gradient(90deg,#38d6ff,#6a7bff);color:#04121a;font-weight:700;text-decoration:none;border:0;cursor:pointer}
-.scrolly{height:1300px;position:relative}
-.stage{position:sticky;top:0;height:min(100vh,820px);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(ellipse at 50% 70%,#12324a 0,#05070b 65%)}
-.stage h1{font-size:clamp(34px,6vw,72px);text-align:center;line-height:1.05;margin-bottom:10px}.stage h1 em{font-style:normal;background:linear-gradient(90deg,#38d6ff,#a3b4ff);-webkit-background-clip:text;color:transparent}
-.stage p{color:#8ea3b8;margin-bottom:20px;text-align:center}
-.car{position:relative;width:min(900px,92vw);aspect-ratio:900/330}.car svg{position:absolute;inset:0;width:100%;height:100%}
-#dirt{clip-path:inset(0 0 0 var(--p,45%))}
-.bar{position:absolute;top:0;bottom:0;left:var(--p,45%);width:3px;background:#38d6ff;box-shadow:0 0 25px 6px #38d6ff99}
-.hint{margin-top:16px;font-size:13px;color:#6f8399;letter-spacing:2px;text-transform:uppercase}
-section{padding:96px 0}h2{font-size:40px;margin-bottom:14px}.sub{color:#8ea3b8;margin-bottom:44px;max-width:640px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.pk{background:linear-gradient(180deg,#0d1622,#080d14);border:1px solid #ffffff12;border-radius:20px;padding:30px}.pk.hot{border-color:#38d6ff;box-shadow:0 0 50px #38d6ff22}
-.pk h3{font-size:22px;margin-bottom:6px}.pk .pr{font-size:34px;font-weight:800;margin:14px 0}.pk li{list-style:none;color:#9fb1c6;padding:6px 0;border-bottom:1px solid #ffffff0d}.pk li:before{content:"✓ ";color:#38d6ff}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.steps div{padding:24px;border-radius:16px;background:#0b121b}.steps b{font-size:40px;color:#38d6ff;display:block}
-.book{background:linear-gradient(120deg,#0e2235,#121a3a);border-radius:26px;padding:50px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.book input,.book select{width:100%;padding:15px;border-radius:12px;border:1px solid #ffffff1a;background:#05070b88;color:#fff;margin-bottom:12px;font:inherit}
-footer{padding:30px 0;color:#53657a;font-size:13px;border-top:1px solid #ffffff10}
-@media(max-width:860px){.grid,.steps,.book{grid-template-columns:1fr}nav{display:none}}
+<title>GLOSS — премиальная мойка и детейлинг</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.ok{padding:28px;border-radius:14px;background:rgba(80,200,120,.12);font-size:18px}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}.burger span{display:block;height:2px;background:currentColor;margin:7px 6px}
+@media(max-width:860px){.burger{display:block}.nav{position:fixed;inset:64px 0 auto 0;flex-direction:column;padding:24px;gap:18px!important;transform:translateY(-130%);transition:.4s;z-index:40}body.menu .nav{transform:none}.wrap{padding:0 18px}}
+
+:root{--bg:#07080a;--tx:#f2f4f7;--mut:#8d939c;--ac:#4fd1ff;--line:#1c2026}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--tx);line-height:1.55}
+h1,h2,h3,.logo{font-family:Syne,sans-serif;letter-spacing:-.02em}
+header{position:fixed;top:0;left:0;right:0;z-index:50;mix-blend-mode:normal;background:linear-gradient(rgba(7,8,10,.8),transparent)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-size:24px;font-weight:800}.logo i{color:var(--ac);font-style:normal}
+.nav{display:flex;gap:32px;font-size:14px;color:#c5cad1}.nav a:hover{color:var(--ac)}
+.btn{display:inline-block;padding:15px 28px;border-radius:99px;background:var(--tx);color:#000;font-weight:600;font-size:15px;border:0;cursor:pointer;transition:.3s}
+.btn:hover{background:var(--ac);transform:translateY(-2px);box-shadow:0 10px 40px rgba(79,209,255,.35)}
+.btn.o{background:transparent;color:var(--tx);border:1px solid #3a3f47}.btn.o:hover{border-color:var(--ac);color:var(--ac);background:transparent}
+.scrub{height:260vh;position:relative}
+.stick{position:sticky;top:0;height:100vh;overflow:hidden}
+.stage{position:absolute;inset:0}.stage img,.stage canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stage:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--bg) 2%,transparent 35%),linear-gradient(90deg,rgba(7,8,10,.85),transparent 55%);pointer-events:none}
+.htxt{position:absolute;z-index:3;left:0;right:0;top:50%;transform:translateY(-50%)}
+.htxt h1{font-size:clamp(40px,7vw,104px);line-height:.95;max-width:820px}
+.htxt h1 span{display:block;color:transparent;-webkit-text-stroke:1.5px var(--tx)}
+.htxt p{max-width:470px;color:#c9ced5;font-size:18px;margin:26px 0 34px}
+.meter{position:absolute;z-index:3;bottom:40px;left:0;right:0}.meter .wrap{display:flex;align-items:center;gap:18px;font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.14em}
+.bar{flex:1;max-width:340px;height:2px;background:#2a2f36;position:relative}.bar i{position:absolute;left:0;top:0;bottom:0;background:var(--ac);width:0}
+#pct{color:var(--tx);font-family:Syne;font-size:22px;min-width:64px}
+section{padding:120px 0}.k{color:var(--ac);font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px;display:block}
+h2{font-size:clamp(32px,4.5vw,64px);line-height:1;max-width:800px;margin-bottom:60px}
+.srv{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.s{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#0d0f12;transition:.4s}.s:hover{border-color:var(--ac);transform:translateY(-6px)}
+.s .im{aspect-ratio:16/11;overflow:hidden}.s img{width:100%;height:100%;object-fit:cover;transition:.8s;filter:saturate(.9)}.s:hover img{transform:scale(1.08)}
+.s .b{padding:26px}.s h3{font-size:22px}.s p{color:var(--mut);font-size:14px;margin:10px 0 20px}.s .pr{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:16px;font-size:14px;color:var(--mut)}.s .pr b{color:var(--tx);font-size:18px}
+.big{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.big .ph{border-radius:24px;overflow:hidden;aspect-ratio:4/5}.big img{width:100%;height:100%;object-fit:cover}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:40px}.nums b{font-family:Syne;font-size:52px;display:block;line-height:1}.nums span{color:var(--mut);font-size:14px}
+.steps{border-top:1px solid var(--line)}.st{display:grid;grid-template-columns:120px 1fr 1.2fr;gap:30px;padding:34px 0;border-bottom:1px solid var(--line);transition:.3s;align-items:baseline}
+.st:hover{padding-left:16px}.st:hover .n{color:var(--ac)}.st .n{font-family:Syne;font-size:20px;color:var(--mut)}.st h3{font-size:28px}.st p{color:var(--mut)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.pl{border:1px solid var(--line);border-radius:22px;padding:36px;transition:.3s}.pl:hover{border-color:#3a3f47}
+.pl.hot{background:linear-gradient(160deg,#0f2733,#07080a 70%);border-color:var(--ac)}.pl h3{font-size:24px}.pl .p{font-family:Syne;font-size:44px;margin:18px 0}.pl .p small{font-size:16px;color:var(--mut)}
+.pl ul{list-style:none;color:#c5cad1;font-size:15px;display:grid;gap:10px;margin-bottom:30px}.pl li:before{content:"✓ ";color:var(--ac)}
+.book{position:relative;border-radius:30px;overflow:hidden;padding:80px}
+.book img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.book:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,8,10,.95) 35%,rgba(7,8,10,.5));z-index:1}
+.book>div{position:relative;z-index:2;max-width:560px}
+form{display:grid;gap:14px;margin-top:30px}.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+input,select{width:100%;background:rgba(255,255,255,.06);border:1px solid #2c3139;border-radius:14px;color:var(--tx);padding:16px;font:15px Inter;backdrop-filter:blur(6px)}input:focus,select:focus{outline:0;border-color:var(--ac)}select option{color:#000}
+footer{padding:40px 0;color:var(--mut);font-size:14px}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:960px){.srv,.plans{grid-template-columns:1fr}.big{grid-template-columns:1fr;gap:40px}.st{grid-template-columns:60px 1fr}.st p{grid-column:2}}
+@media(max-width:860px){header .btn{display:none}.nav{background:#07080a}}
+@media(max-width:560px){section{padding:80px 0}.book{padding:34px 22px}.row2{grid-template-columns:1fr}.htxt p{font-size:16px}.nums b{font-size:38px}.st h3{font-size:22px}}
 </style></head><body>
-<header><div class="w"><div class="logo">AQUA<span>LUXE</span></div><nav><a href="#pk">Услуги</a><a href="#how">Как это работает</a><a href="#book">Запись</a></nav><a class="btn" href="#book">Записаться</a></div></header>
-<div class="scrolly" id="sc"><div class="stage">
-<h1>Ваш автомобиль <em>как из салона</em></h1><p>Прокрутите вниз — и смотрите, как мы смываем грязь</p>
-<div class="car" id="car">
-<svg viewBox="0 0 900 330"><defs><linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9f3ff"/><stop offset=".45" stop-color="#7da2c8"/><stop offset="1" stop-color="#1a2b40"/></linearGradient><linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#0b1a2a"/><stop offset=".5" stop-color="#3b6c93"/><stop offset="1" stop-color="#0b1a2a"/></linearGradient></defs>
-<ellipse cx="450" cy="300" rx="400" ry="18" fill="#000" opacity=".6"/>
-<path d="M70 240 Q60 190 130 175 L280 150 Q360 80 470 78 Q590 78 670 150 L790 170 Q850 185 845 235 L840 260 L70 262 Z" fill="url(#body)"/>
-<path d="M300 152 Q370 98 470 96 Q570 96 640 152 Z" fill="url(#gl)"/><line x1="470" y1="96" x2="470" y2="152" stroke="#1a2b40" stroke-width="6"/>
-<path d="M120 200 Q450 175 820 200" stroke="#fff" stroke-opacity=".7" stroke-width="3" fill="none"/>
-<circle cx="220" cy="262" r="52" fill="#0a0f16"/><circle cx="220" cy="262" r="30" fill="#9fb3c8"/><circle cx="680" cy="262" r="52" fill="#0a0f16"/><circle cx="680" cy="262" r="30" fill="#9fb3c8"/>
-<rect x="810" y="200" width="30" height="12" rx="5" fill="#ffe7a3"/><rect x="72" y="205" width="24" height="10" rx="4" fill="#ff4d5e"/></svg>
-<svg id="dirt" viewBox="0 0 900 330"><defs><filter id="mud"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="4" seed="4"/><feColorMatrix values="0 0 0 0 .32 0 0 0 0 .24 0 0 0 0 .15 0 0 0 2.2 -.7"/><feComposite in2="SourceGraphic" operator="in"/></filter>
-<clipPath id="cs"><path d="M70 240 Q60 190 130 175 L280 150 Q360 80 470 78 Q590 78 670 150 L790 170 Q850 185 845 235 L840 260 L70 262 Z"/><circle cx="220" cy="262" r="52"/><circle cx="680" cy="262" r="52"/></clipPath></defs>
-<g clip-path="url(#cs)"><rect width="900" height="330" fill="#6b5a45" opacity=".78"/><rect width="900" height="330" fill="#fff" filter="url(#mud)"/></g></svg>
-<div class="bar"></div></div><div class="hint">↓ scroll</div></div></div>
-<section id="pk"><div class="w"><h2>Программы мойки</h2><p class="sub">Пример тарифной сетки. Названия, цены и состав услуг — заглушки для согласования.</p>
-<div class="grid"><div class="pk"><h3>Express</h3><p>Быстрая наружная мойка</p><div class="pr">$XX</div><ul><li>Бесконтактная мойка</li><li>Сушка</li><li>Чернение шин</li></ul></div>
-<div class="pk hot"><h3>Premium</h3><p>Снаружи и внутри</p><div class="pr">$XX</div><ul><li>Двухфазная мойка</li><li>Химчистка ковриков</li><li>Уборка салона</li><li>Воск</li></ul></div>
-<div class="pk"><h3>Detailing</h3><p>Полный уход</p><div class="pr">$XXX</div><ul><li>Полировка кузова</li><li>Керамика</li><li>Химчистка салона</li></ul></div></div></div></section>
-<section id="how"><div class="w"><h2>Как это работает</h2><div class="steps"><div><b>01</b>Онлайн-запись на удобное время</div><div><b>02</b>Приёмка и осмотр авто</div><div><b>03</b>Мойка и детейлинг</div><div><b>04</b>Выдача чистого автомобиля</div></div></div></section>
-<section id="book"><div class="w"><div class="book"><div><h2>Запишитесь онлайн</h2><p class="sub">Выберите программу и время — мы подтвердим запись.</p></div>
-<form onsubmit="event.preventDefault();this.innerHTML='<h3>Запись создана (демо)</h3>'"><input placeholder="Имя"><select><option>Программа</option><option>Express</option><option>Premium</option><option>Detailing</option></select><input type="datetime-local"><button class="btn">Записаться</button></form></div></div></section>
-<footer><div class="w">© Car Wash — демонстрационный макет. В продакшене эффект делается на Three.js/WebGL с 3D-моделью и GSAP ScrollTrigger.</div></footer>
+<header><div class="wrap"><a class="logo" href="#">GLOSS<i>.</i></a><nav class="nav"><a href="#services">Услуги</a><a href="#studio">Студия</a><a href="#process">Процесс</a><a href="#prices">Цены</a></nav><a class="btn" href="#book">Записаться</a><button class="burger"><span></span><span></span></button></div></header>
+
+<div class="scrub"><div class="stick"><div class="stage"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2000&q=85" alt="Автомобиль после мойки"><canvas id="dirt"></canvas></div>
+<div class="htxt"><div class="wrap"><span class="k rv">Детейлинг-студия · бесконтактная мойка</span><h1 class="rv" data-d="100">Грязь уходит.<span>Остаётся глянец.</span></h1>
+<p class="rv" data-d="200">Прокрутите страницу — и посмотрите, каким станет ваш автомобиль после трёхфазной мойки GLOSS.</p>
+<div class="rv" data-d="300" style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="#book">Записаться онлайн</a><a class="btn o" href="#prices">Цены</a></div></div></div>
+<div class="meter"><div class="wrap"><span id="pct">0%</span><div class="bar"><i id="bar"></i></div><span id="lbl">Листайте вниз</span></div></div></div></div>
+
+<section id="services"><div class="wrap"><span class="k rv">Услуги</span><h2 class="rv">Всё, что нужно автомобилю, — в одном боксе</h2>
+<div class="srv"><div class="s rv"><div class="im"><img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=900&q=75" alt=""></div><div class="b"><h3>Трёхфазная мойка</h3><p>Активная пена, ручная мойка по методу двух вёдер, сушка микрофиброй без разводов.</p><div class="pr"><span>45 минут</span><b>от 1 900 ₽</b></div></div></div>
+<div class="s rv" data-d="100"><div class="im"><img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=75" alt=""></div><div class="b"><h3>Полировка кузова</h3><p>Удаляем голограммы и мелкие царапины, возвращаем глубину цвета лакокрасочному покрытию.</p><div class="pr"><span>1–2 дня</span><b>от 18 000 ₽</b></div></div></div>
+<div class="s rv" data-d="200"><div class="im"><img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=900&q=75" alt=""></div><div class="b"><h3>Керамика 9H</h3><p>Защитное покрытие на 2–3 года: грязь и реагенты держатся хуже, мойка — проще.</p><div class="pr"><span>2 дня</span><b>от 35 000 ₽</b></div></div></div></div></div></section>
+
+<section id="studio" style="padding-top:0"><div class="wrap big"><div class="ph rv"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80" alt=""></div>
+<div><span class="k rv">Студия</span><h2 class="rv" style="margin-bottom:24px">Тёплые боксы, свет как в операционной и химия Koch&nbsp;Chemie</h2>
+<p class="rv" style="color:var(--mut);font-size:17px">Каждый автомобиль моет один мастер от начала до конца. В зоне ожидания — кофе, рабочие места и панорамное окно в бокс: видно каждый этап.</p>
+<div class="nums"><div class="rv"><b>6</b><span>отапливаемых боксов</span></div><div class="rv" data-d="100"><b>12 000+</b><span>машин в год</span></div><div class="rv" data-d="200"><b>4,9</b><span>средняя оценка клиентов</span></div><div class="rv" data-d="300"><b>24/7</b><span>онлайн-запись</span></div></div></div></div></section>
+
+<section id="process" style="padding-top:0"><div class="wrap"><span class="k rv">Процесс</span><h2 class="rv">Четыре шага к идеальному кузову</h2>
+<div class="steps"><div class="st rv"><span class="n">01</span><h3>Осмотр</h3><p>Фиксируем состояние кузова и согласуем программу до начала работ.</p></div><div class="st rv"><span class="n">02</span><h3>Пена и предмойка</h3><p>Размягчаем дорожную грязь и реагенты, не касаясь лака.</p></div><div class="st rv"><span class="n">03</span><h3>Ручная мойка</h3><p>Мягкие варежки, pH-нейтральный шампунь, отдельный инструмент для дисков.</p></div><div class="st rv"><span class="n">04</span><h3>Сушка и выдача</h3><p>Продуваем зазоры, наносим быстрый воск и показываем результат при дневном свете.</p></div></div></div></section>
+
+<section id="prices" style="padding-top:0"><div class="wrap"><span class="k rv">Цены</span><h2 class="rv">Программы мойки</h2>
+<div class="plans"><div class="pl rv"><h3>Экспресс</h3><div class="p">1 900 ₽ <small>/ седан</small></div><ul><li>Бесконтактная мойка</li><li>Сушка микрофиброй</li><li>Чернение шин</li></ul><a class="btn o" href="#book">Выбрать</a></div>
+<div class="pl hot rv" data-d="100"><h3>Комплекс GLOSS</h3><div class="p">4 500 ₽ <small>/ седан</small></div><ul><li>Трёхфазная мойка</li><li>Химчистка ковриков, пылесос</li><li>Стёкла внутри и снаружи</li><li>Быстрый воск</li></ul><a class="btn" href="#book">Выбрать</a></div>
+<div class="pl rv" data-d="200"><h3>Детейлинг</h3><div class="p">12 000 ₽ <small>/ седан</small></div><ul><li>Глубокая очистка кузова глиной</li><li>Мойка моторного отсека</li><li>Защитный силант на 6 месяцев</li></ul><a class="btn o" href="#book">Выбрать</a></div></div></div></section>
+
+<section id="book" style="padding-top:0"><div class="wrap"><div class="book"><img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1800&q=75" alt=""><div>
+<span class="k rv">Онлайн-запись</span><h2 class="rv" style="margin-bottom:0">Выберите время — бокс будет ждать вас</h2>
+<form class="rv"><div class="row2"><input placeholder="Ваше имя" required><input placeholder="Марка и модель"></div><div class="row2"><select><option>Программа</option><option>Экспресс</option><option>Комплекс GLOSS</option><option>Детейлинг</option><option>Полировка</option><option>Керамика</option></select><input type="date"></div><button class="btn">Записаться</button></form></div></div></div></section>
+<footer><div class="wrap"><span>© 2026 GLOSS Detailing Studio</span><span>Цены указаны в рублях</span></div></footer>
 <script>
-const sc=document.getElementById('sc'),car=document.getElementById('car');
-function u(){const r=sc.getBoundingClientRect(),t=Math.min(1,Math.max(0,-r.top/(sc.offsetHeight-innerHeight)));car.style.setProperty('--p',(t*100).toFixed(1)+'%')}
-addEventListener('scroll',u);
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(el.dataset.d||0)+'ms';io.observe(el)});
+document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.innerHTML='<div class="ok">Спасибо! Заявка принята — мы свяжемся с вами в течение рабочего дня.</div>'}));
+const b=document.querySelector('.burger');if(b)b.onclick=()=>document.body.classList.toggle('menu');
+document.querySelectorAll('.nav a').forEach(a=>a.onclick=()=>document.body.classList.remove('menu'));
+</script>
+
+<script>
+const c=document.getElementById('dirt'),x=c.getContext('2d'),off=document.createElement('canvas'),o=off.getContext('2d');let W,H;
+function rnd(a){let s=a;return()=>(s=(s*16807)%2147483647)/2147483647}
+function build(){W=c.width=innerWidth;H=c.height=innerHeight;off.width=W;off.height=H;const r=rnd(42);o.clearRect(0,0,W,H);
+ const cx=W*.6,cy=H*.6;
+ for(let i=0;i<900;i++){const a=r()*Math.PI*2,d=Math.pow(r(),.7),px=cx+Math.cos(a)*d*W*.55,py=cy+Math.sin(a)*d*H*.38+H*.05,rad=8+r()*60;
+  const g=o.createRadialGradient(px,py,0,px,py,rad),t=60+r()*40|0;g.addColorStop(0,`rgba(${t+50},${t+30},${t},${.25+r()*.35})`);g.addColorStop(1,'rgba(90,70,45,0)');o.fillStyle=g;o.beginPath();o.arc(px,py,rad,0,7);o.fill()}
+ for(let i=0;i<2500;i++){const px=cx+(r()-.5)*W*1.1,py=cy+(r()-.3)*H*.7;o.fillStyle=`rgba(${70+r()*60|0},${55+r()*40|0},35,${r()*.8})`;o.fillRect(px,py,1+r()*3,1+r()*3)}
+ o.globalCompositeOperation='destination-in';const m=o.createRadialGradient(cx,cy,0,cx,cy,W*.55);m.addColorStop(.55,'#000');m.addColorStop(1,'rgba(0,0,0,0)');o.fillStyle=m;o.fillRect(0,0,W,H);o.globalCompositeOperation='source-over';draw()}
+function draw(){const sc=document.querySelector('.scrub'),p=Math.min(1,Math.max(0,-sc.getBoundingClientRect().top/(sc.offsetHeight-innerHeight)));
+ x.clearRect(0,0,W,H);x.drawImage(off,0,0);x.globalCompositeOperation='destination-out';x.lineCap='round';x.lineJoin='round';x.lineWidth=H*.16;x.shadowColor='#000';x.shadowBlur=40;
+ const rows=7,tot=p*rows*1.15;x.beginPath();for(let i=0;i<rows;i++){const f=Math.min(1,Math.max(0,tot-i));if(f<=0)break;const y=H*.25+i*H*.1,ltr=i%2==0,x0=ltr?-50:W+50,x1=ltr?W+50:-50;
+  if(i==0)x.moveTo(x0,y);else x.lineTo(x0,y);x.lineTo(x0+(x1-x0)*f,y+Math.sin(f*6)*10)}x.stroke();x.globalCompositeOperation='source-over';x.shadowBlur=0;
+ const v=Math.round((p||0)*100);document.getElementById('pct').textContent=v+'%';document.getElementById('bar').style.width=v+'%';document.getElementById('lbl').textContent=v>=100?'Готово — как из салона':'Смываем дорожную грязь'}
+addEventListener('scroll',()=>requestAnimationFrame(draw),{passive:true});addEventListener('resize',build);build();
 </script></body></html>
