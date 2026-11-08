@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MINISOFT — заказное программное обеспечение для бизнеса</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit}
+:root{
+  --bg:#07111f;--card:#0d1b2e;--line:rgba(255,255,255,.08);
+  --tx:#eef3fb;--mut:#93a0b5;--ac:#3ee0b2;--ac2:#6ea8ff;
+}
+body{font-family:Manrope,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,.logo{font-family:Syne,sans-serif;letter-spacing:-.03em;line-height:1.1}
+.wrap{max-width:1220px;margin:0 auto;padding:0 28px}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(7,17,31,.72);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-size:20px;font-weight:800}
+.logo span{color:var(--ac)}
+.nav{display:flex;gap:28px;color:var(--mut);font-size:15px;font-weight:500}
+.nav a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ac);color:#04231a;padding:14px 24px;border-radius:12px;font-weight:700;border:0;cursor:pointer;transition:.25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(62,224,178,.28)}
+.btn.gh{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.18)}
+.btn.gh:hover{border-color:#fff;box-shadow:none}
+.burger{display:none;background:0;border:0;width:42px;height:42px;cursor:pointer}
+.burger span{display:block;height:2px;background:#fff;margin:7px 6px}
+.hero{min-height:100vh;position:relative;display:flex;align-items:flex-end;padding:140px 0 72px;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:zoom 18s ease-out both}
+@keyframes zoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,17,31,.94) 0%,rgba(7,17,31,.78) 42%,rgba(7,17,31,.28)),linear-gradient(0deg,var(--bg),transparent 42%)}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac);margin-bottom:22px;font-weight:700}
+.tag:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 6px rgba(62,224,178,.15)}
+.hero h1{font-size:clamp(36px,5.6vw,72px);max-width:860px}
+.hero p{font-size:19px;color:#c5d0e0;max-width:620px;margin:24px 0 36px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:64px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.stats div{background:rgba(13,27,46,.82);padding:24px 22px}
+.stats b{font-family:Syne,sans-serif;font-size:30px;display:block;margin-bottom:4px}
+.stats span{color:var(--mut);font-size:14px}
+section{padding:108px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:48px;flex-wrap:wrap}
+h2{font-size:clamp(30px,3.8vw,50px);max-width:700px}
+.sh p{color:var(--mut);max-width:400px}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.sc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 24px;min-height:280px;display:flex;flex-direction:column;transition:.35s}
+.sc:hover{transform:translateY(-6px);border-color:rgba(62,224,178,.35);box-shadow:0 20px 40px rgba(0,0,0,.25)}
+.sc i{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(62,224,178,.12);color:var(--ac);font-style:normal;font-weight:800;margin-bottom:22px}
+.sc h3{font-size:22px;margin-bottom:12px}
+.sc p{color:var(--mut);font-size:15px;margin-bottom:18px}
+.sc ul{list-style:none;margin-top:auto;color:#c9d4e4;font-size:14px}
+.sc li{padding:7px 0;border-top:1px dashed var(--line)}
+.cases{display:grid;grid-template-columns:1.3fr .7fr;gap:18px}
+.case{position:relative;border-radius:22px;overflow:hidden;min-height:420px;display:flex;align-items:flex-end}
+.case img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.7s}
+.case:hover img{transform:scale(1.06)}
+.case:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,rgba(5,12,22,.92))}
+.case .b{position:relative;z-index:2;padding:32px}
+.case small{color:var(--ac);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+.case h3{font-size:28px;margin:10px 0 12px}
+.case p{color:#cdd6e4;max-width:460px}
+.stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.stack span{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.08);font-size:12px}
+.col{display:grid;gap:18px}
+.about{display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:center}
+.about .ph{border-radius:24px;overflow:hidden;position:relative;aspect-ratio:5/6}
+.about .ph img{width:100%;height:100%;object-fit:cover}
+.about .ph .fl{position:absolute;left:20px;right:20px;bottom:20px;background:rgba(7,17,31,.86);backdrop-filter:blur(10px);border-radius:16px;padding:18px 20px;display:flex;gap:18px}
+.fl b{font-family:Syne,sans-serif;font-size:32px;color:var(--ac);display:block}
+.fl span{color:var(--mut);font-size:13px}
+.about p{color:#c5d0e0;margin:18px 0}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.feats div{border-top:2px solid var(--ac);padding-top:14px}
+.feats h3{font-size:17px;margin-bottom:6px}
+.feats p{color:var(--mut);font-size:14px;margin:0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.steps article{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;counter-increment:s}
+.steps article:before{content:"0" counter(s);font-family:Syne,sans-serif;color:var(--ac);font-size:14px;font-weight:700}
+.steps h3{margin:14px 0 10px;font-size:20px}
+.steps p{color:var(--mut);font-size:14px}
+.req{background:linear-gradient(160deg,#0d1b2e,#10253f 55%,#0a3329);border:1px solid var(--line);border-radius:28px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:56px;position:relative;overflow:hidden}
+.req:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(rgba(62,224,178,.2),transparent 70%);right:-120px;top:-140px}
+.req>*{position:relative}
+.req .lead{color:#c5d0e0;margin:18px 0 0;max-width:420px}
+form{display:grid;gap:12px}
+input,textarea{width:100%;background:rgba(7,17,31,.65);border:1px solid var(--line);color:#fff;border-radius:12px;padding:15px 16px;transition:.2s}
+input:focus,textarea:focus{outline:0;border-color:var(--ac)}
+textarea{min-height:130px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ok{display:none;padding:22px;border-radius:14px;background:rgba(62,224,178,.12);color:#d9fff3}
+footer{padding:36px 0 48px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:1020px){
+  .services,.steps,.stats{grid-template-columns:1fr 1fr}
+  .cases,.about,.req{grid-template-columns:1fr}
+  .about .ph{aspect-ratio:16/11;max-width:640px}
+}
+@media(max-width:860px){
+  .burger{display:block}
+  .nav{position:fixed;inset:72px 0 auto;flex-direction:column;padding:22px 28px 28px;gap:16px;background:#07111f;border-bottom:1px solid var(--line);transform:translateY(-140%);transition:.35s}
+  body.menu .nav{transform:none}
+  header .btn{display:none}
+  .wrap{padding:0 18px}
+}
+@media(max-width:620px){
+  .services,.steps,.stats,.feats,.row2{grid-template-columns:1fr}
+  .hero h1{font-size:34px}
+  .hero p{font-size:16px}
+  section{padding:72px 0}
+  .req{padding:28px}
+  .case{min-height:340px}
+}
+</style>
+<noscript><style>.rv{opacity:1;transform:none}</style></noscript></head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">MINI<span>SOFT</span></a>
+    <nav class="nav">
+      <a href="#services">Услуги</a>
+      <a href="#cases">Проекты</a>
+      <a href="#about">О компании</a>
+      <a href="#process">Как работаем</a>
+    </nav>
+    <a class="btn" href="#req">Оставить заявку</a>
+    <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80" alt="Команда разработки в современном офисе">
+  <div class="wrap">
+    <div class="tag rv">Заказная разработка · сопровождение после запуска</div>
+    <h1 class="rv" data-d="80">Программы и сервисы, которые снимают рутину с вашей команды</h1>
+    <p class="rv" data-d="160">Проектируем и разрабатываем программное обеспечение для компаний: личные кабинеты, внутренние системы, интеграции и веб-платформы. Прозрачные этапы, понятные сроки и поддержка после релиза.</p>
+    <div class="hero-actions rv" data-d="240">
+      <a class="btn" href="#req">Обсудить задачу</a>
+      <a class="btn gh" href="#cases">Смотреть проекты</a>
+    </div>
+    <div class="stats rv" data-d="320">
+      <div><b>40+</b><span>запущенных систем</span></div>
+      <div><b>8 лет</b><span>в заказной разработке</span></div>
+      <div><b>3–4 мес</b><span>средний срок проекта</span></div>
+      <div><b>24/7</b><span>мониторинг после запуска</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sh">
+      <h2 class="rv">Что разрабатываем для компаний</h2>
+      <p class="rv">Берём задачу от идеи до рабочей системы: анализируем процессы, собираем прототип, пишем код и остаёмся на сопровождении.</p>
+    </div>
+    <div class="services">
+      <article class="sc rv">
+        <i>01</i>
+        <h3>Корпоративные системы</h3>
+        <p>Внутренние сервисы вместо таблиц и разрозненных чатов: заявки, согласования, склад, отчётность.</p>
+        <ul>
+          <li>Личные кабинеты сотрудников</li>
+          <li>Роли и права доступа</li>
+          <li>Отчёты для руководства</li>
+        </ul>
+      </article>
+      <article class="sc rv" data-d="80">
+        <i>02</i>
+        <h3>Веб-платформы</h3>
+        <p>Кабинеты клиентов, порталы партнёров и сервисы, через которые компания продаёт или оказывает услуги.</p>
+        <ul>
+          <li>Регистрация и профили</li>
+          <li>Онлайн-заявки и статусы</li>
+          <li>Администрирование контента</li>
+        </ul>
+      </article>
+      <article class="sc rv" data-d="160">
+        <i>03</i>
+        <h3>Интеграции и API</h3>
+        <p>Связываем сайт, CRM, склад и бухгалтерию, чтобы данные не копировали вручную.</p>
+        <ul>
+          <li>Обмен с 1С и CRM</li>
+          <li>Платёжные сервисы</li>
+          <li>Документация API</li>
+        </ul>
+      </article>
+      <article class="sc rv" data-d="240">
+        <i>04</i>
+        <h3>Сопровождение</h3>
+        <p>После запуска система живёт: следим за стабильностью, закрываем доработки и помогаем команде.</p>
+        <ul>
+          <li>Исправления и развитие</li>
+          <li>Резервное копирование</li>
+          <li>Обучение сотрудников</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="sh">
+      <h2 class="rv">Примеры внедрённых решений</h2>
+      <p class="rv">Не шаблонные лендинги, а рабочие кабинеты, которыми ежедневно пользуются сотрудники и клиенты.</p>
+    </div>
+    <div class="cases">
+      <article class="case rv">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80" alt="Аналитика в личном кабинете">
+        <div class="b">
+          <small>Дистрибуция · 4 месяца</small>
+          <h3>Кабинет дистрибьютора и дилеров</h3>
+          <p>Сеть из 60 партнёров оформляет заказы, видит остатки и счета в одном окне. Отдел продаж перестал собирать заявки из почты и мессенджеров.</p>
+          <div class="stack"><span>Личный кабинет</span><span>Роли</span><span>Обмен с 1С</span></div>
+        </div>
+      </article>
+      <div class="col">
+        <article class="case rv" data-d="100" style="min-height:201px">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=80" alt="Медицинский портал">
+          <div class="b">
+            <small>Медицина · 3 месяца</small>
+            <h3>Портал записи в клинику</h3>
+            <p>Пациент выбирает врача и время, администратор видит загрузку смен без телефонной очереди.</p>
+          </div>
+        </article>
+        <article class="case rv" data-d="180" style="min-height:201px">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1400&q=80" alt="Производственный учёт">
+          <div class="b">
+            <small>Производство · 5 месяцев</small>
+            <h3>Учёт смен и заказов в цехе</h3>
+            <p>Мастера отмечают этапы на планшете, руководитель видит отставания в тот же день.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="ph rv">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80" alt="Команда MINISOFT">
+        <div class="fl">
+          <div><b>12</b><span>специалистов в команде</span></div>
+          <div><b>98%</b><span>проектов на сопровождении</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="tag rv">О компании</div>
+        <h2 class="rv">Делаем не «ещё один сайт», а инструмент, которым будут пользоваться каждый день</h2>
+        <p class="rv">MINISOFT разрабатывает программное обеспечение для малого и среднего бизнеса. Мы начинаем с процессов: какие задачи сейчас делают вручную, где теряются заявки и какие отчёты нужны руководителю. Только после этого собираем интерфейс и пишем код.</p>
+        <p class="rv">В команде аналитик, дизайнеры интерфейсов, разработчики и специалист сопровождения. На каждом этапе вы видите промежуточный результат и можете поправить направление до релиза, а не после.</p>
+        <div class="feats">
+          <div class="rv"><h3>Фиксируем рамки</h3><p>Перед стартом согласуем состав работ, сроки этапов и критерии готовности.</p></div>
+          <div class="rv" data-d="80"><h3>Показываем по ходу</h3><p>Каждые 1–2 недели — рабочая сборка, а не длинный отчёт без результата.</p></div>
+          <div class="rv"><h3>Оставляем инструкции</h3><p>Передаём админку, доступы и короткое руководство для вашей команды.</p></div>
+          <div class="rv" data-d="80"><h3>Не пропадаем после сдачи</h3><p>Первый месяц сопровождения входит в проект, дальше — по договорённости.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="sh">
+      <h2 class="rv">Как строим работу</h2>
+      <p class="rv">Четыре понятных этапа: от разбора задачи до запуска и поддержки.</p>
+    </div>
+    <div class="steps">
+      <article class="rv"><h3>Бриф и анализ</h3><p>Разбираем, кто будет пользоваться системой, какие данные через неё проходят и с чем её нужно связать.</p></article>
+      <article class="rv" data-d="80"><h3>Прототип</h3><p>Собираем структуру экранов и согласовываем сценарии: заявка, согласование, отчёт, роль администратора.</p></article>
+      <article class="rv" data-d="160"><h3>Разработка</h3><p>Верстаем интерфейс, подключаем логику и интеграции, проверяем на телефонах и компьютерах ваших сотрудников.</p></article>
+      <article class="rv" data-d="240"><h3>Запуск</h3><p>Переносим на ваш хостинг или сервер, обучаем команду и остаёмся на связи в первый месяц работы.</p></article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="req" id="req">
+      <div>
+        <div class="tag rv">Обратная связь</div>
+        <h2 class="rv">Расскажите о задаче — предложим подход и ориентировочные сроки</h2>
+        <p class="lead rv">Опишите, какую систему хотите получить и кто ей будет пользоваться. Мы ответим с вопросами по задаче и вариантом первого этапа.</p>
+      </div>
+      <form class="rv" id="f">
+        <div class="row2">
+          <input name="name" placeholder="Ваше имя" required>
+          <input name="company" placeholder="Компания">
+        </div>
+        <textarea name="task" placeholder="Какую задачу должна решать система?" required></textarea>
+        <button class="btn" type="submit">Отправить заявку</button>
+        <div class="ok" id="ok">Спасибо, заявка принята. Мы свяжемся с вами и уточним детали задачи.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>MINISOFT · заказная разработка программного обеспечения</span>
+    <span>© 2026</span>
+  </div>
+</footer>
+<script>
+const b=document.querySelector('.burger');
+b.onclick=()=>document.body.classList.toggle('menu');
+document.querySelectorAll('.nav a').forEach(a=>a.onclick=()=>document.body.classList.remove('menu'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.16});
+document.querySelectorAll('.rv').forEach(el=>{el.style.transitionDelay=(el.dataset.d||0)+'ms';io.observe(el)});
+document.getElementById('f').onsubmit=e=>{e.preventDefault();document.getElementById('ok').style.display='block';e.target.reset()};
+</script>
+</body>
+</html>
