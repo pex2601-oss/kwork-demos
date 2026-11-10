@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ТехПомощь 24 — эвакуатор с манипулятором и экскаватор-погрузчик</title>
+<meta name="description" content="Эвакуатор с краном-манипулятором и экскаватор-погрузчик без посредников: подача от 40 минут, честная цена за час, работаем круглосуточно.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f1012;--bg2:#17191c;--card:#1d2024;--line:#2b2f35;--y:#ffc21a;--y2:#ffd65c;--t:#f3f1ec;--m:#a3a6ad;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1200px,92vw);margin:0 auto}
+h1,h2,h3,.u{font-family:Unbounded,sans-serif;letter-spacing:-.01em;line-height:1.1}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--y);color:#111;font-weight:700;padding:17px 28px;border-radius:999px;border:0;cursor:pointer;font-size:16px;transition:transform .25s,box-shadow .25s,background .25s;font-family:Manrope}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 34px -10px rgba(255,194,26,.6);background:var(--y2)}
+.btn.ghost{background:transparent;color:var(--t);border:1px solid rgba(255,255,255,.28)}
+.btn.ghost:hover{border-color:var(--y);color:var(--y);box-shadow:none}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--y)}
+.tag:before{content:"";width:22px;height:2px;background:var(--y)}
+/* nav */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,backdrop-filter .3s}
+header.s{background:rgba(15,16,18,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:10px;font-family:Unbounded;font-weight:800;font-size:18px}
+.logo i{width:34px;height:34px;border-radius:10px;background:var(--y);display:grid;place-items:center;color:#111;font-style:normal;font-size:15px}
+.nav ul{display:flex;gap:32px;list-style:none;font-weight:600;font-size:15px;color:#d6d6d6}
+.nav ul a{position:relative}
+.nav ul a:after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--y);transition:width .3s}
+.nav ul a:hover:after{width:100%}
+.nav .btn{padding:12px 20px;font-size:14px}
+/* hero */
+.hero{position:relative;min-height:min(100vh,920px);display:flex;align-items:flex-end;padding:140px 0 70px;overflow:hidden}
+.hero .bg{position:absolute;inset:0;background:url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/V%C3%A1clavsk%C3%A9_n%C3%A1m%C4%9Bst%C3%AD%2C_odtah_%2801%29.jpg/1920px-V%C3%A1clavsk%C3%A9_n%C3%A1m%C4%9Bst%C3%AD%2C_odtah_%2801%29.jpg") center 60%/cover;transform:scale(1.08);animation:zoom 14s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,12,.95) 0%,rgba(10,10,12,.72) 45%,rgba(10,10,12,.25) 100%),linear-gradient(0deg,var(--bg) 0%,transparent 35%)}
+.hero .wrap{position:relative;z-index:2}
+.live{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:8px 16px;border-radius:999px;font-size:14px;font-weight:600;backdrop-filter:blur(6px)}
+.live b{width:9px;height:9px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 0 rgba(61,220,132,.7);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+.hero h1{font-size:clamp(38px,6vw,78px);font-weight:800;margin:26px 0 22px;max-width:900px}
+.hero h1 em{font-style:normal;color:var(--y)}
+.hero p.lead{font-size:clamp(17px,1.6vw,20px);color:#d2d3d6;max-width:600px;margin-bottom:36px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:70px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.stats>div{background:rgba(23,25,28,.88);padding:24px 26px;backdrop-filter:blur(8px)}
+.stats .u{font-size:32px;color:var(--y);font-weight:700}
+.stats span{color:var(--m);font-size:14px}
+section{padding:120px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
+.head h2{font-size:clamp(30px,3.8vw,50px);font-weight:700;max-width:680px;margin-top:16px}
+.head p{color:var(--m);max-width:400px}
+/* services */
+.svc{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:22px}
+.card{position:relative;border-radius:22px;overflow:hidden;background:var(--card);border:1px solid var(--line);min-height:340px;display:flex;align-items:flex-end;isolation:isolate}
+.card.big{grid-row:span 2;min-height:700px}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.card:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(10,10,12,.96) 8%,rgba(10,10,12,.35) 60%,rgba(10,10,12,.1))}
+.card:hover img{transform:scale(1.06)}
+.card .in{padding:32px}
+.card .num{font-family:Unbounded;color:var(--y);font-size:13px;letter-spacing:.1em}
+.card h3{font-size:clamp(22px,2.2vw,30px);margin:10px 0 12px}
+.card p{color:#c9cacd;max-width:480px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{font-size:13px;font-weight:600;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14)}
+.price-from{position:absolute;top:24px;right:24px;background:var(--y);color:#111;font-weight:800;padding:9px 16px;border-radius:999px;font-size:14px}
+/* why */
+.why{background:var(--bg2);border-block:1px solid var(--line)}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.vs .col{border-radius:22px;padding:38px;border:1px solid var(--line);background:var(--card)}
+.vs .col.good{background:linear-gradient(160deg,#2a2410,#1d2024 55%);border-color:rgba(255,194,26,.35)}
+.vs h3{font-size:22px;margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.vs ul{list-style:none;display:grid;gap:14px}
+.vs li{display:flex;gap:14px;align-items:flex-start;color:#d4d5d8}
+.vs li:before{content:"✕";flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:12px;background:#3a2326;color:#ff7b7b;margin-top:1px}
+.vs .good li:before{content:"✓";background:var(--y);color:#111;font-weight:800}
+/* fleet */
+.fleet{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.unit{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:transform .35s,border-color .35s}
+.unit:hover{transform:translateY(-6px);border-color:rgba(255,194,26,.5)}
+.unit .ph{height:300px;overflow:hidden}
+.unit .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.unit:hover .ph img{transform:scale(1.05)}
+.unit .bd{padding:30px}
+.unit h3{font-size:22px;margin-bottom:18px}
+.spec{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-radius:14px;overflow:hidden}
+.spec div{background:#202328;padding:16px 18px}
+.spec b{display:block;font-family:Unbounded;font-size:19px;color:var(--y);font-weight:600}
+.spec span{font-size:13px;color:var(--m)}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{padding:30px;border-radius:22px;border:1px solid var(--line);background:var(--card);position:relative;transition:border-color .3s,background .3s}
+.step:hover{border-color:var(--y);background:#22252a}
+.step:before{counter-increment:s;content:"0" counter(s);font-family:Unbounded;font-size:44px;font-weight:800;color:transparent;-webkit-text-stroke:1px rgba(255,194,26,.7);display:block;margin-bottom:24px}
+.step h3{font-size:18px;margin-bottom:10px}
+.step p{color:var(--m);font-size:15px}
+/* prices */
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pr{border-radius:22px;padding:36px;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .35s}
+.pr:hover{transform:translateY(-6px)}
+.pr.hot{background:var(--y);color:#111;border-color:var(--y)}
+.pr.hot p,.pr.hot li{color:#2a2a2a}
+.pr h3{font-size:20px}
+.pr .sum{font-family:Unbounded;font-size:40px;font-weight:800;margin:20px 0 4px}
+.pr .sum small{font-size:16px;font-weight:500}
+.pr p{color:var(--m);font-size:14px;margin-bottom:22px}
+.pr ul{list-style:none;display:grid;gap:10px;margin-bottom:28px;flex:1}
+.pr li{padding-left:22px;position:relative;color:#d0d1d4;font-size:15px}
+.pr li:before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:2px;background:var(--y);transform:rotate(45deg)}
+.pr.hot li:before{background:#111}
+.pr.hot .btn{background:#111;color:var(--y)}
+.note{color:var(--m);font-size:14px;margin-top:22px}
+/* faq */
+.faq{max-width:880px}
+details{border-bottom:1px solid var(--line);padding:26px 0}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-weight:700;font-size:19px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-family:Unbounded;color:var(--y);font-size:26px;line-height:1;transition:transform .3s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{color:var(--m);margin-top:14px;max-width:760px}
+/* form */
+.order{position:relative;border-radius:28px;overflow:hidden;padding:70px;display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center;background:linear-gradient(120deg,rgba(15,16,18,.95),rgba(15,16,18,.75)),url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Tow_Truck_-_Minneapolis_Impound_Lot_-_Snow_Emergency_%2824671533572%29.jpg/1280px-Tow_Truck_-_Minneapolis_Impound_Lot_-_Snow_Emergency_%2824671533572%29.jpg") center/cover;border:1px solid var(--line)}
+.order h2{font-size:clamp(28px,3.4vw,44px);margin:16px 0 18px}
+.order p{color:#c8c9cc}
+form{background:rgba(23,25,28,.9);border:1px solid var(--line);border-radius:22px;padding:32px;display:grid;gap:14px;backdrop-filter:blur(10px)}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.seg label{cursor:pointer}
+.seg input{display:none}
+.seg span{display:block;text-align:center;padding:12px 6px;border-radius:12px;border:1px solid var(--line);font-size:14px;font-weight:600;transition:.25s}
+.seg input:checked+span{background:var(--y);color:#111;border-color:var(--y)}
+.field{width:100%;background:#0f1012;border:1px solid var(--line);color:var(--t);padding:16px 18px;border-radius:12px;font:inherit;font-size:15px;transition:border-color .25s}
+.field:focus{outline:0;border-color:var(--y)}
+form .btn{justify-content:center;width:100%}
+form small{color:var(--m);font-size:12px;text-align:center}
+footer{padding:50px 0;border-top:1px solid var(--line);color:var(--m);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.sticky{display:none}
+@media(max-width:980px){
+ .nav ul{display:none}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .svc,.vs,.fleet,.order{grid-template-columns:1fr}
+ .card.big{grid-row:auto;min-height:460px}
+ .steps{grid-template-columns:repeat(2,1fr)}
+ .prices{grid-template-columns:1fr}
+ .order{padding:36px 22px}
+ section{padding:80px 0}
+}
+@media(max-width:560px){
+ .hero h1{font-size:31px}
+ .card h3{font-size:21px}
+ .stats>div{padding:18px}
+ .nav .btn{display:none}
+ .steps{grid-template-columns:1fr}
+ .stats .u{font-size:24px}
+ .stats>div{padding:18px}
+ .vs .col{padding:26px}
+ .sticky{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;justify-content:center}
+ .sticky .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+<header id="hd"><div class="wrap nav">
+ <a href="#" class="logo"><i>24</i>ТехПомощь</a>
+ <ul><li><a href="#svc">Услуги</a></li><li><a href="#fleet">Техника</a></li><li><a href="#price">Цены</a></li><li><a href="#faq">Вопросы</a></li></ul>
+ <a href="#order" class="btn">Вызвать технику</a>
+</div></header>
+
+<section class="hero">
+ <div class="bg"></div>
+ <div class="wrap">
+  <span class="live rv"><b></b>Свободная машина на линии — подача от 40 минут</span>
+  <h1 class="rv d1">Эвакуатор с манипулятором и&nbsp;экскаватор-погрузчик <em>без посредников</em></h1>
+  <p class="lead rv d2">Владелец сам за рулём: вывезем машину после ДТП, поднимем краном груз до 3 тонн, выкопаем траншею под коммуникации. Цену называем до выезда — и не меняем на месте.</p>
+  <div class="cta rv d3"><a href="#order" class="btn">Рассчитать стоимость →</a><a href="#svc" class="btn ghost">Что умеет техника</a></div>
+  <div class="stats rv d3">
+   <div><div class="u">24/7</div><span>принимаем заявки без выходных</span></div>
+   <div><div class="u">40 мин</div><span>средняя подача по городу</span></div>
+   <div><div class="u">3 т</div><span>грузоподъёмность крана-манипулятора</span></div>
+   <div><div class="u">0 ₽</div><span>наценки диспетчеров и агрегаторов</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="svc"><div class="wrap">
+ <div class="head"><div><span class="tag rv">Услуги</span><h2 class="rv d1">Одна машина — три задачи, за которые обычно зовут трёх подрядчиков</h2></div><p class="rv d2">Не нужно искать отдельно эвакуатор, кран и экскаватор: приезжаем с техникой, которая закрывает задачу целиком.</p></div>
+ <div class="svc">
+  <article class="card big rv">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Bergingstruck_met_auto_%28tow_truck_with_car%29.jpg/1280px-Bergingstruck_met_auto_%28tow_truck_with_car%29.jpg" alt="Эвакуатор перевозит легковой автомобиль" loading="lazy">
+   <span class="price-from">от 3 500 ₽</span>
+   <div class="in"><span class="num">01 / ЭВАКУАЦИЯ</span><h3>Эвакуатор с краном-манипулятором</h3><p>Забираем машину даже оттуда, куда не заехать обычной сдвижной платформой: из двора с аркой, с парковки с блокировкой колёс, из кювета. Аккуратные мягкие стропы, фото фиксация до погрузки.</p>
+   <div class="chips"><span>Легковые и кроссоверы</span><span>После ДТП</span><span>Мотоциклы</span><span>Спецтехника до 3 т</span></div></div>
+  </article>
+  <article class="card rv d1">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Crane_truck_in_Russia.jpg/1280px-Crane_truck_in_Russia.jpg" alt="Кран-манипулятор поднимает бетонные блоки" loading="lazy">
+   <span class="price-from">от 2 800 ₽/ч</span>
+   <div class="in"><span class="num">02 / МАНИПУЛЯТОР</span><h3>Подъём и перевозка грузов</h3><p>Бытовки, блоки ФБС, поддоны с кирпичом, металлоконструкции и контейнеры — поднимем, довезём и установим.</p></div>
+  </article>
+  <article class="card rv d2">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Backhoe_loader_Cat420E_left.jpg/1280px-Backhoe_loader_Cat420E_left.jpg" alt="Экскаватор-погрузчик на строительной площадке" loading="lazy">
+   <span class="price-from">от 3 000 ₽/ч</span>
+   <div class="in"><span class="num">03 / ЗЕМЛЯНЫЕ РАБОТЫ</span><h3>Экскаватор-погрузчик</h3><p>Траншеи под воду и канализацию, котлованы под септик, планировка участка, погрузка грунта и вывоз снега.</p></div>
+  </article>
+ </div>
+</div></section>
+
+<section class="why"><div class="wrap">
+ <div class="head"><div><span class="tag rv">Почему напрямую</span><h2 class="rv d1">Когда звоните через агрегатор, вы платите ещё и за его рекламу</h2></div><p class="rv d2">Разница между заказом у владельца техники и у перекупщика — не только в цене.</p></div>
+ <div class="vs">
+  <div class="col rv"><h3>Через диспетчерскую</h3><ul><li>К цене добавляется комиссия посредника 15–30%</li><li>Едет «кто свободен» — модель и опыт водителя неизвестны</li><li>Итоговую сумму часто «уточняют» уже на месте</li><li>Спросить что-то про работу не у кого: диспетчер не видел машину</li></ul></div>
+  <div class="col good rv d1"><h3>Напрямую с владельцем</h3><ul><li>Платите только за работу техники — без наценок</li><li>Приезжает конкретная машина и человек, который за неё отвечает</li><li>Стоимость фиксируем до выезда и пишем в сообщении</li><li>Оплата наличными, переводом или по счёту для юрлиц</li></ul></div>
+ </div>
+</div></section>
+
+<section id="fleet"><div class="wrap">
+ <div class="head"><div><span class="tag rv">Техника</span><h2 class="rv d1">Своя техника, а не арендованная на день</h2></div><p class="rv d2">Обслуживаем сами, поэтому не срываем заказы из-за поломок и знаем возможности каждой машины.</p></div>
+ <div class="fleet">
+  <div class="unit rv"><div class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/V%C3%A1clavsk%C3%A9_n%C3%A1m%C4%9Bst%C3%AD%2C_odtah_%2801%29.jpg/1280px-V%C3%A1clavsk%C3%A9_n%C3%A1m%C4%9Bst%C3%AD%2C_odtah_%2801%29.jpg" alt="Эвакуатор с манипулятором ночью в городе" loading="lazy"></div>
+   <div class="bd"><h3>Эвакуатор с манипулятором</h3><div class="spec"><div><b>3 т</b><span>грузоподъёмность крана</span></div><div><b>6,2 м</b><span>длина платформы</span></div><div><b>8 м</b><span>вылет стрелы</span></div><div><b>5 т</b><span>масса перевозимого груза</span></div></div></div></div>
+  <div class="unit rv d1"><div class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/JCB_3CX_ECO_backhoe_loader_at_VDNKh%2C_Moscow.jpg/1280px-JCB_3CX_ECO_backhoe_loader_at_VDNKh%2C_Moscow.jpg" alt="Экскаватор-погрузчик JCB 3CX" loading="lazy"></div>
+   <div class="bd"><h3>Экскаватор-погрузчик</h3><div class="spec"><div><b>5,9 м</b><span>глубина копания</span></div><div><b>1 м³</b><span>объём фронтального ковша</span></div><div><b>0,4–0,6 м</b><span>ширина траншеи</span></div><div><b>гидромолот</b><span>по запросу</span></div></div></div></div>
+ </div>
+</div></section>
+
+<section class="why"><div class="wrap">
+ <div class="head"><div><span class="tag rv">Как работаем</span><h2 class="rv d1">От заявки до выезда — 10 минут</h2></div></div>
+ <div class="steps">
+  <div class="step rv"><h3>Заявка</h3><p>Оставляете заявку на сайте или пишете, что нужно сделать и где.</p></div>
+  <div class="step rv d1"><h3>Расчёт</h3><p>Перезваниваем, уточняем детали и называем итоговую цену.</p></div>
+  <div class="step rv d2"><h3>Выезд</h3><p>Присылаем время подачи и держим в курсе, пока едем.</p></div>
+  <div class="step rv d3"><h3>Работа и оплата</h3><p>Делаем задачу, вы принимаете результат и платите удобным способом.</p></div>
+ </div>
+</div></section>
+
+<section id="price"><div class="wrap">
+ <div class="head"><div><span class="tag rv">Цены</span><h2 class="rv d1">Честный прайс без звёздочек мелким шрифтом</h2></div><p class="rv d2">Минимальный заказ — 2 часа для манипулятора и экскаватора. Подача по городу входит в стоимость.</p></div>
+ <div class="prices">
+  <div class="pr rv"><h3>Эвакуация авто</h3><div class="sum">3 500 <small>₽</small></div><p>по городу, легковой автомобиль</p><ul><li>Погрузка краном или лебёдкой</li><li>Фотофиксация перед погрузкой</li><li>Ночью и в выходные — без доплат</li></ul><a href="#order" class="btn ghost">Заказать</a></div>
+  <div class="pr hot rv d1"><h3>Манипулятор</h3><div class="sum">2 800 <small>₽/час</small></div><p>подъём, перевозка и монтаж грузов</p><ul><li>Стропальщик в составе экипажа</li><li>Грузы до 3 т, длина до 6 м</li><li>Работа на объекте и по городу</li></ul><a href="#order" class="btn">Заказать</a></div>
+  <div class="pr rv d2"><h3>Экскаватор-погрузчик</h3><div class="sum">3 000 <small>₽/час</small></div><p>земляные и погрузочные работы</p><ul><li>Траншеи, котлованы, планировка</li><li>Погрузка грунта и снега</li><li>Смена ковша на месте</li></ul><a href="#order" class="btn ghost">Заказать</a></div>
+ </div>
+ <p class="note rv">Цены на демо-версии ориентировочные — на финальном сайте будут ваши.</p>
+</div></section>
+
+<section id="faq"><div class="wrap">
+ <div class="head"><div><span class="tag rv">Вопросы</span><h2 class="rv d1">Что обычно спрашивают перед заказом</h2></div></div>
+ <div class="faq">
+  <details class="rv" open><summary>Сколько ждать машину?</summary><p>По городу в среднем 40–60 минут с момента подтверждения. За город — время назовём сразу, исходя из расстояния.</p></details>
+  <details class="rv"><summary>Можно ли эвакуировать машину с заблокированными колёсами?</summary><p>Да. Кран-манипулятор поднимает автомобиль целиком, поэтому неважно, крутятся ли колёса и включается ли нейтраль.</p></details>
+  <details class="rv"><summary>Работаете с организациями?</summary><p>Да, работаем по договору с оплатой по счёту, закрывающие документы предоставляем.</p></details>
+  <details class="rv"><summary>Что если работа займёт меньше двух часов?</summary><p>Оплачивается минимальный заказ — 2 часа. Если задача сложнее, чем казалось, сначала согласуем продление и только потом продолжаем.</p></details>
+ </div>
+</div></section>
+
+<section id="order" style="padding-top:0"><div class="wrap">
+ <div class="order rv">
+  <div><span class="tag">Заявка</span><h2>Опишите задачу — назовём цену за 10 минут</h2><p>Заявка попадает напрямую владельцу техники. Перезваниваем, уточняем детали и фиксируем стоимость до выезда.</p></div>
+  <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Заявка отправлена ✓'">
+   <div class="seg"><label><input type="radio" name="t" checked><span>Эвакуатор</span></label><label><input type="radio" name="t"><span>Манипулятор</span></label><label><input type="radio" name="t"><span>Экскаватор</span></label></div>
+   <input class="field" placeholder="Ваше имя">
+   <input class="field" placeholder="Откуда и куда / адрес объекта">
+   <textarea class="field" rows="3" placeholder="Что нужно сделать: например, вывезти авто после ДТП"></textarea>
+   <button class="btn" type="submit">Получить расчёт</button>
+   <small>Нажимая кнопку, вы соглашаетесь на обработку персональных данных</small>
+  </form>
+ </div>
+</div></section>
+
+<footer><div class="wrap"><a href="#" class="logo"><i>24</i>ТехПомощь</a><span>Эвакуатор, кран-манипулятор и экскаватор-погрузчик напрямую от владельца</span><span>© 2026</span></div></footer>
+<div class="sticky"><a href="#order" class="btn">Вызвать технику</a></div>
+<script>
+const hd=document.getElementById('hd');addEventListener('scroll',()=>hd.classList.toggle('s',scrollY>40));
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
