@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Строительный контроль — FrameHouseHub, концепт</title>
+<meta name="description" content="Концепт многостраничного сайта FrameHouseHub: проектирование и строительный контроль.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="concept">Концепт сайта для проекта на Kwork — <b>не готовый продукт</b>. Стиль и структура для согласования.</div>
+<header>
+  <div class="wrap nav" id="nav">
+    <a class="logo" href="index.html">
+      <img src="img/logo.png" alt="FrameHouseHub">
+    </a>
+    <ul>
+      <li><a href="index.html" class="">Главная</a></li>
+<li><a href="designing.html" class="">Проектирование</a></li>
+<li><a href="control.html" class="active">Контроль</a></li>
+<li><a href="portfolio.html" class="">Портфолио</a></li>
+<li><a href="visits.html" class="">Разбор выездов</a></li>
+<li><a href="contacts.html" class="">Контакты</a></li>
+    </ul>
+    <div class="nav-end">
+      <a class="phone" href="tel:+74951429064">+7 (495) 142-90-64</a>
+      <a class="btn accent" href="contacts.html">Оставить заявку</a>
+      <button class="burger" type="button" aria-label="Меню" onclick="document.getElementById('nav').classList.toggle('is-open')"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Услуга</div>
+    <h1>Строительный контроль</h1>
+    <p>Вам не нужно изучать строительные правила и лично спорить с прорабом — мы берём это на себя.</p>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="prose">
+      <p>Наш эксперт разговаривает со строителями на языке нормативов и инструментальных замеров. Мы выезжаем на объект, проводим аудит и выдаём чёткие предписания. Стройка становится прозрачной и предсказуемой.</p>
+    </div>
+    <div class="grid4" style="margin-top:40px">
+      <div class="mini"><div class="ic"></div><h3>Аудит проектов</h3><p>Разбор документации до и во время работ.</p></div>
+      <div class="mini"><div class="ic"></div><h3>Экспертиза</h3><p>Проверка решений и качества исполнения.</p></div>
+      <div class="mini"><div class="ic"></div><h3>Приёмка работ</h3><p>Фиксация объёмов, дефектов и скрытых этапов.</p></div>
+      <div class="mini"><div class="ic"></div><h3>Технадзор</h3><p>Регулярные выезды и контроль устранения замечаний.</p></div>
+    </div>
+    <div class="sec-h" style="margin-top:64px">
+      <h2>Разбор выездов</h2>
+      <p>На готовом сайте каждый выезд можно будет заносить в каталог Tilda отдельной карточкой — без участия верстальщика.</p>
+    </div>
+    <div class="actions"><a class="btn" href="visits.html">Смотреть примеры разборов</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>© FrameHouseHub, ИП Копцев М.А.<br>Концепт, не является официальным сайтом компании.</div>
+    <div><a href="tel:+74951429064">+7 (495) 142-90-64</a> · <a href="tel:+79161220320">+7 916 122-03-20</a><br>
+    <a href="https://framehousehub.ru/" rel="noopener">текущий сайт framehousehub.ru</a></div>
+  </div>
+</footer>
+<script>
+function demoForm(e){e.preventDefault();const ok=e.target.querySelector('.ok');if(ok)ok.classList.add('show');e.target.querySelectorAll('input,textarea,button[type=submit]').forEach(el=>{if(el.type!=='submit')el.blur()});return false;}
+</script>
+</body>
+</html>

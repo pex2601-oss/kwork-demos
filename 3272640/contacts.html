@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Контакты — FrameHouseHub, концепт</title>
+<meta name="description" content="Концепт многостраничного сайта FrameHouseHub: проектирование и строительный контроль.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="concept">Концепт сайта для проекта на Kwork — <b>не готовый продукт</b>. Стиль и структура для согласования.</div>
+<header>
+  <div class="wrap nav" id="nav">
+    <a class="logo" href="index.html">
+      <img src="img/logo.png" alt="FrameHouseHub">
+    </a>
+    <ul>
+      <li><a href="index.html" class="">Главная</a></li>
+<li><a href="designing.html" class="">Проектирование</a></li>
+<li><a href="control.html" class="">Контроль</a></li>
+<li><a href="portfolio.html" class="">Портфолио</a></li>
+<li><a href="visits.html" class="">Разбор выездов</a></li>
+<li><a href="contacts.html" class="active">Контакты</a></li>
+    </ul>
+    <div class="nav-end">
+      <a class="phone" href="tel:+74951429064">+7 (495) 142-90-64</a>
+      <a class="btn accent" href="contacts.html">Оставить заявку</a>
+      <button class="burger" type="button" aria-label="Меню" onclick="document.getElementById('nav').classList.toggle('is-open')"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Связь</div>
+    <h1>Контакты</h1>
+    <p>Реквизиты с текущего сайта. Форма в концепте не отправляется; на готовом сайте заявки уйдут в Telegram и на почту.</p>
+  </div>
+</section>
+<section>
+  <div class="wrap contacts">
+    <div>
+      <dl>
+        <dt>Телефон</dt>
+        <dd><a href="tel:+74951429064">+7 (495) 142-90-64</a><br><a href="tel:+79161220320">+7 916 122-03-20</a></dd>
+        <dt>Компания</dt>
+        <dd>FrameHouseHub<br>ИП Копцев М.А.</dd>
+        <dt>Сайт</dt>
+        <dd><a href="https://framehousehub.ru/">framehousehub.ru</a></dd>
+      </dl>
+    </div>
+    <form class="form stack light" onsubmit="return demoForm(event)">
+      <input name="name" placeholder="Имя" required>
+      <input name="phone" placeholder="Телефон" required>
+      <input name="email" placeholder="Почта" type="email">
+      <textarea name="msg" rows="5" placeholder="Кратко о задаче"></textarea>
+      <button class="btn accent" type="submit">Отправить заявку</button>
+      <div class="ok" style="color:var(--ink)">Спасибо. В концепте заявка никуда не уходит.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>© FrameHouseHub, ИП Копцев М.А.<br>Концепт, не является официальным сайтом компании.</div>
+    <div><a href="tel:+74951429064">+7 (495) 142-90-64</a> · <a href="tel:+79161220320">+7 916 122-03-20</a><br>
+    <a href="https://framehousehub.ru/" rel="noopener">текущий сайт framehousehub.ru</a></div>
+  </div>
+</footer>
+<script>
+function demoForm(e){e.preventDefault();const ok=e.target.querySelector('.ok');if(ok)ok.classList.add('show');e.target.querySelectorAll('input,textarea,button[type=submit]').forEach(el=>{if(el.type!=='submit')el.blur()});return false;}
+</script>
+</body>
+</html>

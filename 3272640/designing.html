@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Проектирование — FrameHouseHub, концепт</title>
+<meta name="description" content="Концепт многостраничного сайта FrameHouseHub: проектирование и строительный контроль.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="concept">Концепт сайта для проекта на Kwork — <b>не готовый продукт</b>. Стиль и структура для согласования.</div>
+<header>
+  <div class="wrap nav" id="nav">
+    <a class="logo" href="index.html">
+      <img src="img/logo.png" alt="FrameHouseHub">
+    </a>
+    <ul>
+      <li><a href="index.html" class="">Главная</a></li>
+<li><a href="designing.html" class="active">Проектирование</a></li>
+<li><a href="control.html" class="">Контроль</a></li>
+<li><a href="portfolio.html" class="">Портфолио</a></li>
+<li><a href="visits.html" class="">Разбор выездов</a></li>
+<li><a href="contacts.html" class="">Контакты</a></li>
+    </ul>
+    <div class="nav-end">
+      <a class="phone" href="tel:+74951429064">+7 (495) 142-90-64</a>
+      <a class="btn accent" href="contacts.html">Оставить заявку</a>
+      <button class="burger" type="button" aria-label="Меню" onclick="document.getElementById('nav').classList.toggle('is-open')"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Услуга</div>
+    <h1>Проектирование</h1>
+    <p>От первой линии эскиза до точной пространственной модели. Превращаем красивые идеи в реализуемые и безопасные решения.</p>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="prose">
+      <p>Мы проектируем долговечные конструкции с детальной проработкой каждого узла. Задача простая: защитить ваш бюджет от строительных ошибок ещё до выхода на площадку.</p>
+      <p>В работу входят концепции, архитектурные решения и конструктив. Документация собирается так, чтобы подрядчик не додумывал узлы на объекте.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><b>01</b><h3>Концепция</h3><p style="color:var(--muted);margin-top:8px">Эскиз, объём, посадка на участок, логика планировок.</p></div>
+      <div class="step"><b>02</b><h3>Архитектура</h3><p style="color:var(--muted);margin-top:8px">Фасады, разрезы, материалы, пространственная модель.</p></div>
+      <div class="step"><b>03</b><h3>Конструкции</h3><p style="color:var(--muted);margin-top:8px">Узлы, расчёты, рабочая документация для стройки.</p></div>
+    </div>
+    <div class="actions" style="margin-top:36px">
+      <a class="btn accent" href="contacts.html">Заказать проект</a>
+      <a class="btn ghost" href="portfolio.html">Смотреть примеры</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>© FrameHouseHub, ИП Копцев М.А.<br>Концепт, не является официальным сайтом компании.</div>
+    <div><a href="tel:+74951429064">+7 (495) 142-90-64</a> · <a href="tel:+79161220320">+7 916 122-03-20</a><br>
+    <a href="https://framehousehub.ru/" rel="noopener">текущий сайт framehousehub.ru</a></div>
+  </div>
+</footer>
+<script>
+function demoForm(e){e.preventDefault();const ok=e.target.querySelector('.ok');if(ok)ok.classList.add('show');e.target.querySelectorAll('input,textarea,button[type=submit]').forEach(el=>{if(el.type!=='submit')el.blur()});return false;}
+</script>
+</body>
+</html>
