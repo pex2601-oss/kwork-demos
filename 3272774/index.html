@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Северный пар — мобильные бани под ключ за 10 дней</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#16120e;--ink2:#5b5148;--bg:#f5efe6;--card:#fffaf3;--wood:#c47a3f;--wood2:#e39a5a;--pine:#24332a;--line:#e6dccd}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:Fraunces,serif;line-height:1.08;letter-spacing:-.015em;font-weight:600}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1220px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:17px 30px;border-radius:999px;font-weight:700;font-size:16px;transition:.3s;cursor:pointer;border:0;font-family:inherit}
+.btn-w{background:var(--wood);color:#fff;box-shadow:0 14px 34px -12px rgba(196,122,63,.8)}
+.btn-w:hover{background:var(--wood2);transform:translateY(-2px)}
+.btn-o{border:1.5px solid rgba(255,255,255,.45);color:#fff}
+.btn-o:hover{background:#fff;color:var(--ink)}
+.btn svg{width:18px;height:18px;transition:.3s}.btn:hover svg{transform:translateX(4px)}
+.tag{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--wood)}
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.35s}
+header.s{background:rgba(22,18,14,.86);backdrop-filter:blur(14px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:80px;color:#fff}
+.logo{font-family:Fraunces;font-weight:700;font-size:23px;display:flex;align-items:center;gap:11px}
+.logo svg{width:32px;height:32px}
+.menu{display:flex;gap:34px;font-weight:600;font-size:15px}
+.menu a{opacity:.82;transition:.2s;position:relative}
+.menu a:after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--wood2);transition:.3s}
+.menu a:hover{opacity:1}.menu a:hover:after{width:100%}
+.nav .btn{padding:12px 22px;font-size:14px}
+.burger{display:none;background:none;border:0;color:#fff;cursor:pointer}
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--ink);padding:150px 0 70px}
+.hero-bg{position:absolute;inset:0;background:url(https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Sauna_building_in_R%C3%B6sk%C3%B6n_leirikeskus%2C_R%C3%B6sk%C3%B6%2C_Kitee%2C_North_Karelia%2C_Finland%2C_2025_August.jpg/1920px-Sauna_building_in_R%C3%B6sk%C3%B6n_leirikeskus%2C_R%C3%B6sk%C3%B6%2C_Kitee%2C_North_Karelia%2C_Finland%2C_2025_August.jpg) center 60%/cover;animation:zoom 24s ease-in-out infinite alternate}
+@keyframes zoom{to{transform:scale(1.08)}}
+.hero:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(22,18,14,.55) 0%,rgba(22,18,14,.15) 40%,rgba(22,18,14,.88) 100%)}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:60px;align-items:end}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);font-size:14px;font-weight:600;margin-bottom:26px;border:1px solid rgba(255,255,255,.18)}
+.badge i{width:8px;height:8px;border-radius:50%;background:#7fd18b;box-shadow:0 0 0 4px rgba(127,209,139,.25)}
+.hero h1{font-size:clamp(42px,6.2vw,86px);margin-bottom:24px}
+.hero h1 em{font-style:italic;color:var(--wood2)}
+.hero p.lead{font-size:20px;max-width:560px;opacity:.9;margin-bottom:36px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.offer{background:rgba(255,250,243,.96);color:var(--ink);border-radius:26px;padding:30px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.offer .tag{margin-bottom:10px}
+.offer h3{font-size:28px;margin-bottom:10px}
+.offer p{color:var(--ink2);font-size:15px;margin-bottom:20px}
+.offer ul{list-style:none;display:grid;gap:10px;margin-bottom:22px}
+.offer li{display:flex;gap:10px;font-weight:600;font-size:15px}
+.offer li:before{content:"";flex:0 0 20px;height:20px;border-radius:50%;background:var(--wood) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/12px no-repeat}
+.offer .btn{width:100%;justify-content:center}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:70px;padding-top:34px;border-top:1px solid rgba(255,255,255,.18)}
+.stats b{font-family:Fraunces;font-size:44px;font-weight:600;display:block;line-height:1}
+.stats span{opacity:.75;font-size:14px}
+section{padding:120px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:56px}
+.head h2{font-size:clamp(34px,4.4vw,58px);max-width:680px;margin-top:12px}
+.head p{max-width:400px;color:var(--ink2);font-size:17px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
+.filters button{border:1.5px solid var(--line);background:transparent;padding:10px 20px;border-radius:999px;font:600 14px Manrope;cursor:pointer;transition:.25s;color:var(--ink)}
+.filters button.on,.filters button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:var(--card);border-radius:24px;overflow:hidden;border:1px solid var(--line);transition:.4s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-8px);box-shadow:0 30px 60px -30px rgba(60,40,20,.45)}
+.card .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:.8s}
+.card:hover .ph img{transform:scale(1.07)}
+.card .ph .lbl{position:absolute;top:16px;left:16px;background:rgba(22,18,14,.78);color:#fff;font-size:12px;font-weight:700;padding:6px 12px;border-radius:999px;letter-spacing:.06em}
+.card .ph .hit{left:auto;right:16px;background:var(--wood)}
+.card .bd{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:25px;margin-bottom:14px}
+.spec{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px}
+.spec div{background:var(--bg);border-radius:12px;padding:10px 12px}
+.spec small{display:block;font-size:11px;color:var(--ink2);text-transform:uppercase;letter-spacing:.06em}
+.spec b{font-size:15px}
+.card .ft{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
+.price{font-family:Fraunces;font-size:27px;font-weight:600}
+.price small{font-family:Manrope;font-size:13px;color:var(--ink2);font-weight:500;margin-right:4px}
+.more{width:48px;height:48px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;transition:.3s}
+.card:hover .more{background:var(--wood);transform:rotate(-45deg)}
+.inside{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.in-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.in-ph{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5}
+.in-ph img{width:100%;height:100%;object-fit:cover}
+.in-ph .float{position:absolute;bottom:22px;left:22px;right:22px;background:rgba(22,18,14,.72);backdrop-filter:blur(10px);border-radius:18px;padding:18px 20px;display:flex;gap:16px;align-items:center;border:1px solid rgba(255,255,255,.12)}
+.in-ph .float b{font-family:Fraunces;font-size:34px;color:var(--wood2)}
+.in-ph .float span{font-size:14px;opacity:.85}
+.inside h2{font-size:clamp(34px,4.2vw,54px);margin:12px 0 22px}
+.inside p.sub{opacity:.75;font-size:17px;margin-bottom:38px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:26px 30px}
+.feat div{border-top:1px solid rgba(255,255,255,.16);padding-top:20px}
+.feat .n{font-family:Fraunces;color:var(--wood2);font-size:15px;margin-bottom:6px}
+.feat h4{font-size:18px;margin-bottom:6px}
+.feat p{font-size:14.5px;opacity:.7}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 22px;position:relative;transition:.3s}
+.step:hover{border-color:var(--wood);transform:translateY(-4px)}
+.step:before{counter-increment:s;content:"0" counter(s);font-family:Fraunces;font-size:44px;color:var(--wood);display:block;margin-bottom:18px;line-height:1}
+.step h4{font-size:18px;margin-bottom:8px}
+.step p{font-size:14.5px;color:var(--ink2)}
+.step .d{display:inline-block;margin-top:14px;font-size:12.5px;font-weight:700;background:var(--bg);padding:5px 11px;border-radius:999px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:16px}
+.gallery figure{position:relative;border-radius:20px;overflow:hidden}
+.gallery figure:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gallery figure:nth-child(4){grid-column:span 2}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:.8s}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 20px 18px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75));font-weight:600;font-size:15px}
+.gallery figcaption small{display:block;opacity:.75;font-weight:500;font-size:13px}
+.delivery{background:var(--pine);color:#fff}
+.dl-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center}
+.delivery h2{font-size:clamp(34px,4.2vw,54px);margin:12px 0 20px}
+.delivery p.sub{opacity:.78;font-size:17px;margin-bottom:32px}
+.zones{display:grid;gap:12px}
+.zone{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-radius:18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);transition:.3s}
+.zone:hover{background:rgba(255,255,255,.13)}
+.zone b{font-size:17px}.zone span{opacity:.7;font-size:14px;display:block}
+.zone em{font-style:normal;font-family:Fraunces;font-size:22px;color:#f1c08f}
+.map{position:relative;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle,rgba(241,192,143,.22) 0 22%,rgba(241,192,143,.12) 22% 46%,rgba(241,192,143,.06) 46% 70%,transparent 70%)}
+.map:before,.map:after{content:"";position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(255,255,255,.18)}
+.map:after{inset:24%}
+.map .c{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;background:var(--wood);display:grid;place-items:center;text-align:center;font-weight:800;font-size:14px;line-height:1.25;box-shadow:0 0 0 14px rgba(196,122,63,.25);animation:pulse 3s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 26px rgba(196,122,63,.08)}}
+.map .pt{position:absolute;background:#fff;color:var(--ink);font-size:13px;font-weight:700;padding:7px 13px;border-radius:999px;white-space:nowrap;box-shadow:0 10px 24px -10px rgba(0,0,0,.5)}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:32px;display:flex;flex-direction:column;transition:.3s}
+.rev:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgba(60,40,20,.4)}
+.stars{color:var(--wood);letter-spacing:3px;margin-bottom:16px}
+.rev p{font-size:16px;margin-bottom:24px;flex:1}
+.who{display:flex;align-items:center;gap:14px}
+.av{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--wood),#7a4a24);color:#fff;display:grid;place-items:center;font-family:Fraunces;font-size:20px}
+.who b{display:block}.who span{font-size:13.5px;color:var(--ink2)}
+.faq{max-width:860px;margin:0 auto}
+.q{border-bottom:1px solid var(--line)}
+.q button{width:100%;text-align:left;background:none;border:0;padding:26px 0;font:700 19px Manrope;color:var(--ink);display:flex;justify-content:space-between;gap:20px;cursor:pointer}
+.q button span{flex:0 0 34px;height:34px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:.3s;font-weight:500}
+.q.open button span{background:var(--wood);color:#fff;border-color:var(--wood);transform:rotate(45deg)}
+.q .a{max-height:0;overflow:hidden;transition:max-height .4s;color:var(--ink2);font-size:16px}
+.q.open .a{max-height:220px}
+.q .a p{padding-bottom:26px}
+.final{position:relative;color:#fff;overflow:hidden;padding:130px 0}
+.final .bg{position:absolute;inset:0;background:url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Sauna_of_the_spa_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg/1920px-Sauna_of_the_spa_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg) center/cover}
+.final:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(22,18,14,.93) 0%,rgba(22,18,14,.7) 55%,rgba(22,18,14,.35) 100%)}
+.final .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.final h2{font-size:clamp(36px,4.6vw,62px);margin:12px 0 20px}
+.final p{opacity:.85;font-size:18px;max-width:500px}
+form{background:var(--card);color:var(--ink);border-radius:26px;padding:34px;display:grid;gap:14px;box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+form h3{font-size:26px}
+form p.s{color:var(--ink2);font-size:14.5px;margin-top:-6px}
+input,select{width:100%;padding:16px 18px;border-radius:14px;border:1.5px solid var(--line);font:500 16px Manrope;background:#fff;color:var(--ink);transition:.2s}
+input:focus,select:focus{outline:0;border-color:var(--wood);box-shadow:0 0 0 4px rgba(196,122,63,.15)}
+form .btn{justify-content:center}
+form small{font-size:12.5px;color:var(--ink2);text-align:center}
+footer{background:var(--ink);color:rgba(255,255,255,.6);padding:40px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer .logo{color:#fff;font-size:20px}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+@media(max-width:1020px){
+ .menu,.nav .btn{display:none}.burger{display:block}
+ .hero-grid,.in-grid,.dl-grid,.final .wrap{grid-template-columns:1fr;gap:40px}
+ .cards,.reviews{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:1fr 1fr}
+ .head{flex-direction:column;align-items:flex-start}
+ .map{max-width:440px;margin:0 auto;width:100%}
+}
+@media(max-width:640px){
+ section{padding:80px 0}
+ .hero{padding:120px 0 50px}
+ .hero p.lead{font-size:17px}
+ .stats{grid-template-columns:1fr 1fr;gap:24px;margin-top:46px}
+ .stats b{font-size:34px}
+ .cards,.reviews,.steps,.feat{grid-template-columns:1fr}
+ .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+ .gallery figure:nth-child(1){grid-column:span 2;grid-row:span 1}
+ .in-ph{aspect-ratio:1/1}
+ .map .pt{font-size:11px;padding:5px 9px}
+ .map .c{width:92px;height:92px;font-size:12px}
+ .offer,form{padding:24px}
+}
+</style>
+</head>
+<body>
+<header id="hd"><div class="wrap nav">
+ <a href="#" class="logo"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="9" fill="#c47a3f"/><path d="M7 21l9-10 9 10" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 9c0-2 2-2 2-4M17 9c0-2 2-2 2-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M10 21v4h12v-4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>Северный пар</a>
+ <nav class="menu"><a href="#projects">Проекты</a><a href="#inside">Комплектация</a><a href="#works">Работы</a><a href="#delivery">Доставка</a><a href="#reviews">Отзывы</a></nav>
+ <a href="#order" class="btn btn-w">Обратный звонок</a>
+ <button class="burger" aria-label="Меню"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+
+<section class="hero">
+ <div class="hero-bg"></div>
+ <div class="wrap">
+  <div class="hero-grid">
+   <div class="rv">
+    <div class="badge"><i></i>Принимаем заказы на зимний сезон</div>
+    <h1>Тёплая мобильная баня <em>под ключ</em> от 10 дней</h1>
+    <p class="lead">Каркасные бани и бани-бочки из камерной сушки, с печью, полками и отделкой. Привозим готовой на участок — остаётся затопить и пригласить друзей.</p>
+    <div class="cta">
+     <a href="#projects" class="btn btn-w">Выбрать проект <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+     <a href="#order" class="btn btn-o">Рассчитать стоимость</a>
+    </div>
+   </div>
+   <div class="offer rv d2">
+    <span class="tag">Акция ноября</span>
+    <h3>Проект бани — в подарок</h3>
+    <p>Подготовим планировку под ваш участок и состав семьи бесплатно при заказе до конца месяца.</p>
+    <ul><li>Каркасная баня от 285 000 ₽</li><li>Гарантия 5 лет по договору</li><li>Оплата частями по этапам</li></ul>
+    <a href="#order" class="btn btn-w">Получить проект</a>
+   </div>
+  </div>
+  <div class="stats rv d3">
+   <div><b>10</b><span>дней — сборка в цеху</span></div>
+   <div><b>5 лет</b><span>гарантии на конструкцию</span></div>
+   <div><b>40 мин</b><span>до +90 °C в парной</span></div>
+   <div><b>3 часа</b><span>установка на участке</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="wrap">
+  <div class="head rv"><div><span class="tag">Каталог проектов</span><h2>Выберите идеальную баню для своего участка</h2></div><p>Каждый проект можно доработать: изменить размер, планировку, отделку и печь. Цена указана с полной комплектацией.</p></div>
+  <div class="filters rv"><button class="on">Все проекты</button><button>Каркасные</button><button>Бани-бочки</button><button>С террасой</button><button>До 10 м²</button></div>
+  <div class="cards">
+   <article class="card rv"><div class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Barrel_sauna_in_Lah%C3%A4lla_3.jpg/1280px-Barrel_sauna_in_Lah%C3%A4lla_3.jpg" alt="Баня-бочка с панорамным окном"><span class="lbl">СБ-04</span><span class="lbl hit">Хит сезона</span></div><div class="bd"><h3>Бочка «Панорама»</h3><div class="spec"><div><small>Площадь</small><b>9 м²</b></div><div><small>Размер</small><b>4×2,3 м</b></div><div><small>Мест</small><b>4–5</b></div></div><div class="ft"><div class="price"><small>от</small>320 000 ₽</div><a href="#order" class="more"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></article>
+   <article class="card rv d1"><div class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Barrel_sauna_in_Lah%C3%A4lla_1.jpg/1280px-Barrel_sauna_in_Lah%C3%A4lla_1.jpg" alt="Каркасная баня у воды"><span class="lbl">СБ-01</span></div><div class="bd"><h3>Каркасная «Компакт»</h3><div class="spec"><div><small>Площадь</small><b>5 м²</b></div><div><small>Размер</small><b>3×2,3 м</b></div><div><small>Мест</small><b>2–3</b></div></div><div class="ft"><div class="price"><small>от</small>285 000 ₽</div><a href="#order" class="more"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></article>
+   <article class="card rv d2"><div class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Barrel_sauna_in_Lah%C3%A4lla_4.jpg/1280px-Barrel_sauna_in_Lah%C3%A4lla_4.jpg" alt="Баня с террасой"><span class="lbl">СБ-16</span></div><div class="bd"><h3>Каркасная с террасой</h3><div class="spec"><div><small>Площадь</small><b>12 м²</b></div><div><small>Размер</small><b>6×2,3 м</b></div><div><small>Мест</small><b>5–6</b></div></div><div class="ft"><div class="price"><small>от</small>490 000 ₽</div><a href="#order" class="more"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></article>
+   <article class="card rv"><div class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Barrel_sauna.jpg/1280px-Barrel_sauna.jpg" alt="Компактная баня-бочка"><span class="lbl">СБ-02</span></div><div class="bd"><h3>Бочка «Мини»</h3><div class="spec"><div><small>Площадь</small><b>6 м²</b></div><div><small>Размер</small><b>3×2,2 м</b></div><div><small>Мест</small><b>2–3</b></div></div><div class="ft"><div class="price"><small>от</small>249 000 ₽</div><a href="#order" class="more"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></article>
+   <article class="card rv d1"><div class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Public_Sauna_in_Norway.jpg/1280px-Public_Sauna_in_Norway.jpg" alt="Баня-шатёр"><span class="lbl">СБ-09</span></div><div class="bd"><h3>Баня-шатёр «Гнездо»</h3><div class="spec"><div><small>Площадь</small><b>10 м²</b></div><div><small>Форма</small><b>8 граней</b></div><div><small>Мест</small><b>6–8</b></div></div><div class="ft"><div class="price"><small>от</small>410 000 ₽</div><a href="#order" class="more"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></article>
+   <article class="card rv d2"><div class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Barrel_sauna_in_Lah%C3%A4lla_2.jpg/1280px-Barrel_sauna_in_Lah%C3%A4lla_2.jpg" alt="Баня-бочка с остеклённым торцом"><span class="lbl">СБ-06</span></div><div class="bd"><h3>Бочка с предбанником</h3><div class="spec"><div><small>Площадь</small><b>11 м²</b></div><div><small>Размер</small><b>5×2,3 м</b></div><div><small>Мест</small><b>4–6</b></div></div><div class="ft"><div class="price"><small>от</small>375 000 ₽</div><a href="#order" class="more"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="inside" id="inside">
+ <div class="wrap in-grid">
+  <div class="in-ph rv"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Sauna_of_the_spa_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg/1280px-Sauna_of_the_spa_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg" alt="Парная с полками из липы"><div class="float"><b>+90 °C</b><span>прогрев парной за 40 минут даже в мороз −25 °C</span></div></div>
+  <div class="rv d1">
+   <span class="tag">Что входит в цену</span>
+   <h2>Готова к первому пару в день доставки</h2>
+   <p class="sub">Никаких «а это за отдельную плату». В базовую комплектацию входит всё, что нужно, чтобы затопить баню сразу после установки.</p>
+   <div class="feat">
+    <div><div class="n">01</div><h4>Сухой брус и утепление</h4><p>Каркас из сосны камерной сушки, 150 мм базальтовой ваты и пароизоляция из фольги.</p></div>
+    <div><div class="n">02</div><h4>Печь на дровах</h4><p>Стальная печь с выносной топкой из предбанника и каменкой на 40 кг.</p></div>
+    <div><div class="n">03</div><h4>Полки из липы</h4><p>Не нагреваются и не выделяют смолу. Два уровня, ширина лежака 60 см.</p></div>
+    <div><div class="n">04</div><h4>Отделка и свет</h4><p>Вагонка «Штиль», влагостойкая подсветка, двери из закалённого стекла.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="steps">
+ <div class="wrap">
+  <div class="head rv"><div><span class="tag">Как мы работаем</span><h2>От заявки до первого пара — 5 шагов</h2></div><p>Фиксируем цену и сроки в договоре. Вы платите частями — только за выполненный этап.</p></div>
+  <div class="steps">
+   <div class="step rv"><h4>Заявка и замер</h4><p>Обсуждаем размеры, бюджет и место на участке.</p><span class="d">1 день</span></div>
+   <div class="step rv d1"><h4>Проект в подарок</h4><p>Готовим планировку и 3D-визуализацию бани.</p><span class="d">2 дня</span></div>
+   <div class="step rv d2"><h4>Договор</h4><p>Фиксируем цену, срок и комплектацию.</p><span class="d">1 день</span></div>
+   <div class="step rv d3"><h4>Сборка в цеху</h4><p>Присылаем фото и видео каждого этапа.</p><span class="d">10 дней</span></div>
+   <div class="step rv"><h4>Доставка и установка</h4><p>Привозим манипулятором и ставим на опоры.</p><span class="d">1 день</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="works" style="padding-top:0">
+ <div class="wrap">
+  <div class="head rv"><div><span class="tag">Наши работы</span><h2>Бани, которые уже радуют владельцев</h2></div><p>Ставим бани на дачах, у загородных домов, на базах отдыха и глэмпингах.</p></div>
+  <div class="gallery">
+   <figure class="rv"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Floating_Sauna_Pyhalahti_Fishing_Port.jpg/1280px-Floating_Sauna_Pyhalahti_Fishing_Port.jpg" alt="Баня у озера"><figcaption>Баня у озера для базы отдыха<small>Карелия · 14 м²</small></figcaption></figure>
+   <figure class="rv d1"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Heat_Storage_Sauna_Stove.jpg/1280px-Heat_Storage_Sauna_Stove.jpg" alt="Каменка"><figcaption>Печь с закрытой каменкой<small>мягкий пар</small></figcaption></figure>
+   <figure class="rv d2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Inside_a_sauna_trailer_in_Haukilahti.jpg/1280px-Inside_a_sauna_trailer_in_Haukilahti.jpg" alt="Мобильная баня внутри"><figcaption>Баня на прицепе<small>интерьер</small></figcaption></figure>
+   <figure class="rv d1"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Sauna_stool_2_ready.JPG/1280px-Sauna_stool_2_ready.JPG" alt="Мебель для бани"><figcaption>Мебель для предбанника<small>липа и кедр</small></figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<section class="delivery" id="delivery">
+ <div class="wrap dl-grid">
+  <div class="rv">
+   <span class="tag" style="color:#f1c08f">Доставка и установка</span>
+   <h2>Привезём готовую баню и поставим за 3 часа</h2>
+   <p class="sub">Доставляем манипулятором по Ленинградской области и соседним регионам. Подготовим опоры, выставим по уровню и затопим печь вместе с вами.</p>
+   <div class="zones">
+    <div class="zone"><div><b>До 50 км от Санкт-Петербурга</b><span>установка на опоры включена</span></div><em>0 ₽</em></div>
+    <div class="zone"><div><b>50–150 км</b><span>Ленинградская область</span></div><em>9 000 ₽</em></div>
+    <div class="zone"><div><b>Свыше 150 км</b><span>Новгородская, Псковская, Карелия</span></div><em>по расчёту</em></div>
+   </div>
+  </div>
+  <div class="map rv d2">
+   <div class="c">Цех<br>в СПб</div>
+   <span class="pt" style="left:6%;top:18%">Выборг</span>
+   <span class="pt" style="right:4%;top:26%">Петрозаводск</span>
+   <span class="pt" style="left:0;bottom:30%">Кингисепп</span>
+   <span class="pt" style="right:10%;bottom:14%">Великий Новгород</span>
+   <span class="pt" style="left:40%;top:6%">Приозерск</span>
+  </div>
+ </div>
+</section>
+
+<section id="reviews">
+ <div class="wrap">
+  <div class="head rv"><div><span class="tag">Отзывы</span><h2>Что говорят владельцы наших бань</h2></div><p>Пишут через год, через два — когда баня прошла не одну зиму.</p></div>
+  <div class="reviews">
+   <div class="rev rv"><div class="stars">★★★★★</div><p>Заказали бочку на дачу в октябре, через 11 дней она уже стояла у пруда. Прогревается быстро, даже в январские морозы парились без проблем.</p><div class="who"><div class="av">А</div><div><b>Андрей</b><span>Бочка «Панорама», Всеволожский район</span></div></div></div>
+   <div class="rev rv d1"><div class="stars">★★★★★</div><p>Понравилось, что присылали фото с производства каждые пару дней. Цена в договоре не изменилась ни на рубль, установили за пару часов.</p><div class="who"><div class="av">О</div><div><b>Ольга</b><span>Каркасная с террасой, Приозерск</span></div></div></div>
+   <div class="rev rv d2"><div class="stars">★★★★★</div><p>Взяли две бани для глэмпинга. Гости в восторге от панорамного окна, а нам удобно — печь топится из предбанника, внутри всегда чисто.</p><div class="who"><div class="av">Д</div><div><b>Дмитрий</b><span>База отдыха, Карелия</span></div></div></div>
+  </div>
+ </div>
+</section>
+
+<section style="padding-top:0">
+ <div class="wrap">
+  <div class="head rv" style="justify-content:center;text-align:center"><div><span class="tag">Вопросы</span><h2>Частые вопросы</h2></div></div>
+  <div class="faq rv">
+   <div class="q open"><button>Нужен ли фундамент под мобильную баню?<span>+</span></button><div class="a"><p>Нет. Баню ставим на винтовые сваи или бетонные блоки — это занимает пару часов. При необходимости её можно перевезти на новое место.</p></div></div>
+   <div class="q"><button>Можно ли пользоваться баней зимой?<span>+</span></button><div class="a"><p>Да, все модели утеплены базальтовой ватой 150 мм. Парная прогревается до +90 °C примерно за 40 минут даже при −25 °C на улице.</p></div></div>
+   <div class="q"><button>Как проходит оплата?<span>+</span></button><div class="a"><p>Предоплата 30% при заключении договора, 50% — после сборки каркаса, оставшиеся 20% — после установки бани на вашем участке.</p></div></div>
+   <div class="q"><button>Можно изменить проект под себя?<span>+</span></button><div class="a"><p>Конечно. Меняем длину, планировку, окна, тип печи и отделку. Дизайнер подготовит обновлённый проект и смету бесплатно.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="final" id="order">
+ <div class="bg"></div>
+ <div class="wrap">
+  <div class="rv">
+   <span class="tag" style="color:#f1c08f">Обратный звонок</span>
+   <h2>Рассчитаем баню мечты за 15 минут</h2>
+   <p>Оставьте заявку — менеджер перезвонит, уточнит пожелания и пришлёт точную смету с проектом в подарок.</p>
+  </div>
+  <form class="rv d2" onsubmit="event.preventDefault();this.querySelector('button').textContent='Спасибо! Перезвоним в течение 15 минут';">
+   <h3>Получить расчёт</h3>
+   <p class="s">Ответим в рабочее время с 9:00 до 21:00</p>
+   <input type="text" placeholder="Ваше имя" required>
+   <input type="tel" placeholder="Телефон для связи" required>
+   <select><option>Какая баня интересует?</option><option>Каркасная</option><option>Баня-бочка</option><option>Баня-шатёр</option><option>Пока не определился</option></select>
+   <button class="btn btn-w" type="submit">Получить расчёт и проект</button>
+   <small>Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</small>
+  </form>
+ </div>
+</section>
+
+<footer><div class="wrap"><a href="#" class="logo"><svg viewBox="0 0 32 32" fill="none" width="28" height="28"><rect width="32" height="32" rx="9" fill="#c47a3f"/><path d="M7 21l9-10 9 10" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 21v4h12v-4" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>Северный пар</a><span>Мобильные бани под ключ · © 2026</span><a href="#">Политика конфиденциальности</a></div></footer>
+
+<script>
+const hd=document.getElementById('hd');addEventListener('scroll',()=>hd.classList.toggle('s',scrollY>40));
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.querySelectorAll('.q button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on')});
+</script>
+</body>
+</html>
