@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кадровый аутсорсинг для юридических лиц — «Кадровый контур»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--deep:#0f3b3c;--deep2:#164e4f;--gold:#c9a86a;--cream:#f7f3ec;--paper:#fffdf9;--ink:#1d2726;--muted:#66726f;--line:#e6dfd2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(34px,4.4vw,58px)}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:17px 30px;border-radius:4px;font-weight:600;font-size:15px;letter-spacing:.02em;transition:.3s;cursor:pointer;border:0}
+.btn-gold{background:var(--gold);color:var(--deep)}
+.btn-gold:hover{background:#d8bb83;transform:translateY(-2px);box-shadow:0 16px 30px -16px rgba(201,168,106,.9)}
+.btn-line{border:1px solid rgba(255,255,255,.4);color:#fff}
+.btn-line:hover{background:#fff;color:var(--deep)}
+/* top */
+.top{background:var(--deep);color:#fff;position:sticky;top:0;z-index:40;transition:.3s}
+.top.sh{box-shadow:0 10px 30px -18px #000}
+.bar{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;font-family:"Cormorant Garamond";font-size:26px;font-weight:700}
+.logo span{width:38px;height:38px;border:1.5px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-size:20px;transform:rotate(45deg)}
+.logo span b{transform:rotate(-45deg)}
+.tabs{display:flex;gap:6px;background:rgba(255,255,255,.07);padding:5px;border-radius:6px}
+.tabs a{padding:9px 16px;border-radius:4px;font-size:14px;font-weight:500;opacity:.8;transition:.25s}
+.tabs a:hover{opacity:1;background:rgba(255,255,255,.08)}
+.tabs a.act{background:var(--gold);color:var(--deep);opacity:1;font-weight:600}
+.hours{font-size:13px;opacity:.7}
+/* hero */
+.hero{background:var(--deep);color:#fff;padding:60px 0 0;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-200px;top:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,106,.18),transparent 65%)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:end;position:relative}
+.hero h1{font-size:clamp(46px,6.4vw,92px);margin:22px 0 26px}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero p{font-size:18px;color:#c4d3d1;max-width:560px;margin-bottom:36px}
+.trust{display:flex;gap:40px;margin:56px 0 70px;flex-wrap:wrap}
+.trust b{font-family:"Cormorant Garamond";font-size:46px;color:var(--gold);display:block;line-height:1}
+.trust span{font-size:13px;color:#a9bcb9}
+.hero-ph{position:relative;align-self:stretch;min-height:560px}
+.hero-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:220px 220px 0 0}
+.stamp{position:absolute;left:-40px;bottom:70px;background:var(--paper);color:var(--ink);padding:22px 24px;border-radius:6px;box-shadow:0 30px 50px -25px rgba(0,0,0,.5);max-width:250px;animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.stamp b{display:block;font-size:15px;margin-bottom:4px}.stamp small{color:var(--muted);font-size:13px}
+.stamp i{display:inline-block;width:10px;height:10px;border-radius:50%;background:#3bb273;margin-right:8px;box-shadow:0 0 0 4px rgba(59,178,115,.2)}
+section{padding:110px 0}
+/* pains */
+.pains{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:50px}
+.pain{padding:36px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:.35s;background:transparent}
+.pain:hover{background:var(--paper)}
+.pain .num{font-family:"Cormorant Garamond";font-size:20px;color:var(--gold);font-style:italic}
+.pain h3{font-size:28px;margin:14px 0 10px}
+.pain p{color:var(--muted);font-size:15px}
+/* services */
+.svc{background:var(--paper)}
+.svc-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.svc-ph{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/5}
+.svc-ph img{width:100%;height:100%;object-fit:cover;transition:6s}
+.svc-ph:hover img{transform:scale(1.06)}
+.list{margin-top:34px}
+.li{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--line);transition:.3s}
+.li:hover{padding-left:10px}
+.li .ck{width:44px;height:44px;border-radius:50%;background:var(--deep);color:var(--gold);display:grid;place-items:center;font-size:18px}
+.li h4{font-size:18px;font-weight:600;margin-bottom:4px}.li p{color:var(--muted);font-size:15px}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px;counter-reset:s}
+.step{position:relative;padding-top:40px}
+.step:before{counter-increment:s;content:"0" counter(s);font-family:"Cormorant Garamond";font-size:64px;color:var(--gold);opacity:.55;position:absolute;top:-20px;left:0;line-height:1}
+.step:after{content:"";position:absolute;top:20px;left:80px;right:-12px;height:1px;background:var(--line)}
+.step:last-child:after{display:none}
+.step h3{font-size:26px;margin:22px 0 10px}.step p{color:var(--muted);font-size:15px}
+/* prices */
+.prices{background:var(--deep);color:#fff}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.plan{border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:38px 32px;transition:.35s;position:relative;background:rgba(255,255,255,.02)}
+.plan:hover{transform:translateY(-8px);border-color:var(--gold)}
+.plan.best{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.plan.best .pl-note{color:var(--muted)}
+.ribbon{position:absolute;top:-13px;left:32px;background:var(--gold);color:var(--deep);font-size:12px;font-weight:700;padding:5px 12px;border-radius:3px;letter-spacing:.06em;text-transform:uppercase}
+.plan h3{font-size:30px}
+.pl-note{font-size:14px;color:#a9bcb9;margin:6px 0 26px}
+.cost{font-family:"Cormorant Garamond";font-size:54px;font-weight:600;line-height:1}
+.cost small{display:block;margin-top:8px;font-family:Inter;font-size:14px;font-weight:500;opacity:.7}
+.plan ul{list-style:none;margin:28px 0 32px;display:grid;gap:12px;font-size:15px}
+.plan li:before{content:"✓";color:var(--gold);font-weight:700;margin-right:10px}
+.plan .btn{width:100%;justify-content:center}
+.plan:not(.best) .btn{background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff}
+.plan:not(.best) .btn:hover{background:var(--gold);color:var(--deep);border-color:var(--gold)}
+.plan.best .btn{background:var(--deep);color:#fff}
+/* guarantee */
+.guar{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:6px;overflow:hidden;background:var(--paper)}
+.guar .ph{min-height:460px;background:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1400&q=80') center/cover}
+.guar .tx{padding:64px 56px}
+.guar p{color:var(--muted);font-size:17px;margin:20px 0}
+.quote{border-left:2px solid var(--gold);padding-left:20px;font-family:"Cormorant Garamond";font-size:24px;font-style:italic;margin-top:26px}
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+details{border-bottom:1px solid var(--line);padding:24px 0}
+summary{font-family:"Cormorant Garamond";font-size:25px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary:after{content:"+";font-family:Inter;font-size:24px;color:var(--gold);transition:.3s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{color:var(--muted);margin-top:12px;font-size:16px}
+/* form */
+.lead{background:var(--deep);color:#fff;border-radius:6px;padding:80px 70px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;overflow:hidden}
+.lead:after{content:"";position:absolute;left:-150px;bottom:-250px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(201,168,106,.3)}
+.lead p{color:#c4d3d1;font-size:17px;margin-top:18px}
+.f{display:grid;gap:14px;position:relative;z-index:2}
+.f input,.f select{padding:17px 18px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;font:500 15px Inter;outline:none;transition:.25s}
+.f input::placeholder{color:#a9bcb9}.f select option{color:#000}
+.f input:focus,.f select:focus{border-color:var(--gold);background:rgba(255,255,255,.1)}
+.f small{color:#8fa4a1;font-size:12px}
+footer{padding:50px 0;font-size:14px;color:var(--muted)}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.foot .logo{color:var(--deep)}
+.rv{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+@media(max-width:1020px){.hours{display:none}.hero-grid,.svc-grid,.faq-grid,.lead,.guar{grid-template-columns:1fr}.hero-ph{min-height:440px}.stamp{left:16px}.pains,.plans{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.step:after{display:none}.lead{padding:56px 32px}}
+@media(max-width:680px){.wrap{padding:0 18px}section{padding:76px 0}.bar{height:auto;padding:14px 0;flex-direction:column;align-items:flex-start;gap:12px}.tabs{width:100%;overflow-x:auto}.tabs a{white-space:nowrap;padding:8px 12px;font-size:13px}.pains,.plans,.steps{grid-template-columns:1fr}.trust{gap:26px}.guar .tx{padding:40px 26px}.guar .ph{min-height:280px}.hero-ph{min-height:360px}}
+</style>
+</head>
+<body>
+<div class="top" id="top"><div class="wrap bar">
+<a class="logo" href="#"><span><b>К</b></span>Кадровый контур</a>
+<nav class="tabs"><a class="act" href="#">Кадровый учёт</a><a href="#">Воинский учёт</a><a href="#">Работа с мигрантами</a></nav>
+<div class="hours">Пн–Пт, 10:00–18:00 · только юрлица</div>
+</div></div>
+
+<section class="hero" style="padding-bottom:0"><div class="wrap hero-grid">
+<div>
+<span class="kicker rv">Кадровое делопроизводство на аутсорсинге</span>
+<h1 class="rv d1">Кадры в порядке — <em>штрафы</em> мимо</h1>
+<p class="rv d2">Берём на себя приём и увольнение сотрудников, отпуска, больничные и отчётность. Работаем удалённо и отвечаем за результат по договору — вы экономите на штатном кадровике до 30%.</p>
+<div class="rv d3" style="display:flex;gap:14px;flex-wrap:wrap"><a class="btn btn-gold" href="#lead">Получить расчёт стоимости →</a><a class="btn btn-line" href="#prices">Смотреть тарифы</a></div>
+<div class="trust rv d3"><div><b>12 лет</b><span>в кадровом учёте</span></div><div><b>340+</b><span>компаний на обслуживании</span></div><div><b>0 ₽</b><span>штрафов у клиентов за 2025 год</span></div></div>
+</div>
+<div class="hero-ph rv d2"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80" alt="Консультация специалиста по кадрам"><div class="stamp"><b><i></i>Проверка ГИТ пройдена</b><small>Клиент, 48 сотрудников · документы восстановлены за 9 рабочих дней</small></div></div>
+</div></section>
+
+<section><div class="wrap">
+<span class="kicker rv">Когда пора передать кадры нам</span>
+<h2 class="rv d1" style="margin-top:16px;max-width:760px">Узнаёте свою компанию хотя бы в одном пункте?</h2>
+<div class="pains">
+<div class="pain rv"><span class="num">i.</span><h3>Штат растёт</h3><p>Документов всё больше, а отдельного кадровика ещё нет — бумаги ведёт бухгалтер или директор.</p></div>
+<div class="pain rv d1"><span class="num">ii.</span><h3>Скоро проверка</h3><p>Пришло уведомление из инспекции труда, и непонятно, всё ли в порядке с приказами и личными делами.</p></div>
+<div class="pain rv d2"><span class="num">iii.</span><h3>Кадровик уходит</h3><p>Специалист увольняется, а передавать дела некому — нужен человек, который подхватит всё без простоя.</p></div>
+<div class="pain rv"><span class="num">iv.</span><h3>Меняются законы</h3><p>Электронные трудовые, новые формы отчётности — сложно уследить за всем самостоятельно.</p></div>
+<div class="pain rv d1"><span class="num">v.</span><h3>Есть иностранцы</h3><p>Патенты, уведомления МВД, сроки разрешительных документов — ошибка стоит до 800 000 ₽.</p></div>
+<div class="pain rv d2"><span class="num">vi.</span><h3>Хаос в архиве</h3><p>Часть документов потеряна, подписи не везде, графики отпусков не утверждены вовремя.</p></div>
+</div></div></section>
+
+<section class="svc"><div class="wrap svc-grid">
+<div class="svc-ph rv"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1100&q=80" alt="Специалисты обсуждают кадровые вопросы" loading="lazy"></div>
+<div><span class="kicker rv">Что входит в услугу</span><h2 class="rv d1" style="margin-top:16px">Полная функция кадровой службы — без найма в штат</h2>
+<div class="list">
+<div class="li rv"><span class="ck">✓</span><div><h4>Приём, перевод и увольнение</h4><p>Трудовые договоры, приказы, личные карточки Т-2, электронные трудовые книжки.</p></div></div>
+<div class="li rv d1"><span class="ck">✓</span><div><h4>Отпуска и больничные</h4><p>График отпусков, расчёт дней, оформление листков нетрудоспособности через СФР.</p></div></div>
+<div class="li rv d2"><span class="ck">✓</span><div><h4>Отчётность и взаимодействие с госорганами</h4><p>ЕФС-1, ответы на запросы инспекции труда, военкоматов и СФР — в срок.</p></div></div>
+<div class="li rv d3"><span class="ck">✓</span><div><h4>Локальные нормативные акты</h4><p>Правила внутреннего распорядка, положения об оплате труда и защите персональных данных.</p></div></div>
+</div></div></div></section>
+
+<section><div class="wrap">
+<span class="kicker rv">Как мы начинаем работу</span>
+<h2 class="rv d1" style="margin-top:16px">Четыре шага до порядка в кадрах</h2>
+<div class="steps">
+<div class="step rv"><h3>Экспресс-аудит</h3><p>Бесплатно проверяем текущие документы и показываем риски с суммами возможных штрафов.</p></div>
+<div class="step rv d1"><h3>Договор</h3><p>Фиксируем объём работ, сроки и нашу финансовую ответственность за ошибки.</p></div>
+<div class="step rv d2"><h3>Восстановление</h3><p>Приводим архив в соответствие с законом — обычно за 5–10 рабочих дней.</p></div>
+<div class="step rv d3"><h3>Сопровождение</h3><p>Ведём кадры ежедневно, за вами закреплён персональный специалист.</p></div>
+</div></div></section>
+
+<section class="prices" id="prices"><div class="wrap">
+<span class="kicker rv">Тарифы</span>
+<h2 class="rv d1" style="margin-top:16px">Прозрачная стоимость — без доплат за «срочность»</h2>
+<div class="plans">
+<div class="plan rv"><h3>Старт</h3><div class="pl-note">до 10 сотрудников</div><div class="cost">6 500 ₽ <small>/ месяц</small></div><ul><li>Все кадровые операции</li><li>Ежемесячная отчётность</li><li>Консультации в рабочее время</li></ul><a class="btn" href="#lead">Выбрать тариф</a></div>
+<div class="plan best rv d1"><span class="ribbon">Чаще выбирают</span><h3>Бизнес</h3><div class="pl-note">до 50 сотрудников</div><div class="cost">14 900 ₽ <small>/ месяц</small></div><ul><li>Всё из тарифа «Старт»</li><li>Персональный специалист</li><li>Сопровождение проверок ГИТ</li><li>Воинский учёт</li></ul><a class="btn" href="#lead">Выбрать тариф</a></div>
+<div class="plan rv d2"><h3>Корпорация</h3><div class="pl-note">от 50 сотрудников</div><div class="cost">от 24 000 ₽ <small>/ месяц</small></div><ul><li>Всё из тарифа «Бизнес»</li><li>Учёт иностранных работников</li><li>Разработка ЛНА под компанию</li></ul><a class="btn" href="#lead">Обсудить условия</a></div>
+</div></div></section>
+
+<section><div class="wrap"><div class="guar rv">
+<div class="ph"></div>
+<div class="tx"><span class="kicker">Наша гарантия</span><h2 style="margin-top:16px">Ошибся специалист — платим мы</h2><p>Финансовая ответственность прописана в договоре: если штраф возник по нашей вине, мы компенсируем его полностью. За 12 лет такой пункт понадобился нам дважды.</p><div class="quote">«Мы передали кадры и впервые за три года спокойно прошли плановую проверку».</div><p style="font-size:14px;margin-top:10px">— директор производственной компании, 62 сотрудника</p></div>
+</div></div></section>
+
+<section style="padding-top:20px"><div class="wrap faq-grid">
+<div><span class="kicker rv">Вопросы</span><h2 class="rv d1" style="margin-top:16px">Отвечаем до того, как вы спросите</h2></div>
+<div>
+<details class="rv" open><summary>Как вы получаете документы, если работаете удалённо?</summary><p>Через электронный документооборот и защищённое облако. Бумажные оригиналы при необходимости забирает курьер.</p></details>
+<details class="rv"><summary>Работаете ли вы с ИП?</summary><p>Мы сотрудничаем только с юридическими лицами — так мы можем глубже погружаться в процессы каждого клиента.</p></details>
+<details class="rv"><summary>Сколько стоит восстановление учёта?</summary><p>Зависит от объёма и периода. Точную сумму называем после бесплатного экспресс-аудита — обычно это один-два месячных платежа.</p></details>
+<details class="rv"><summary>Можно ли перейти к вам в середине месяца?</summary><p>Да, первый месяц оплачивается пропорционально — с даты подписания договора.</p></details>
+</div></div></section>
+
+<section id="lead" style="padding-top:20px"><div class="wrap"><div class="lead">
+<div><span class="kicker rv">Бесплатный экспресс-аудит</span><h2 class="rv d1" style="margin-top:16px">Узнайте, сколько штрафов прячется в ваших документах</h2><p class="rv d2">Оставьте заявку — специалист свяжется в течение рабочего дня, запросит документы и пришлёт отчёт с рисками за 3 дня.</p></div>
+<form class="f rv d2" onsubmit="this.querySelector('button').textContent='Заявка принята ✓';return false">
+<input placeholder="Ваше имя"><input placeholder="Название компании"><select><option>Количество сотрудников</option><option>до 10</option><option>10–50</option><option>более 50</option></select>
+<button class="btn btn-gold" style="justify-content:center">Получить аудит бесплатно</button><small>Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных</small>
+</form></div></div></section>
+
+<footer><div class="wrap foot"><a class="logo" href="#"><span><b>К</b></span>Кадровый контур</a><div>Кадровый учёт · Воинский учёт · Работа с мигрантами</div><div>© 2026 «Кадровый контур»</div></div></footer>
+<script>
+const t=document.getElementById('top');addEventListener('scroll',()=>t.classList.toggle('sh',scrollY>20));
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body></html>

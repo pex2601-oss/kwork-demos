@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Магистраль — междугородние автобусные перевозки</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0d1b2a;--ink2:#1b2d42;--accent:#ff7a1a;--accent2:#ffb347;--sky:#e9f1f8;--muted:#5d6b7a;--line:#dde5ee;--r:22px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:#f6f8fb;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1220px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:Unbounded,Manrope,sans-serif;letter-spacing:-.02em;line-height:1.12}
+h2{font-size:clamp(28px,3.6vw,46px);font-weight:700}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--accent)}
+.eyebrow:before{content:"";width:28px;height:2px;background:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:100px;font-weight:700;font-size:16px;transition:.3s;cursor:pointer;border:0}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 12px 30px -10px rgba(255,122,26,.7)}
+.btn-primary:hover{background:#ff8c3a;transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(255,122,26,.8)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(8px)}
+.btn-ghost:hover{background:rgba(255,255,255,.22)}
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.35s}
+header.scrolled{background:rgba(13,27,42,.92);backdrop-filter:blur(14px);box-shadow:0 10px 30px -20px #000}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px;color:#fff}
+.logo{display:flex;align-items:center;gap:12px;font-family:Unbounded;font-weight:700;font-size:19px}
+.logo i{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;font-style:normal;font-size:18px}
+.menu{display:flex;gap:30px;font-weight:600;font-size:15px}
+.menu a{opacity:.85;position:relative;padding:6px 0}
+.menu a:after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--accent);transition:.3s}
+.menu a:hover{opacity:1}.menu a:hover:after{width:100%}
+.burger{display:none;background:none;border:0;color:#fff;font-size:28px}
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;color:#fff;padding:140px 0 70px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=2000&q=80') center/cover;transform:scale(1.08);animation:zoom 18s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,27,42,.55) 0%,rgba(13,27,42,.25) 40%,rgba(13,27,42,.92) 100%)}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero h1{font-size:clamp(38px,6vw,82px);font-weight:700;max-width:900px;margin:18px 0 22px}
+.hero h1 span{color:var(--accent2)}
+.hero p.lead{font-size:clamp(17px,1.6vw,21px);max-width:620px;opacity:.9;margin-bottom:34px}
+.search{margin-top:50px;background:rgba(255,255,255,.97);color:var(--ink);border-radius:26px;padding:14px;display:grid;grid-template-columns:1fr 1fr .8fr .7fr auto;gap:10px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.field{padding:12px 18px;border-radius:16px;background:var(--sky);display:flex;flex-direction:column}
+.field label{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.field select,.field input{border:0;background:transparent;font:600 17px Manrope;color:var(--ink);outline:none;margin-top:2px}
+.search .btn{border-radius:18px;justify-content:center}
+.hero-stats{display:flex;gap:48px;margin-top:40px;flex-wrap:wrap}
+.hero-stats b{font-family:Unbounded;font-size:32px;display:block;color:#fff}
+.hero-stats span{opacity:.75;font-size:14px}
+/* sections */
+section{padding:110px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:50px;flex-wrap:wrap}
+.head p{max-width:440px;color:var(--muted);font-size:17px}
+/* routes */
+.routes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.route{background:#fff;border-radius:var(--r);padding:28px;border:1px solid var(--line);transition:.35s;position:relative;overflow:hidden}
+.route:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(13,27,42,.35);border-color:transparent}
+.route .tag{position:absolute;top:22px;right:22px;font-size:12px;font-weight:700;background:#fff2e8;color:var(--accent);padding:6px 12px;border-radius:100px}
+.from{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.cities{display:flex;align-items:center;gap:14px;font-family:Unbounded;font-size:24px;font-weight:500;margin:8px 0 20px;white-space:nowrap}
+.cities .line{flex:0 0 64px;height:2px;background:repeating-linear-gradient(90deg,var(--accent) 0 8px,transparent 8px 14px);position:relative;min-width:30px}
+.cities .line:after{content:"🚌";position:absolute;top:-14px;left:10%;font-size:18px;transition:left 1.2s}
+.route:hover .line:after{left:55%}
+.meta{display:flex;gap:22px;color:var(--muted);font-size:14px;margin-bottom:22px;flex-wrap:wrap}
+.meta b{color:var(--ink);font-size:15px;display:block}
+.route-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed var(--line);padding-top:18px}
+.price{font-family:Unbounded;font-size:24px}
+.price small{font-family:Manrope;font-size:13px;color:var(--muted);font-weight:500}
+.go{width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:20px;transition:.3s}
+.route:hover .go{background:var(--accent);transform:rotate(-45deg)}
+/* about */
+.about{background:var(--ink);color:#fff;border-radius:40px;margin:0 16px}
+.about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:70px;align-items:center}
+.about-img{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5}
+.about-img img{width:100%;height:100%;object-fit:cover;transition:6s}
+.about-img:hover img{transform:scale(1.06)}
+.badge{position:absolute;left:24px;bottom:24px;background:var(--accent);padding:18px 22px;border-radius:18px;font-weight:700}
+.badge b{font-family:Unbounded;font-size:34px;display:block}
+.about p{color:#b9c6d4;font-size:17px;margin:22px 0}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+.feat{background:var(--ink2);border-radius:18px;padding:22px;transition:.3s;border:1px solid transparent}
+.feat:hover{border-color:rgba(255,179,71,.4);transform:translateY(-3px)}
+.feat .ic{font-size:26px;margin-bottom:10px}
+.feat h3{font-family:Manrope;font-size:17px;font-weight:700;margin-bottom:6px}
+.feat p{margin:0;font-size:14px;color:#9fb0c2}
+/* route page preview */
+.trip{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.timeline{background:#fff;border-radius:28px;padding:36px;border:1px solid var(--line)}
+.stop{display:grid;grid-template-columns:70px 22px 1fr;gap:16px;position:relative;padding-bottom:26px}
+.stop:last-child{padding-bottom:0}
+.stop time{font-weight:800;font-size:17px}
+.dot{width:16px;height:16px;border-radius:50%;border:3px solid var(--accent);background:#fff;margin-top:4px;position:relative;z-index:2}
+.stop:not(:last-child) .dot:after{content:"";position:absolute;left:50%;top:14px;width:2px;height:calc(100% + 40px);background:var(--line);transform:translateX(-50%)}
+.stop h4{font-size:17px}.stop p{color:var(--muted);font-size:14px}
+.trip-card{border-radius:28px;overflow:hidden;position:relative;min-height:520px;color:#fff;display:flex;align-items:flex-end}
+.trip-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.trip-card:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,27,42,.95),rgba(13,27,42,0) 60%);z-index:1}
+.trip-card .in{position:relative;z-index:2;padding:36px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.chip{background:rgba(255,255,255,.14);backdrop-filter:blur(6px);padding:8px 14px;border-radius:100px;font-size:14px;font-weight:600}
+/* fleet */
+.fleet{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.bus{background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);transition:.35s}
+.bus:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(13,27,42,.35)}
+.bus .ph{aspect-ratio:4/3;overflow:hidden}
+.bus .ph img{width:100%;height:100%;object-fit:cover;transition:.8s}
+.bus:hover .ph img{transform:scale(1.08)}
+.bus .tx{padding:22px}
+.bus h3{font-family:Manrope;font-size:18px;font-weight:800}
+.bus p{color:var(--muted);font-size:14px;margin:6px 0 14px}
+.icons{display:flex;gap:8px;flex-wrap:wrap}
+.icons span{font-size:12px;font-weight:700;background:var(--sky);padding:6px 10px;border-radius:8px}
+/* passengers */
+.pass{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pcard{background:#fff;border-radius:var(--r);padding:30px 26px;border:1px solid var(--line);transition:.3s}
+.pcard:hover{background:var(--ink);color:#fff}
+.pcard:hover p{color:#b9c6d4}
+.pcard .n{font-family:Unbounded;font-size:44px;color:var(--accent);line-height:1}
+.pcard h3{font-family:Manrope;font-size:19px;font-weight:800;margin:18px 0 10px}
+.pcard p{color:var(--muted);font-size:15px;transition:.3s}
+/* faq */
+.faq{max-width:860px}
+details{background:#fff;border-radius:18px;border:1px solid var(--line);margin-bottom:12px;padding:22px 26px;transition:.3s}
+details[open]{box-shadow:0 20px 40px -30px rgba(13,27,42,.4)}
+summary{font-weight:700;font-size:18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary:after{content:"+";font-size:26px;color:var(--accent);transition:.3s;line-height:1}
+details[open] summary:after{transform:rotate(45deg)}
+details p{color:var(--muted);margin-top:12px}
+/* cta */
+.cta{position:relative;border-radius:40px;overflow:hidden;color:#fff;padding:90px 70px;margin:0 16px}
+.cta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cta:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,27,42,.95) 30%,rgba(13,27,42,.4));z-index:1}
+.cta .in{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.cta p{opacity:.85;font-size:18px;margin-top:18px}
+.form{background:#fff;border-radius:26px;padding:30px;display:grid;gap:12px}
+.form input,.form select{padding:16px 18px;border-radius:14px;border:1px solid var(--line);font:500 16px Manrope;background:#f6f8fb;outline:none;transition:.2s}
+.form input:focus,.form select:focus{border-color:var(--accent);background:#fff}
+.form small{color:var(--muted);font-size:12px}
+footer{padding:60px 0 40px;color:var(--muted);font-size:14px}
+.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:30px}
+.foot .logo{color:var(--ink)}
+.fmenu{display:flex;gap:26px;flex-wrap:wrap;font-weight:600;color:var(--ink)}
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+@media(max-width:1020px){.menu{display:none}.burger{display:block}.search{grid-template-columns:1fr 1fr}.search .btn{grid-column:1/-1}.routes,.fleet,.pass{grid-template-columns:1fr 1fr}.about-grid,.trip,.cta .in{grid-template-columns:1fr}.cta{padding:60px 30px}}
+@media(max-width:620px){.wrap{padding:0 18px}section{padding:76px 0}.routes,.fleet,.pass,.feats{grid-template-columns:1fr}.search{grid-template-columns:1fr}.hero-stats{gap:26px}.about,.cta{border-radius:28px;margin:0 8px}.timeline{padding:24px}.hero{padding-top:120px}.hcta{display:none!important}.trip-card h3{font-size:22px!important}.trip-card .in{padding:24px}.trip-card{min-height:420px}}
+</style>
+</head>
+<body>
+<header id="hdr"><div class="wrap nav">
+<a class="logo" href="#"><i>М</i>Магистраль</a>
+<nav class="menu"><a href="#routes">Маршруты</a><a href="#about">О компании</a><a href="#fleet">Автопарк</a><a href="#pass">Пассажирам</a><a href="#contact">Контакты</a></nav>
+<a class="btn btn-primary hcta" href="#routes" style="padding:12px 22px;font-size:15px">Купить билет</a>
+<button class="burger" aria-label="Меню">☰</button>
+</div></header>
+
+<section class="hero"><div class="hero-bg"></div><div class="wrap">
+<span class="eyebrow rv">Междугородние перевозки с 2009 года</span>
+<h1 class="rv d1">Дорога между городами — <span>без пересадок</span> и сюрпризов</h1>
+<p class="lead rv d2">Регулярные рейсы по 14 направлениям на современных туристических автобусах: удобные кресла, Wi-Fi и розетки у каждого места, отправление строго по расписанию.</p>
+<div class="rv d3"><a class="btn btn-primary" href="#routes">Выбрать рейс →</a> &nbsp; <a class="btn btn-ghost" href="#fleet">Посмотреть автопарк</a></div>
+<form class="search rv d3" onsubmit="return false">
+<div class="field"><label>Откуда</label><select><option>Нижний Новгород</option><option>Москва</option><option>Владимир</option></select></div>
+<div class="field"><label>Куда</label><select><option>Москва</option><option>Казань</option><option>Ярославль</option><option>Иваново</option></select></div>
+<div class="field"><label>Дата</label><input type="text" value="15 ноября"></div>
+<div class="field"><label>Пассажиры</label><select><option>1 взрослый</option><option>2 взрослых</option><option>2 + ребёнок</option></select></div>
+<button class="btn btn-primary">Найти рейсы</button>
+</form>
+<div class="hero-stats rv"><div><b>14</b><span>регулярных маршрутов</span></div><div><b>32</b><span>автобуса в парке</span></div><div><b>98%</b><span>рейсов без опозданий</span></div><div><b>1,2 млн</b><span>пассажиров за 15 лет</span></div></div>
+</div></section>
+
+<section id="routes"><div class="wrap">
+<div class="head"><div><span class="eyebrow rv">Популярные направления</span><h2 class="rv d1" style="margin-top:14px">Куда едем на этой неделе</h2></div><p class="rv d2">Каждый маршрут — отдельная страница с расписанием, остановками и ценами. Новые направления добавляются из админки за пару минут.</p></div>
+<div class="routes">
+<a class="route rv" href="#trip"><span class="tag">Хит</span><div class="from">из Нижнего Новгорода</div><div class="cities"><div class="line"></div>Москва</div><div class="meta"><div><b>6 ч 10 мин</b>в пути</div><div><b>5 рейсов</b>в день</div><div><b>3</b>остановки</div></div><div class="route-foot"><div class="price">1 450 ₽ <small>/ от</small></div><span class="go">→</span></div></a>
+<a class="route rv d1" href="#trip"><div class="from">из Нижнего Новгорода</div><div class="cities"><div class="line"></div>Казань</div><div class="meta"><div><b>7 ч 40 мин</b>в пути</div><div><b>3 рейса</b>в день</div><div><b>4</b>остановки</div></div><div class="route-foot"><div class="price">1 750 ₽ <small>/ от</small></div><span class="go">→</span></div></a>
+<a class="route rv d2" href="#trip"><span class="tag">Новый</span><div class="from">из Нижнего Новгорода</div><div class="cities"><div class="line"></div>Ярославль</div><div class="meta"><div><b>5 ч 30 мин</b>в пути</div><div><b>2 рейса</b>в день</div><div><b>2</b>остановки</div></div><div class="route-foot"><div class="price">1 300 ₽ <small>/ от</small></div><span class="go">→</span></div></a>
+<a class="route rv" href="#trip"><div class="from">из Нижнего Новгорода</div><div class="cities"><div class="line"></div>Владимир</div><div class="meta"><div><b>3 ч 20 мин</b>в пути</div><div><b>6 рейсов</b>в день</div><div><b>2</b>остановки</div></div><div class="route-foot"><div class="price">850 ₽ <small>/ от</small></div><span class="go">→</span></div></a>
+<a class="route rv d1" href="#trip"><div class="from">из Нижнего Новгорода</div><div class="cities"><div class="line"></div>Иваново</div><div class="meta"><div><b>4 ч 15 мин</b>в пути</div><div><b>3 рейса</b>в день</div><div><b>3</b>остановки</div></div><div class="route-foot"><div class="price">990 ₽ <small>/ от</small></div><span class="go">→</span></div></a>
+<a class="route rv d2" href="#trip"><div class="from">из Нижнего Новгорода</div><div class="cities"><div class="line"></div>Чебоксары</div><div class="meta"><div><b>4 ч 30 мин</b>в пути</div><div><b>4 рейса</b>в день</div><div><b>2</b>остановки</div></div><div class="route-foot"><div class="price">1 050 ₽ <small>/ от</small></div><span class="go">→</span></div></a>
+</div></div></section>
+
+<section class="about" id="about"><div class="wrap about-grid">
+<div class="about-img rv"><img src="https://images.unsplash.com/photo-1494515843206-f3117d3f51b7?w=1200&q=80" alt="Салон туристического автобуса" loading="lazy"><div class="badge"><b>15 лет</b>на линии без ДТП по вине водителей</div></div>
+<div><span class="eyebrow rv">О компании</span><h2 class="rv d1" style="margin-top:14px">Возим людей так, как хотели бы, чтобы возили нас</h2>
+<p class="rv d2">Мы — региональный перевозчик с собственным автопарком и диспетчерской службой. Все водители проходят предрейсовый медосмотр, а каждый автобус — техосмотр перед выходом на линию. Поэтому пассажиры возвращаются к нам годами.</p>
+<div class="feats">
+<div class="feat rv"><div class="ic">🛡️</div><h3>Лицензия и страховка</h3><p>Каждый пассажир застрахован на весь путь следования</p></div>
+<div class="feat rv d1"><div class="ic">🕒</div><h3>Строго по графику</h3><p>GPS-контроль движения и диспетчер на связи 24/7</p></div>
+<div class="feat rv d2"><div class="ic">💺</div><h3>Комфорт в пути</h3><p>Откидные кресла, климат-контроль, USB и Wi-Fi</p></div>
+<div class="feat rv d3"><div class="ic">🎫</div><h3>Билет за минуту</h3><p>Онлайн-покупка и электронный билет в телефоне</p></div>
+</div></div></div></section>
+
+<section id="trip"><div class="wrap">
+<div class="head"><div><span class="eyebrow rv">Страница маршрута</span><h2 class="rv d1" style="margin-top:14px">Нижний Новгород — Москва</h2></div><p class="rv d2">Так выглядит карточка маршрута: остановки, время, цены по участкам и всё, что нужно знать перед поездкой.</p></div>
+<div class="trip">
+<div class="timeline rv">
+<div class="stop"><time>07:00</time><span class="dot"></span><div><h4>Нижний Новгород, автостанция «Канавинская»</h4><p>Посадка начинается за 15 минут до отправления</p></div></div>
+<div class="stop"><time>08:45</time><span class="dot"></span><div><h4>Дзержинск</h4><p>Остановка 5 минут · от 350 ₽</p></div></div>
+<div class="stop"><time>10:05</time><span class="dot"></span><div><h4>Владимир, автовокзал</h4><p>Стоянка 15 минут, кафе и туалет · от 850 ₽</p></div></div>
+<div class="stop"><time>11:30</time><span class="dot"></span><div><h4>Покров</h4><p>Остановка по требованию · от 1 100 ₽</p></div></div>
+<div class="stop"><time>13:10</time><span class="dot"></span><div><h4>Москва, м. «Новогиреево»</h4><p>Прибытие · полный маршрут от 1 450 ₽</p></div></div>
+</div>
+<div class="trip-card rv d1"><img src="https://images.unsplash.com/photo-1557223562-6c77ef16210f?w=1400&q=80" alt="Автобус на маршруте" loading="lazy"><div class="in"><span class="eyebrow" style="color:var(--accent2)">Ежедневно · 5 рейсов</span><h3 style="font-size:30px;margin-top:12px">Отправления в 07:00, 10:30, 14:00, 17:30 и 23:00</h3><div class="chips"><span class="chip">Wi-Fi</span><span class="chip">Розетки</span><span class="chip">Багаж до 20 кг бесплатно</span><span class="chip">Детский тариф −30%</span></div></div></div>
+</div></div></section>
+
+<section id="fleet" style="padding-top:20px"><div class="wrap">
+<div class="head"><div><span class="eyebrow rv">Автопарк</span><h2 class="rv d1" style="margin-top:14px">32 автобуса, которые не стыдно показать</h2></div><p class="rv d2">Средний возраст парка — 4 года. Все машины проходят ежедневный контроль технического состояния.</p></div>
+<div class="fleet">
+<div class="bus rv"><div class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Setra_S_515_HD%2C_Busworld_Europe_2023%2C_Brussels_%28P1140122%29.jpg/1280px-Setra_S_515_HD%2C_Busworld_Europe_2023%2C_Brussels_%28P1140122%29.jpg" alt="Setra S 515 HD" loading="lazy"></div><div class="tx"><h3>Setra S 515 HD</h3><p>Флагман дальних рейсов, 49 мест</p><div class="icons"><span>Wi-Fi</span><span>USB</span><span>WC</span></div></div></div>
+<div class="bus rv d1"><div class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Neoplan_Skyliner%2C_Busworld_Europe_2023%2C_Brussels_%28P1140191%29.jpg/1280px-Neoplan_Skyliner%2C_Busworld_Europe_2023%2C_Brussels_%28P1140191%29.jpg" alt="Neoplan Skyliner" loading="lazy"></div><div class="tx"><h3>Neoplan Skyliner</h3><p>Двухэтажный, 78 мест, панорамный обзор</p><div class="icons"><span>Wi-Fi</span><span>Климат</span><span>WC</span></div></div></div>
+<div class="bus rv d2"><div class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Setra_S416GT-HD_bus_from_Slovakia.JPG/1280px-Setra_S416GT-HD_bus_from_Slovakia.JPG" alt="Setra S 416 GT-HD" loading="lazy"></div><div class="tx"><h3>Setra S 416 GT-HD</h3><p>Для рейсов до 500 км, 46 мест</p><div class="icons"><span>USB</span><span>Климат</span></div></div></div>
+<div class="bus rv d3"><div class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Neoplan_Cityliner%2C_Busworld_Europe_2023%2C_Brussels_%28P1140189%29.jpg/1280px-Neoplan_Cityliner%2C_Busworld_Europe_2023%2C_Brussels_%28P1140189%29.jpg" alt="Neoplan Cityliner" loading="lazy"></div><div class="tx"><h3>Neoplan Cityliner</h3><p>Заказные и корпоративные поездки, 50 мест</p><div class="icons"><span>Wi-Fi</span><span>ТВ</span><span>USB</span></div></div></div>
+</div></div></section>
+
+<section id="pass" style="padding-top:40px"><div class="wrap">
+<div class="head"><div><span class="eyebrow rv">Пассажирам</span><h2 class="rv d1" style="margin-top:14px">Коротко о главном перед поездкой</h2></div></div>
+<div class="pass">
+<div class="pcard rv"><div class="n">01</div><h3>Багаж</h3><p>Одно место до 20 кг в багажном отсеке и ручная кладь до 5 кг — бесплатно. Дополнительное место — 200 ₽.</p></div>
+<div class="pcard rv d1"><div class="n">02</div><h3>Дети</h3><p>Детям до 12 лет — скидка 30%. Малыши до 5 лет без отдельного места едут бесплатно.</p></div>
+<div class="pcard rv d2"><div class="n">03</div><h3>Животные</h3><p>Кошек и небольших собак перевозим в закрытой переноске. Стоимость — как за единицу багажа.</p></div>
+<div class="pcard rv d3"><div class="n">04</div><h3>Возврат билета</h3><p>Более чем за 2 часа до отправления вернём 95% стоимости, позже — 85%. Без визита в кассу.</p></div>
+</div></div></section>
+
+<section style="padding-top:20px"><div class="wrap faq">
+<span class="eyebrow rv">Частые вопросы</span><h2 class="rv d1" style="margin:14px 0 36px">Отвечаем заранее</h2>
+<details class="rv" open><summary>Нужно ли распечатывать билет?</summary><p>Нет. Водителю достаточно показать электронный билет в телефоне и паспорт или свидетельство о рождении ребёнка.</p></details>
+<details class="rv"><summary>Можно ли выбрать место в салоне?</summary><p>Да, при покупке онлайн откроется схема салона — выберите любое свободное кресло, в том числе у окна или в первом ряду.</p></details>
+<details class="rv"><summary>Что делать, если я опаздываю к отправлению?</summary><p>Позвоните диспетчеру — водитель подождёт в пределах графика или мы переоформим билет на ближайший рейс.</p></details>
+<details class="rv"><summary>Есть ли заказные перевозки?</summary><p>Да, предоставляем автобусы с водителем для корпоративных выездов, экскурсий и свадеб — от 3 часов аренды.</p></details>
+</div></section>
+
+<section id="contact" style="padding-top:20px"><div class="cta">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=2000&q=80" alt="Дорога" loading="lazy">
+<div class="wrap in">
+<div><span class="eyebrow rv" style="color:var(--accent2)">Заказной рейс</span><h2 class="rv d1" style="margin-top:14px">Нужен автобус для группы?</h2><p class="rv d2">Оставьте заявку — диспетчер подберёт автобус под количество пассажиров и рассчитает стоимость в течение 15 минут.</p></div>
+<form class="form rv d2" onsubmit="this.querySelector('button').textContent='Заявка отправлена ✓';return false">
+<input placeholder="Ваше имя"><select><option>Количество пассажиров</option><option>до 20</option><option>20–50</option><option>более 50</option></select><input placeholder="Откуда и куда едем"><button class="btn btn-primary" style="justify-content:center">Рассчитать стоимость</button><small>Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных</small>
+</form></div></div></section>
+
+<footer><div class="wrap foot">
+<a class="logo" href="#"><i style="color:#fff">М</i>Магистраль</a>
+<div class="fmenu"><a href="#routes">Маршруты</a><a href="#about">О компании</a><a href="#fleet">Автопарк</a><a href="#pass">Пассажирам</a></div>
+<div>© 2026 «Магистраль». Междугородние автобусные перевозки</div>
+</div></footer>
+<script>
+const h=document.getElementById('hdr');addEventListener('scroll',()=>h.classList.toggle('scrolled',scrollY>40));
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body></html>
