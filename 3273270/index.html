@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тёплый берег — загородные дома посуточно под Екатеринбургом</title>
+<meta name="description" content="Коттеджи, А-фреймы и дома для праздников вокруг Екатеринбурга: тёплый бассейн, банный чан, баня, банкетный зал. Подберём свободный дом за 15 минут.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f1e9;--ink:#1d211c;--muted:#6b6f66;--forest:#23392c;--forest2:#2f4b3a;--amber:#d98a3d;--amber2:#f0b26b;--card:#fffdf9;--line:#e4dccf;--r:22px}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden}.hero .wrap>*,.row2>*,.cat>*,.mapbox>*,.cta>*{min-width:0}.field input,.field select{width:100%;min-width:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1220px,92vw);margin:0 auto}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:600;line-height:1.05;letter-spacing:-.01em}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--amber)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:999px;font-weight:700;font-size:15px;border:0;cursor:pointer;transition:.3s;font-family:inherit}
+.btn-amber{background:var(--amber);color:#fff;box-shadow:0 12px 30px -10px rgba(217,138,61,.7)}
+.btn-amber:hover{background:#c97a2e;transform:translateY(-2px)}
+.btn-ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--forest);background:var(--forest);color:#fff}
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.35s}
+header.solid{background:rgba(246,241,233,.92);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{font-family:"Cormorant Garamond",serif;font-size:27px;font-weight:600;color:#fff;display:flex;align-items:center;gap:10px}
+.logo i{width:34px;height:34px;border-radius:50%;background:var(--amber);display:grid;place-items:center;font-style:normal;font-size:17px}
+header.solid .logo,header.solid .menu a{color:var(--ink)}
+.menu{display:flex;gap:34px}
+.menu a{color:rgba(255,255,255,.88);font-weight:600;font-size:14px;position:relative}
+.menu a:after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--amber);transition:.3s}
+.menu a:hover:after{width:100%}
+.nav .btn{padding:12px 22px;font-size:14px}
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;padding:140px 0 70px}
+.hero-bg{position:absolute;inset:0;background:url(https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=2000&q=80) center/cover;animation:zoom 22s ease-out forwards}
+@keyframes zoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+.hero:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(15,22,17,.55) 0%,rgba(15,22,17,.15) 35%,rgba(15,22,17,.82) 100%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:end}
+.hero h1{font-size:clamp(46px,6.4vw,92px);margin:18px 0 22px}
+.hero h1 em{color:var(--amber2)}
+.hero p.lead{font-size:19px;max-width:560px;color:rgba(255,255,255,.86)}
+.facts{display:flex;gap:38px;margin-top:38px}
+.facts b{font-family:"Cormorant Garamond",serif;font-size:42px;display:block;line-height:1}
+.facts span{font-size:13px;color:rgba(255,255,255,.75)}
+.pick{background:rgba(255,253,249,.97);color:var(--ink);border-radius:28px;padding:32px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.pick h3{font-size:31px;margin-bottom:6px}
+.pick p{font-size:14px;color:var(--muted);margin-bottom:22px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.field label{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select{font:inherit;font-size:15px;padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;background:#fff;outline:none;transition:.2s}
+.field input:focus,.field select:focus{border-color:var(--amber)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pick .btn{width:100%;margin-top:6px}
+.note{font-size:12px;color:var(--muted);margin-top:12px;text-align:center}
+/* occasions */
+section{padding:110px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:48px}
+.head h2{font-size:clamp(38px,4.6vw,62px);margin-top:10px;max-width:700px}
+.head p{max-width:400px;color:var(--muted)}
+.occ{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.occ a{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:3/4;color:#fff;display:flex;align-items:flex-end;padding:24px}
+.occ img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.occ a:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 40%,rgba(10,16,12,.85))}
+.occ a:hover img{transform:scale(1.08)}
+.occ div{position:relative;z-index:2}
+.occ small{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber2)}
+.occ h3{font-size:30px;margin:6px 0 4px}
+.occ span{font-size:14px;color:rgba(255,255,255,.8)}
+/* catalog */
+#catalog{background:var(--card);border-radius:48px 48px 0 0}
+.cat{display:grid;grid-template-columns:280px 1fr;gap:40px;align-items:start}
+.filters{position:sticky;top:100px;background:var(--bg);border-radius:var(--r);padding:26px}
+.filters h4{font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin:4px 0 14px;color:var(--forest)}
+.filters h4:not(:first-child){margin-top:26px}
+.chk{display:flex;align-items:center;gap:12px;padding:9px 0;cursor:pointer;font-size:15px;font-weight:500}
+.chk input{display:none}
+.chk i{width:22px;height:22px;border-radius:7px;border:1.5px solid #c9bfae;display:grid;place-items:center;transition:.2s;flex:none}
+.chk input:checked+i{background:var(--forest);border-color:var(--forest)}
+.chk input:checked+i:after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.chk em{margin-left:auto;font-style:normal;font-size:12px;color:var(--muted)}
+.reset{margin-top:18px;font-size:13px;font-weight:700;color:var(--amber);background:none;border:0;cursor:pointer;font-family:inherit}
+.found{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;color:var(--muted);font-size:14px}
+.found b{color:var(--ink);font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:.35s}
+.card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(35,57,44,.45)}
+.card.hide{display:none}
+.gal{position:relative;aspect-ratio:16/10;overflow:hidden}
+.gal img{width:100%;height:100%;object-fit:cover;transition:opacity .4s}
+.gal .tag{position:absolute;top:16px;left:16px;background:rgba(255,253,249,.94);border-radius:999px;padding:6px 14px;font-size:12px;font-weight:700}
+.thumbs{position:absolute;bottom:14px;left:14px;display:flex;gap:6px}
+.thumbs b{width:44px;height:32px;border-radius:8px;background-size:cover;background-position:center;border:2px solid rgba(255,255,255,.6);cursor:pointer;transition:.2s}
+.thumbs b.on,.thumbs b:hover{border-color:#fff;transform:translateY(-2px)}
+.cbody{padding:22px 24px 24px}
+.cbody h3{font-size:28px}
+.loc{font-size:13px;color:var(--muted);margin:4px 0 14px}
+.am{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.am span{font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;background:#eef2ec;color:var(--forest2)}
+.cfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.cfoot small{display:block;font-size:12px;color:var(--muted)}
+.cfoot b{font-size:21px}
+.cfoot .btn{padding:12px 18px;font-size:13px}
+.empty{display:none;padding:50px;text-align:center;border:1.5px dashed var(--line);border-radius:var(--r);color:var(--muted)}
+/* why */
+.why{background:var(--forest);color:#fff;border-radius:48px}
+.why .head p{color:rgba(255,255,255,.7)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step{border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:30px;transition:.3s}
+.step:hover{background:rgba(255,255,255,.05);border-color:var(--amber)}
+.step b{font-family:"Cormorant Garamond",serif;font-size:54px;color:var(--amber2);line-height:1}
+.step h3{font-size:25px;margin:14px 0 8px}
+.step p{font-size:14px;color:rgba(255,255,255,.72)}
+/* map */
+.mapbox{display:grid;grid-template-columns:1fr 360px;gap:24px}
+.map{position:relative;border-radius:var(--r);overflow:hidden;background:#e9e4d8;min-height:520px}
+.map svg{width:100%;height:100%;position:absolute;inset:0}
+.pin{position:absolute;transform:translate(-50%,-100%);cursor:pointer}
+.pin i{display:block;width:40px;height:40px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--amber);border:3px solid #fff;box-shadow:0 8px 18px rgba(0,0,0,.25);transition:.25s}
+.pin:hover i,.pin.on i{background:var(--forest)}
+.pin span{position:absolute;left:50%;bottom:52px;transform:translateX(-50%);white-space:nowrap;background:#fff;padding:7px 12px;border-radius:10px;font-size:12px;font-weight:700;opacity:0;transition:.25s;pointer-events:none;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.pin:hover span,.pin.on span{opacity:1}
+.city{position:absolute;transform:translate(-50%,-50%);background:var(--ink);color:#fff;padding:8px 14px;border-radius:999px;font-size:13px;font-weight:700}
+.list{display:flex;flex-direction:column;gap:10px}
+.list div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;cursor:pointer;transition:.2s}
+.list div:hover,.list div.on{border-color:var(--amber);transform:translateX(4px)}
+.list b{display:block;font-size:15px}
+.list span{font-size:13px;color:var(--muted)}
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.rev .st{color:var(--amber);letter-spacing:3px;margin-bottom:14px}
+.rev p{font-size:15px;margin-bottom:18px}
+.rev b{font-size:14px}.rev small{display:block;color:var(--muted);font-size:13px}
+/* cta */
+.cta{position:relative;border-radius:48px;overflow:hidden;color:#fff;padding:100px 70px;display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center}
+.cta:before{content:"";position:absolute;inset:0;background:url(https://images.unsplash.com/photo-1470246973918-29a93221c455?w=1800&q=80) center/cover}
+.cta:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,22,17,.9),rgba(15,22,17,.5))}
+.cta>*{position:relative;z-index:2}
+.cta h2{font-size:clamp(40px,4.6vw,64px)}
+.cta p{color:rgba(255,255,255,.8);margin-top:16px;max-width:480px}
+footer{padding:50px 0 120px;color:var(--muted);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:30px}
+/* quick bar */
+.quick{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.quick button{width:56px;height:56px;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;color:#fff;box-shadow:0 12px 26px -8px rgba(0,0,0,.4);transition:.25s;position:relative}
+.quick button:hover{transform:scale(1.08)}
+.quick button span{position:absolute;right:68px;background:var(--ink);color:#fff;font-size:12px;font-weight:700;padding:7px 12px;border-radius:10px;white-space:nowrap;opacity:0;transition:.2s;pointer-events:none}
+.quick button:hover span{opacity:1}
+.q1{background:#2aa3df}.q2{background:#25b862}.q3{background:var(--amber)}
+.demo-badge{position:fixed;left:18px;bottom:18px;z-index:60;background:rgba(29,33,28,.88);color:#fff;font-size:12px;padding:8px 14px;border-radius:999px}
+/* modal */
+.modal{position:fixed;inset:0;z-index:80;background:rgba(10,14,11,.6);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.mbox{background:var(--card);border-radius:28px;padding:36px;width:min(440px,100%);position:relative;animation:pop .35s}
+@keyframes pop{from{transform:translateY(20px);opacity:0}}
+.mbox h3{font-size:32px;margin-bottom:6px}
+.mbox p{color:var(--muted);font-size:14px;margin-bottom:20px}
+.x{position:absolute;right:18px;top:16px;font-size:26px;background:none;border:0;cursor:pointer;color:var(--muted)}
+.ok{display:none;text-align:center;padding:20px 0}
+.ok b{font-family:"Cormorant Garamond",serif;font-size:34px;display:block;margin-bottom:8px}
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s}
+.rv.in{opacity:1;transform:none}
+@media(max-width:1000px){
+.menu{display:none}
+.hero .wrap,.cat,.mapbox,.cta{grid-template-columns:minmax(0,1fr)}
+.occ,.steps{grid-template-columns:repeat(2,1fr)}
+.filters{position:static}
+.revs{grid-template-columns:1fr}
+.cta{padding:60px 28px}
+.head{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:640px){
+section{padding:70px 0}
+.grid,.occ,.steps{grid-template-columns:1fr}
+.occ a{aspect-ratio:4/3}
+.facts{gap:18px 26px;flex-wrap:wrap}.facts b{font-size:32px}
+.nav .btn{display:none}
+.hero{padding-top:110px}
+.pick{padding:24px}
+.map{min-height:380px}
+#catalog,.why,.cta{border-radius:28px}
+.demo-badge{display:none}
+}
+</style>
+</head>
+<body>
+<header id="hdr"><div class="wrap nav">
+<a href="#" class="logo"><i>✦</i>Тёплый берег</a>
+<nav class="menu"><a href="#occasions">Поводы</a><a href="#catalog">Каталог домов</a><a href="#how">Как забронировать</a><a href="#map">На карте</a><a href="#reviews">Отзывы</a></nav>
+<button class="btn btn-amber" data-open>Подобрать дом</button>
+</div></header>
+
+<section class="hero" style="padding-bottom:70px">
+<div class="hero-bg"></div>
+<div class="wrap">
+<div>
+<div class="eyebrow">Загородные дома посуточно · Екатеринбург и область</div>
+<h1>Дом за городом,<br>где <em>уже тепло</em><br>и всё готово</h1>
+<p class="lead">32 проверенных коттеджа, А-фрейма и дома для праздников в 20–60 минутах от города. Тёплый бассейн, банный чан, баня и банкетный зал — выберите галочками, а свободные даты подскажет менеджер.</p>
+<div class="facts"><div><b>32</b><span>дома в каталоге</span></div><div><b>15 мин</b><span>ответ на заявку</span></div><div><b>от 7 500 ₽</b><span>за сутки</span></div></div>
+</div>
+<form class="pick" onsubmit="return send(event)">
+<h3>Подобрать свободный дом</h3>
+<p>Пришлём 3–5 вариантов со свободными датами и ценой</p>
+<div class="row2">
+<div class="field"><label>Заезд</label><input type="date" required></div>
+<div class="field"><label>Выезд</label><input type="date" required></div>
+</div>
+<div class="field"><label>Гостей</label><select><option>до 6 человек</option><option>7–15 человек</option><option>16–30 человек</option><option>31–50 человек</option></select></div>
+<div class="field"><label>Телефон</label><input type="tel" placeholder="+7 (___) ___-__-__" required></div>
+<button class="btn btn-amber">Подобрать дом →</button>
+<div class="note">Без предоплаты за подбор · Отвечаем с 9:00 до 23:00</div>
+</form>
+</div>
+</section>
+
+<section id="occasions"><div class="wrap">
+<div class="head rv"><div><div class="eyebrow">Для какого повода</div><h2>Каждому поводу — свой дом</h2></div><p>Мы разделили дома по вместимости и формату отдыха, чтобы вы не листали коттеджи на 50 человек, когда едете вдвоём.</p></div>
+<div class="occ">
+<a href="#catalog" class="rv" data-go="cap6"><img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=900&q=80" alt="А-фрейм в лесу"><div><small>до 6 человек</small><h3>А-фреймы и домики</h3><span>Для пары, семьи или друзей</span></div></a>
+<a href="#catalog" class="rv" data-go="cap15"><img src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?w=900&q=80" alt="Дом у озера"><div><small>до 10–15 человек</small><h3>Компании и дни рождения</h3><span>Баня, мангал, большая гостиная</span></div></a>
+<a href="#catalog" class="rv" data-go="cap30"><img src="https://images.unsplash.com/photo-1475855581690-80accde3ae2b?w=900&q=80" alt="Большой коттедж"><div><small>до 30 человек</small><h3>Корпоративы</h3><span>Зал, проектор, парковка на 15 машин</span></div></a>
+<a href="#catalog" class="rv" data-go="cap50"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=900&q=80" alt="Банкетный зал"><div><small>до 50 человек</small><h3>Свадьбы и юбилеи</h3><span>Банкетный зал и выездная регистрация</span></div></a>
+</div>
+</div></section>
+
+<section id="catalog"><div class="wrap">
+<div class="head rv"><div><div class="eyebrow">Каталог</div><h2>Отметьте, что важно, — покажем подходящие дома</h2></div><p>Фильтры работают вместе: например, «до 15 человек» + «тёплый бассейн» + «банный чан».</p></div>
+<div class="cat">
+<aside class="filters rv">
+<h4>Вместимость и повод</h4>
+<label class="chk"><input type="checkbox" name="cap" value="cap6"><i></i>А-фреймы, до 6 чел.</label>
+<label class="chk"><input type="checkbox" name="cap" value="cap15"><i></i>Компании, до 15 чел.</label>
+<label class="chk"><input type="checkbox" name="cap" value="cap30"><i></i>Корпоративы, до 30 чел.</label>
+<label class="chk"><input type="checkbox" name="cap" value="cap50"><i></i>Свадьбы, до 50 чел.</label>
+<h4>Удобства</h4>
+<label class="chk"><input type="checkbox" name="am" value="pool"><i></i>Тёплый бассейн</label>
+<label class="chk"><input type="checkbox" name="am" value="chan"><i></i>Банный чан</label>
+<label class="chk"><input type="checkbox" name="am" value="sauna"><i></i>Баня / сауна</label>
+<label class="chk"><input type="checkbox" name="am" value="grill"><i></i>Мангальная зона</label>
+<label class="chk"><input type="checkbox" name="am" value="hall"><i></i>Банкетный зал</label>
+<button class="reset" type="button" onclick="resetF()">Сбросить фильтры</button>
+</aside>
+<div>
+<div class="found"><span>Найдено: <b id="cnt">8</b> домов</span><span>Цены ориентировочные, зависят от дат</span></div>
+<div class="grid" id="grid"></div>
+<div class="empty" id="empty">Под такое сочетание у нас пока нет дома — оставьте заявку, и менеджер предложит ближайшие варианты.<br><br><button class="btn btn-amber" data-open>Подобрать вручную</button></div>
+</div>
+</div>
+</div></section>
+
+<section id="how" style="padding-top:0;background:var(--card)"><div class="wrap why" style="padding:90px 60px">
+<div class="head rv"><div><div class="eyebrow">Как забронировать</div><h2>От заявки до ключей — один вечер</h2></div><p>Мы не просто сдаём дома: каждый объект проверен лично, а бронь закрепляется договором.</p></div>
+<div class="steps">
+<div class="step rv"><b>01</b><h3>Заявка</h3><p>Даты, число гостей и пожелания — через форму или в мессенджере.</p></div>
+<div class="step rv"><b>02</b><h3>Подборка</h3><p>За 15 минут присылаем 3–5 свободных домов с фото и итоговой ценой.</p></div>
+<div class="step rv"><b>03</b><h3>Бронь</h3><p>Договор и предоплата 30%. Остаток — при заселении.</p></div>
+<div class="step rv"><b>04</b><h3>Заезд</h3><p>Чан и бассейн прогреты к вашему приезду, дрова и угли уже на месте.</p></div>
+</div>
+</div></section>
+
+<section id="map"><div class="wrap">
+<div class="head rv"><div><div class="eyebrow">Где находятся</div><h2>20–60 минут от Екатеринбурга</h2></div><p>Нажмите на дом в списке — подсветим его на карте.</p></div>
+<div class="mapbox rv">
+<div class="map" id="mapEl">
+<svg viewBox="0 0 800 520" preserveAspectRatio="none"><defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ddd5c6" stroke-width="1"/></pattern></defs><rect width="800" height="520" fill="url(#g)"/>
+<path d="M0 300 C150 280 260 330 400 260 S650 200 800 230" stroke="#bcd3dc" stroke-width="14" fill="none"/>
+<ellipse cx="300" cy="110" rx="70" ry="38" fill="#bcd3dc"/><ellipse cx="560" cy="400" rx="60" ry="30" fill="#bcd3dc"/><ellipse cx="610" cy="140" rx="45" ry="26" fill="#bcd3dc"/>
+<path d="M400 260 L120 60 M400 260 L700 80 M400 260 L720 470 M400 260 L90 460 M400 260 L400 520" stroke="#fff" stroke-width="7" fill="none"/>
+<circle cx="140" cy="380" r="70" fill="#cfdcc4" opacity=".6"/><circle cx="650" cy="300" r="90" fill="#cfdcc4" opacity=".6"/><circle cx="220" cy="190" r="60" fill="#cfdcc4" opacity=".6"/></svg>
+<div class="city" style="left:50%;top:50%">Екатеринбург</div>
+<div id="pins"></div>
+</div>
+<div class="list" id="plist"></div>
+</div>
+</div></section>
+
+<section id="reviews" style="padding-top:20px"><div class="wrap">
+<div class="head rv"><div><div class="eyebrow">Отзывы гостей</div><h2>Возвращаются каждый сезон</h2></div></div>
+<div class="revs">
+<div class="rev rv"><div class="st">★★★★★</div><p>Искали дом на юбилей мамы на 40 человек. Прислали четыре варианта за двадцать минут, выбрали с банкетным залом у Таватуя. Всё было ровно как на фото.</p><b>Анастасия</b><small>юбилей, «Усадьба Таватуй»</small></div>
+<div class="rev rv"><div class="st">★★★★★</div><p>А-фрейм с чаном — лучший подарок жене на годовщину. Чан был горячий к приезду, вокруг только сосны и тишина.</p><b>Дмитрий</b><small>выходные вдвоём, «Сосны»</small></div>
+<div class="rev rv"><div class="st">★★★★★</div><p>Возили отдел на корпоратив, 26 человек. Зал, проектор, баня и мангал — организаторы сами всё согласовали с хозяином.</p><b>Ирина</b><small>корпоратив, «Лесная резиденция»</small></div>
+</div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<div class="cta rv">
+<div><div class="eyebrow">Не хочется выбирать самому?</div><h2>Подберём дом под ваш повод за 15 минут</h2><p>Расскажите, сколько вас и что важно, — пришлём варианты со свободными датами и окончательной ценой без скрытых доплат.</p></div>
+<form class="pick" onsubmit="return send(event)" style="box-shadow:none">
+<div class="field"><label>Повод</label><select><option>Отдых с семьёй / вдвоём</option><option>День рождения</option><option>Корпоратив</option><option>Свадьба / юбилей</option></select></div>
+<div class="field"><label>Телефон</label><input type="tel" placeholder="+7 (___) ___-__-__" required></div>
+<button class="btn btn-amber">Получить подборку</button>
+</form>
+</div>
+</div></section>
+
+<footer><div class="wrap"><span>© 2026 Тёплый берег · Загородные дома посуточно, Екатеринбург</span><span>Политика конфиденциальности</span></div></footer>
+
+<div class="quick">
+<button class="q1" data-open aria-label="Telegram"><span>Написать в Telegram</span><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.6c.2.6.4.8.8.8.4 0 .6-.2.9-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.4-1.5ZM8.6 14.3l9.7-6.1c.5-.3.9-.1.5.2l-8.3 7.5-.3 3.4-1.6-5Z"/></svg></button>
+<button class="q2" data-open aria-label="WhatsApp"><span>Написать в WhatsApp</span><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.2 1.4 2.5 1.5.3.2.5.1.7-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg></button>
+<button class="q3" data-open aria-label="Позвонить"><span>Позвонить</span><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg></button>
+</div>
+<div class="demo-badge">Демо-вариант дизайна · кнопки связи подключаются к вашим контактам</div>
+
+<div class="modal" id="modal"><div class="mbox">
+<button class="x" onclick="closeM()">×</button>
+<form id="mform" onsubmit="return send(event,true)">
+<h3 id="mt">Узнать свободные даты</h3><p id="ms">Оставьте телефон — менеджер ответит в течение 15 минут</p>
+<div class="row2"><div class="field"><label>Заезд</label><input type="date"></div><div class="field"><label>Выезд</label><input type="date"></div></div>
+<div class="field"><label>Телефон</label><input type="tel" placeholder="+7 (___) ___-__-__" required></div>
+<button class="btn btn-amber" style="width:100%">Отправить заявку</button>
+</form>
+<div class="ok" id="ok"><b>Заявка принята!</b>Менеджер подберёт свободные даты и свяжется с вами в течение 15 минут.</div>
+</div></div>
+
+<script>
+const U=id=>`https://images.unsplash.com/photo-${id}?w=900&q=80`;
+const L={pool:"Тёплый бассейн",chan:"Банный чан",sauna:"Баня",grill:"Мангал",hall:"Банкетный зал"};
+const H=[
+{n:"А-фрейм «Сосны»",loc:"Берёзовский · 25 мин",cap:"cap6",g:"до 6 гостей",am:["chan","grill"],p:"7 500",im:["1542718610-a1d656d1884c","1505691938895-1758d7feb511","1470246973918-29a93221c455"],x:30,y:22},
+{n:"Домик «Лесной»",loc:"Арамиль · 30 мин",cap:"cap6",g:"до 4 гостей",am:["sauna","grill"],p:"8 000",im:["1449158743715-0a90ebb6d2d8","1502672260266-1c1ef2d93688","1587061949409-02df41d5e562"],x:62,y:70},
+{n:"Коттедж «У озера»",loc:"Таватуй · 50 мин",cap:"cap15",g:"до 14 гостей",am:["chan","sauna","grill"],p:"18 000",im:["1482192505345-5655af888cc4","1505691938895-1758d7feb511","1499696010180-025ef6e1a8f9"],x:36,y:14},
+{n:"Дом «Гамак и сосны»",loc:"Верхняя Пышма · 25 мин",cap:"cap15",g:"до 12 гостей",am:["pool","sauna","grill"],p:"21 000",im:["1499696010180-025ef6e1a8f9","1502672260266-1c1ef2d93688","1449158743715-0a90ebb6d2d8"],x:24,y:34},
+{n:"Вилла «Белая»",loc:"Сысерть · 45 мин",cap:"cap15",g:"до 15 гостей",am:["pool","chan","sauna","grill"],p:"29 000",im:["1600596542815-ffad4c1539a9","1505691938895-1758d7feb511","1613490493576-7fde63acd811"],x:56,y:86},
+{n:"«Лесная резиденция»",loc:"Исеть · 40 мин",cap:"cap30",g:"до 30 гостей",am:["sauna","grill","hall"],p:"38 000",im:["1475855581690-80accde3ae2b","1519167758481-83f550bb49b3","1502672260266-1c1ef2d93688"],x:14,y:58},
+{n:"Комплекс «Белый двор»",loc:"Кольцово · 30 мин",cap:"cap30",g:"до 28 гостей",am:["pool","chan","sauna","grill","hall"],p:"45 000",im:["1613490493576-7fde63acd811","1519167758481-83f550bb49b3","1600596542815-ffad4c1539a9"],x:80,y:60},
+{n:"«Усадьба Таватуй»",loc:"Таватуй · 55 мин",cap:"cap50",g:"до 50 гостей",am:["pool","chan","sauna","grill","hall"],p:"65 000",im:["1510627489930-0c1b0bfb6785","1464366400600-7168b8af9bc3","1519167758481-83f550bb49b3"],x:42,y:9}];
+const grid=document.getElementById('grid');
+grid.innerHTML=H.map((h,i)=>`<article class="card" data-cap="${h.cap}" data-am="${h.am.join(' ')}"><div class="gal"><img src="${U(h.im[0])}" alt="${h.n}"><span class="tag">${h.g}</span><div class="thumbs">${h.im.map((m,k)=>`<b class="${k?'':'on'}" style="background-image:url(https://images.unsplash.com/photo-${m}?w=120&q=60)" data-i="${m}"></b>`).join('')}</div></div><div class="cbody"><h3>${h.n}</h3><div class="loc">📍 ${h.loc}</div><div class="am">${h.am.map(a=>`<span>${L[a]}</span>`).join('')}</div><div class="cfoot"><div><small>от, за сутки</small><b>${h.p} ₽</b></div><button class="btn btn-amber" data-open data-h="${h.n}">Узнать свободные даты</button></div></div></article>`).join('');
+grid.querySelectorAll('.thumbs b').forEach(b=>b.onclick=()=>{const g=b.closest('.gal');g.querySelector('img').src=U(b.dataset.i);g.querySelectorAll('b').forEach(x=>x.classList.remove('on'));b.classList.add('on')});
+function apply(){const caps=[...document.querySelectorAll('[name=cap]:checked')].map(c=>c.value),ams=[...document.querySelectorAll('[name=am]:checked')].map(c=>c.value);let n=0;grid.querySelectorAll('.card').forEach(c=>{const ok=(!caps.length||caps.includes(c.dataset.cap))&&ams.every(a=>c.dataset.am.split(' ').includes(a));c.classList.toggle('hide',!ok);if(ok)n++});document.getElementById('cnt').textContent=n;document.getElementById('empty').style.display=n?'none':'block'}
+document.querySelectorAll('.filters input').forEach(i=>i.onchange=apply);
+function resetF(){document.querySelectorAll('.filters input').forEach(i=>i.checked=false);apply()}
+document.querySelectorAll('[data-go]').forEach(a=>a.onclick=()=>{resetF();document.querySelector(`[value=${a.dataset.go}]`).checked=true;apply()});
+// map
+const pins=document.getElementById('pins'),pl=document.getElementById('plist');
+H.forEach((h,i)=>{pins.insertAdjacentHTML('beforeend',`<div class="pin" data-k="${i}" style="left:${h.x}%;top:${h.y}%"><i></i><span>${h.n} · от ${h.p} ₽</span></div>`);pl.insertAdjacentHTML('beforeend',`<div data-k="${i}"><b>${h.n}</b><span>${h.loc} · ${h.g}</span></div>`)});
+function hl(k){document.querySelectorAll('[data-k]').forEach(e=>e.classList.toggle('on',e.dataset.k==k))}
+document.querySelectorAll('[data-k]').forEach(e=>e.onclick=()=>hl(e.dataset.k));
+// modal
+const m=document.getElementById('modal');
+document.addEventListener('click',e=>{const b=e.target.closest('[data-open]');if(!b)return;e.preventDefault();document.getElementById('mt').textContent=b.dataset.h?`Свободные даты: ${b.dataset.h}`:'Подобрать свободный дом';document.getElementById('mform').style.display='block';document.getElementById('ok').style.display='none';m.classList.add('open')});
+function closeM(){m.classList.remove('open')}m.onclick=e=>{if(e.target===m)closeM()};
+function send(e,inM){e.preventDefault();if(!inM){m.classList.add('open')}document.getElementById('mform').style.display='none';document.getElementById('ok').style.display='block';return false}
+// header + reveal
+const hd=document.getElementById('hdr');addEventListener('scroll',()=>hd.classList.toggle('solid',scrollY>60));
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
